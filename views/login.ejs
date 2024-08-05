@@ -1,0 +1,18 @@
+<%- include("./partials/head") %>
+<%- include("./partials/nav") %>
+    <main>
+        <form action="/login"  method="post" id="loginForm">
+            <fieldset>
+                <legend>Log In</legend>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br/>
+                <label for="password">Password:</label>
+                <input type="text" id="password" name="password" required>
+                <br/>
+                <br/>
+                <button type="submit">login</button>
+            </fieldset>
+        </form>
+    </main>
+<%- include("./partials/foot") %>
