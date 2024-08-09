@@ -1,16 +1,10 @@
 html {
     height: 100%;
 }
+
 body {
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     height: inherit;
-}
-
-main {
-    flex: 2;
 }
 
 label {
@@ -18,23 +12,6 @@ label {
     width: 100px;
     margin-top: 6px;
 }
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav a {
-    text-decoration: none;
-    padding: 8px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-
 
 form {
     width: 400px;
@@ -60,3 +37,58 @@ button {
     min-width: 150px;
 }
 
+/* header navigation */
+
+header.nav {
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header.nav a {
+    text-decoration: none;
+}
+
+.welcome {
+    width: 468px;
+    margin: 0 auto;
+}
+
+.welcome a {
+    padding: 12px;
+}
+
+.welcome a:hover {
+    background-color: rgb(204, 218, 223);
+}
+
+.dash {
+    height: 90vh;
+    background-color: aliceblue;
+    display: flex;
+}
+
+.dash .sidebar {
+    width: 278px;
+    padding: 12px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: black;
+    border-radius: 4px;
+}
+
+.sidebar a:hover {
+    background-color: rgb(2, 136, 224);
+    color: white;
+}
+
+.dash .main {
+    flex: 2;
+    border-radius: 12px;
+    background-color: rgba(56, 56, 56, 0.096);
+    padding: 12px;
+}
