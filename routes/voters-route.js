@@ -1,12 +1,14 @@
 const express = require("express");
 const router = express.Router();
+const sqlite3 = require("sqlite3").verbose();
+const db = new sqlite3.Database("./elections.db");
 
 router.get("/", (req, res) => {
   // Query the database to find a matching username and password
   db.all("SELECT * FROM roles", function (err, row) {
     if (row) {
       console.log(row);
-      res.render("voter-registration.ejs", { row });
+      res.render("voters.ejs", { row });
     } else {
       console.error(err);
     }
