@@ -1,28 +1,14 @@
-<%- include("./partials/head") %>
-<%- include("./partials/nav") %>
+<%- include("./partials/head") %> <%- include("./partials/nav") %>
 <div class="dash">
-    <%- include("./partials/sidebar") %>
-    <main class="main grid">
-        <article class="card">
-            <header>Number of Registrant</header>
-            <span>10</span>
-        </article>
-        <article class="card">
-            <header>Number of Registrant</header>
-            <span>10</span>
-        </article>
-        <article class="card">
-            <header>Number of Registrant</header>
-            <span>10</span>
-        </article>
-        <article class="card">
-            <header>Number of Registrant</header>
-            <span>10</span>
-        </article>
-        <article class="card">
-            <header>Number of Registrant</header>
-            <span>10</span>
-        </article>
-    </main>
+  <%- include("./partials/sidebar") %>
+  <main class="main grid">
+    <article class="card">
+      <header>Registered Voters</header>
+      <section class="center">
+        <h1 class="larger"><%= row.length %></h1>
+      </section>
+      <footer>Total number of registred voters</footer>
+    </article>
+  </main>
 </div>
 <%- include("./partials/foot") %>
