@@ -32,22 +32,13 @@ db.serialize(() => {
 
 })
 
-// route handlers
-
-// index routers
+// ROUTES HANDLERS
 app.use("/", indexRoutes)
-app.use("/welcome", indexRoutes)
-app.use("/login", indexRoutes)
-
-// voter routes
 app.use("/voters", voterRoutes);
 
-app.get("/votes", (req, res) => {
-    res.render("vote.ejs")
-})
 
 app.listen(port,()=>{
-    console.log(`App is listening to port ${port}`)
+    console.log(`App is listening to port http://localhost:${port}`);
 })
 
 module.exports = db
