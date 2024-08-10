@@ -4,6 +4,7 @@
 
 * {
   font: inherit;
+  box-sizing: border-box;
 }
 
 a {
@@ -215,8 +216,7 @@ fieldset label {
 fieldset input,
 fieldset select {
   display: inline-block;
-  max-width: 250px;
-  width: 100%;
+  width: 314px;
   padding: 8px;
   margin-bottom: 4px;
   border-radius: 0;
@@ -227,7 +227,6 @@ fieldset select {
 }
 
 fieldset select {
-  min-width: 270px;
   text-transform: capitalize;
 }
 
@@ -240,31 +239,72 @@ fieldset select:focus {
   outline: none;
 }
 
-fieldset input {
-  border-color: thin solid lightgrey;
+fieldset input:focus {
+  border-color:black;
 }
 
 fieldset button {
   border: none;
-  min-width: 270px;
   float: right;
-  margin-right: 18px;
+  width: 314px;
 }
 
 /* forms ends*/
 
 /* GENERIC PAGES */
-.generic.header,
-.generic.footer {
-  padding: 12px;
+
+.error {
+  display: block;
+  font-size: smaller;
+  font-family: monospace;
+  color: red;
+  width: 314px;
+  float: right;
+  margin-bottom: 4px;
+}
+/* GENERIC PAGES END*/
+
+/* FLEX COLUMN */
+
+.flexbody {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+}
+
+.flexbody > header,
+.flexbody > footer {
+  padding: 12px 24px;
   display: flex;
   justify-content: space-between;
 }
-.generic.main {
-  height: 500px;
+
+.flexbody > footer {
+  background-color: rgba(211, 211, 211, 0.692);
 }
-.generic.main.center {
+
+.flexbody > main {
+  flex: 2;
+}
+
+.flexbody .centerized {
   display: grid;
   place-items: center;
 }
-/* GENERIC PAGES END*/
+
+/* FLEX COLUMN */
+
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexcolumn > header,
+.flexcolumn > footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexcolumn main {
+  flex: 2;
+}

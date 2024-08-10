@@ -1,53 +1,87 @@
 <%- include("./partials/head") %>
-<header class="generic header">
-  <a href="/">Elections App</a>
-</header>
-<main class="generic main center">
-  <form action="/voters/registration" method="post" class="form">
-    <fieldset>
-      <legend>Voter Registration Process</legend>
+<div class="flexbody">
+  <header>
+    <a href="/">Elections App</a>
+    <a href="/login">Log In</a>
+  </header>
+  <main class="centerized">
+    <form action="/voters/registration" method="post" class="form">
+      <fieldset>
+        <legend>Voter Registration Process</legend>
 
-      <label for="first_name">First Name:</label>
-      <input type="text" id="first_name" placeholder="Enter first name" required />
-      <br />
+        <label for="first_name">First Name:</label>
+        <input
+          name="first_name"
+          type="text"
+          id="first_name"
+          placeholder="Enter first name"
+          required
+        />
+        <br />
 
-      <label for="middle_name">Middle Name:</label>
-      <input type="text" id="middle_name" placeholder="Enter middle name" />
-      <br />
+        <label for="middle_name">Middle Name:</label>
+        <input
+          name="middle_name"
+          type="text"
+          id="middle_name"
+          placeholder="Enter middle name"
+        />
+        <br />
 
-      <label for="last_name">Last Name:</label>
-      <input type="text" id="last_name" placeholder="Enter last name" required />
-      <br />
+        <label for="last_name">Last Name:</label>
+        <input
+          name="middle_name"
+          type="text"
+          id="last_name"
+          placeholder="Enter last name"
+          required
+        />
+        <br />
 
-      <label for="DOB">Date of Birth:</label>
-      <input type="date" id="DOB" name="DOB" required />
-      <br />
+        <label for="DOB">Date of Birth:</label>
+        <input name="DOB" type="date" id="DOB" name="DOB" required />
+        <br />
 
-      <label for="username">Username:</label>
-      <input type="text" id="username" placeholder="Enter username" required />
-      <br />
+        <label for="username">Username:</label>
+        <input
+          name="username"
+          type="text"
+          id="username"
+          placeholder="Enter username"
+          required
+        />
+        <br />
 
-      <label for="password">Password:</label>
-      <input type="password" id="password" placeholder="********" required />
-      <br />
+        <label for="password">Password:</label>
+        <input
+          name="password"
+          type="password"
+          id="password"
+          placeholder="********"
+          required
+        />
+        <br />
 
-      <label for="photo">Profile Photo: </label>
-      <input type="file" id="photo" name="photo" required />
-      <br />
+        <label for="photo">Profile Photo: </label>
+        <input type="file" id="photo" name="photo" required />
+        <br />
 
-      <label for="role">Role: </label>
-      <select name="role" id="role">
-        <% row.map((row) => { %>
-        <option value="<%= row.id %>"><%= row.role %></option>
-        <%}) %>
-      </select>
-      <br />
-      <br />
-      <button type="submit" class="button">Register</button>
-    </fieldset>
-  </form>
-</main>
-<footer class="generic footer">
-  <p>&copy; 2024 - Tim T. Joe</p>
-  <a href="/login">Log in</a>
-</footer>
+        <label for="role">Role: </label>
+        <select name="role" id="role">
+          <% row.map((row) => { %>
+          <option value="<%= row.id %>"><%= row.role %></option>
+          <%}) %>
+        </select>
+        <br />
+        <br />
+        <button type="submit" class="button">Register</button>
+      </fieldset>
+    </form>
+  </main>
+  <footer>
+    <span
+      >&copy; 2024 -
+      <a href="https://github.com/timtjoe" target="_blank">Tim T. Joe</a></span
+    >
+  </footer>
+</div>

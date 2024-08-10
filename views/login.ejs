@@ -1,25 +1,46 @@
- <%- include("./partials/head") %>
-<header class="generic header">
-  <a href="/">Elections App</a>
-</header>
-<main class="generic main center">
-  <form action="/login" method="post" class="form">
-    <fieldset>
-      <legend>Log In</legend>
+<%- include("./partials/head") %>
+<div class="flexbody">
+  <header>
+    <a href="/">Elections App</a>
+    <a href="/voters/registration">Voter Registration</a>
+  </header>
+  <main class="centerized">
+    <form action="/login" method="post" class="form">
+      <fieldset>
+        <legend>Log In</legend>
 
-      <label for="username">User Name:</label>
-      <input type="text" id="username" placeholder="Enter user name" required />
-      <br />
+        <label for="username">User Name:</label>
+        <input
+          name="username"
+          type="text"
+          id="username"
+          placeholder="Enter user name"
+          required
+        />
+        <br />
 
-      <label for="password">Password:</label>
-      <input type="password" id="password" placeholder="********" minlength="8" required />
-      <br />
-      <br />
-      <button type="submit" class="button">Log In</button>
-    </fieldset>
-  </form>
-</main>
-<footer class="generic footer">
-  <p>&copy; 2024 - Tim T. Joe</p>
-  <a href="/voters/registration">Register</a>
-</footer>
+        <label for="password">Password:</label>
+        <input
+          name="password"
+          type="password"
+          id="password"
+          placeholder="********"
+          minlength="8"
+          required
+        />
+        <% if(data.error) {%>
+        <small class="error"><%= data.error %></small>
+        <% }%>
+        <br />
+        <br />
+        <button type="submit" class="button">Log In</button>
+      </fieldset>
+    </form>
+  </main>
+  <footer>
+    <span
+      >&copy; 2024 -
+      <a href="https://github.com/timtjoe" target="_blank">Tim T. Joe</a></span
+    >
+  </footer>
+</div>

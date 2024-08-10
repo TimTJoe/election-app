@@ -19,7 +19,6 @@ router.get("/registration", (req, res) => {
   // Query the database to find a matching username and password
   db.all("SELECT * FROM roles", function (err, row) {
     if (row) {
-      console.log(row);
       res.render("voter-registration.ejs", { row });
     } else {
       console.error(err);
