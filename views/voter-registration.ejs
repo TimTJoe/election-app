@@ -1,41 +1,48 @@
 <%- include("./partials/head") %>
-<%- include("./partials/nav") %>
-    <main class="reg">
-        <form action="/voters/registration"  method="post" class="form">
-            <fieldset>
-                <legend>Voter Registration</legend>
+<!-- <%- include("./partials/nav") %> -->
+<header class="generic header">
+  <a href="/">Elections App</a>
+</header>
+<main class="generic main center">
+  <form action="/voters/registration" method="post" class="form">
+    <fieldset>
+      <legend>Voter Registration Process</legend>
 
-                <label for="first_name">First Name:</label>
-                <input type="text" id="first_name" name="first_name" required>
-                <br/>
-                <label for="middle_name">Middle Name:</label>
-                <input type="text" id="middle_name" name="middle_name">
-                <br/>
-                <label for="last_name">Last Name:</label>
-                <input type="text" id="last_name" name="last_name" required>
-                    <br/>
-                <label for="DOB">Date of Birth:</label>
-                <input type="date" id="DOB" name="DOB" required>
-                    <br/>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                    <br/>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                    <br/>
-                <label for="photo">Profile Photo: </label>
-                <input type="file" id="photo" name="photo" required>
-                    <br/>
-                <label for="role">Role: </label>
-                <select name="role" id="role">
-                    <% row.map((row) => { %>
-                        <option value="<%= row.id %>"><%= row.role %></option>
-                    <%}) %>
-                </select>
-                <br/>
-                <br/>
-                <button type="submit" class="button">Register</button>
-            </fieldset>
-        </form>
-    </main>
-<%- include("./partials/foot") %>
+      <label for="first_name">First Name:</label>
+      <input type="text" id="first_name" name="first_name" required />
+      <br />
+      <label for="middle_name">Middle Name:</label>
+      <input type="text" id="middle_name" name="middle_name" />
+      <br />
+      <label for="last_name">Last Name:</label>
+      <input type="text" id="last_name" name="last_name" required />
+      <br />
+      <label for="DOB">Date of Birth:</label>
+      <input type="date" id="DOB" name="DOB" required />
+      <br />
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+      <br />
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+      <br />
+      <label for="photo">Profile Photo: </label>
+      <input type="file" id="photo" name="photo" required />
+      <br />
+      <label for="role">Role: </label>
+      <select name="role" id="role">
+        <% row.map((row) => { %>
+        <option value="<%= row.id %>"><%= row.role %></option>
+        <%}) %>
+      </select>
+      <br />
+      <br />
+      <button type="submit" class="button">Register</button>
+    </fieldset>
+  </form>
+</main>
+<header class="generic header">
+  <p>&copy; 2024 - Tim T. Joe</p>
+  <a href="/login">Log in</a>
+</header>
+<!-- <%- include("./partials/foot") %> -->

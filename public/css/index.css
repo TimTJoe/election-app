@@ -5,6 +5,10 @@
 * {
   font: inherit;
 }
+
+a {
+  text-decoration: none;
+}
 html {
   height: 100%;
 }
@@ -63,8 +67,6 @@ header.nav a {
   transition: transform 0.2s ease-in-out;
   border-left: solid transparent;
   color: black;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
 }
 
 .sidebar a:hover {
@@ -82,7 +84,6 @@ header.nav a {
   padding: 8px;
   height: 500px;
   overflow-x: auto;
-  border-radius: 6px;
 }
 
 .dash .main.grid {
@@ -144,7 +145,6 @@ header.nav a {
   padding: 10px;
   text-decoration: none;
   background-color: #1873fc;
-  border-radius: 6px;
 }
 
 .button:hover {
@@ -163,7 +163,6 @@ header.nav a {
 
 .tablist .tabitem {
   padding: 6px;
-  border-radius: 6px;
   background-color: white;
   display: flex;
   align-items: center;
@@ -189,11 +188,10 @@ header.nav a {
   gap: 2px;
 }
 
-/* registration page */
-.reg {
-  height: 500px;
-  display: grid;
-  place-items: center;
+/* forms */
+
+form {
+  max-width: 500px;
 }
 
 fieldset {
@@ -209,12 +207,14 @@ fieldset legend {
 fieldset label {
   display: inline-block;
   padding: 4px;
-  min-width: 150px;
+  min-width: 178px;
   cursor: pointer;
+  text-align: left;
 }
 
 fieldset input,
 fieldset select {
+  text-align: left;
   display: inline-block;
   padding: 8px;
   font: inherit;
@@ -226,8 +226,13 @@ fieldset select {
   border-radius: 0;
 }
 
-fieldset select {
+fieldset select{
+  min-width: 270px;
   text-transform: capitalize;
+}
+
+fieldset input[type="date"] {
+  text-transform: uppercase;
 }
 
 fieldset input:focus,
@@ -241,8 +246,24 @@ fieldset input {
 
 fieldset button {
   border: none;
-  min-width: 250px;
+  min-width: 270px;
   float: right;
 }
 
-/* registration page ends*/
+/* forms ends*/
+
+/* GENERIC PAGES */
+.generic.header,
+.generic.footer {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+.generic.main {
+  height: 500px;
+}
+.generic.main.center {
+  display: grid;
+  place-items: center;
+}
+/* GENERIC PAGES END*/
