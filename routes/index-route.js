@@ -8,10 +8,11 @@ router.get("/welcome", function get(req, res) {
 });
 
 router.get("/", function get(req, res) {
-  db.all("SELECT * FROM users WHERE role_id=?", [3], function (err, row) {
-    if (row) {
-      console.log(row);
-      res.render("dashboard.ejs", { row });
+  let data = {}
+  db.all("SELECT * FROM users WHERE role_id=?", [3], function query(error, user) {
+    data.voter = user
+    if (user.length !== 0) {
+      res.render("dashboard.ejs", { data });
       //   res.render("voter-registration.ejs", { row });
     } else {
       console.error(err);

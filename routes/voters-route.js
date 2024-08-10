@@ -4,11 +4,12 @@ const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database("./elections.db");
 
 router.get("/", (req, res) => {
-  // Query the database to find a matching username and password
-  db.all("SELECT * FROM roles", function (err, row) {
-    if (row) {
-      console.log(row);
-      res.render("voters.ejs", { row });
+  let data = {}
+  // Query the database to find a matching
+  db.all("SELECT * FROM users WHERE role_id=?",[3], function (err, users) {
+    data.voters = users;
+    if (users.length !== 0) {
+      res.render("voters.ejs", { data });
     } else {
       console.error(err);
     }
@@ -16,7 +17,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/registration", (req, res) => {
-  // Query the database to find a matching username and password
+  // Query the database to find a matching
   db.all("SELECT * FROM roles", function (err, row) {
     if (row) {
       res.render("voter-registration.ejs", { row });

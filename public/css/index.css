@@ -240,7 +240,7 @@ fieldset select:focus {
 }
 
 fieldset input:focus {
-  border-color:black;
+  border-color: black;
 }
 
 fieldset button {
@@ -307,4 +307,8 @@ fieldset button {
 
 .flexcolumn main {
   flex: 2;
+}
+
+small {
+  font-size: smaller;
 }

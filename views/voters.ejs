@@ -9,26 +9,20 @@
       <section>Actions</section>
     </nav>
     <div class="tablist">
-        
-      <section class="tabitem">
+      <% data.voters.map((voter, key) => { %>
+      <section class="tabitem" id="<%= voter.id %>">
         <span class="tabicon">
           <img src="/images/sample.png" alt="icon" class="tabimg" />
         </span>
         <span class="tabcontent max">
-          <strong>Timothy T. Joe</strong>
-          <small>25 years old &middot; Male</small>
+          <strong>
+            <%= voter.first_name %> <%= voter.middle_name %>. <%=
+            voter.last_name %>
+          </strong>
+          <small> <%= voter.DOB %> &middot; Male</small>
         </span>
       </section>
-
-      <section class="tabitem">
-        <span class="tabicon">
-          <img src="/images/sample.png" alt="icon" class="tabimg" />
-        </span>
-        <span class="tabcontent max">
-          <strong>Timothy T. Joe</strong>
-          <small>25 years old &middot; Male</small>
-        </span>
-      </section>
+      <%}) %>
     </div>
   </main>
 </div>
