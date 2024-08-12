@@ -5,7 +5,12 @@
     <a href="/login">Log In</a>
   </header>
   <main class="centerized">
-    <form action="/voters/registration" method="post" class="form">
+    <form
+      action="/voters/registration"
+      method="post"
+      class="form"
+      enctype="multipart/form-data"
+    >
       <fieldset>
         <legend>Voter Registration Process</legend>
 
@@ -30,7 +35,7 @@
 
         <label for="last_name">Last Name:</label>
         <input
-          name="middle_name"
+          name="last_name"
           type="text"
           id="last_name"
           placeholder="Enter last name"
@@ -63,7 +68,7 @@
         <br />
 
         <label for="photo">Profile Photo: </label>
-        <input type="file" id="photo" name="photo" required />
+        <input type="file" id="photo" name="photo" required/>
         <br />
 
         <label for="role">Role: </label>
