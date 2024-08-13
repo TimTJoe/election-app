@@ -73,8 +73,15 @@
 
         <label for="role">Role: </label>
         <select name="role" id="role">
-          <% row.map((row) => { %>
-          <option value="<%= row.id %>"><%= row.role %></option>
+          <% data.roles.map((role) => { %>
+          <option value="<%= role.id %>"><%= role.role %></option>
+          <%}) %>
+        </select>
+        
+        <label for="position">Position: </label>
+        <select name="position" id="position">
+          <% data.positions.map((position) => { %>
+          <option value="<%= position.id %>"><%= position.position %></option>
           <%}) %>
         </select>
         <br />
