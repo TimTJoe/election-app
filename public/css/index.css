@@ -312,3 +312,36 @@ fieldset button {
 small {
   font-size: smaller;
 }
+
+.gridlist {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+ gap: 12px;
+  /* grid-column: 200px; */
+}
+
+.gridlist .gridcell {
+  background-color: white;
+  border: thin solid black;
+  max-height: 300px;
+}
+
+.gridcell .figure {
+  width: 100%;
+  height: 150px;
+}
+
+.gridcell .headline {
+  font-size: larger;
+  margin: 8px;
+}
+
+.gridcell .infoline {
+  display: block;
+  margin-bottom: 4px;
+  color: rgb(51, 51, 51);
+}
+
+.center-align {
+  text-align: center;
+}

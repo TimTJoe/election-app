@@ -13,6 +13,7 @@ const sqlite3 = require('sqlite3').verbose()
 const db = new sqlite3.Database('./elections.db')
 const indexRoutes = require("./routes/index-route")
 const voterRoutes = require("./routes/voters-route")
+const partiesRoutes = require("./routes/parties-route")
 
 db.serialize(() => {
 
@@ -35,6 +36,7 @@ db.serialize(() => {
 // ROUTES HANDLERS
 app.use("/", indexRoutes)
 app.use("/voters", voterRoutes);
+app.use("/parties", partiesRoutes);
 
 
 app.listen(port,()=>{

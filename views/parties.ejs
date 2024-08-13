@@ -1,0 +1,26 @@
+<%- include("./partials/head") %> <%- include("./partials/nav") %>
+<div class="dash">
+  <%- include("./partials/sidebar") %>
+  <main class="main">
+    <nav class="toolbar row">
+      <section class="max">
+        <a href="parties/registration" class="button"> + Party Registration</a>
+      </section>
+      <section></section>
+    </nav>
+    <div class="gridlist">
+        <% if(data.parties) { %>
+            <% data.parties.map(function each(party, index){ %>
+            <section class="gridcell center-align">
+              <img class="figure" src="/images/sample.png" alt="" />
+              <h3 class="headline"><%= party.party %></h3>
+              <small class="infoline"> 0 Candidates &middot; 0 Elections Won </small>
+            </section>
+            <%}) %>
+        <% } else {%>
+            <h1>no party register</h1>
+        <% } %>
+    </div>
+  </main>
+</div>
+<%- include("./partials/foot") %>

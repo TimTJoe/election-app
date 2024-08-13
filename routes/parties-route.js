@@ -1,26 +1,41 @@
-const express = require("express")
-const router = express.Router()
+const express = require("express");
+const db = require("../public/js/db");
+const upload = require("../public/js/multer");
+const router = express.Router();
 
 router.get("/", (req, res) => {
+  let data = {};
+  // Query the database to find a matching
+  db.all("SELECT * FROM parties", function (err, parties) {
+    data.parties = parties;
+    if (err) console.error(err);
+    res.render("parties.ejs", {data});
+  });
+});
+
+router.get("/registration", (req, res) => {
   res.render("party-registration.ejs");
 });
 
 // Handle POST requests to "/party-registration"
-router.post("/registration", (req, res) => {
-        // Destructure party and logo from the request body
-        const { party, logo } = req.body;
+router.post("/registration", upload.single("logo"), (req, res) => {
+  // Destructure party and logo from the request body
+  const { party, logo } = req.body;
 
-        // Insert party details into the database
-        db.run("INSERT INTO parties VALUES (?,?,?)", [null, party, logo], function(err) {
-            if (!err) {
-                // Redirect to the dashboard if insertion is successful
-                res.redirect("/dashboard");
-            } else {
-                // console log if insertion fails
-                console.error(err)
-            }
-        });
+  // Insert party details into the database
+  db.run(
+    "INSERT INTO parties VALUES (?,?,?)",
+    [null, party, logo],
+    function query(err) {
+      if (!err) {
+        // Redirect to the dashboard if insertion is successful
+        res.redirect("/parties");
+      } else {
+        // console log if insertion fails
+        console.error(err);
+      }
+    }
+  );
 });
 
-
-module.exports = router
+module.exports = router;
