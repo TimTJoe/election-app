@@ -9,14 +9,14 @@ router.get("/welcome", function get(req, res) {
 
 router.get("/", function get(req, res) {
   let data = {}
-  db.all("SELECT * FROM users WHERE role_id=?", [3], function query(error, user) {
-    data.voter = user
-    if (user.length !== 0) {
-      res.render("dashboard.ejs", { data });
-      //   res.render("voter-registration.ejs", { row });
-    } else {
-      console.error(err);
-    }
+  db.all("SELECT * FROM users WHERE role_id=?", [3], function query(error, voter) {
+    if(error) console.error(error)
+    data.voter = voter
+  });
+
+  db.all("SELECT * FROM users WHERE role_id=?", [3], function query(error, voter) {
+    if(error) console.error(error)
+    data.voter = voter
   });
 });
 

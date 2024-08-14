@@ -1,5 +1,4 @@
 const express = require("express");
-const upload = require("../public/js/multer");
 const router = express.Router();
 
 router.get("/", function handler(req, res) {

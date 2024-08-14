@@ -1,6 +1,6 @@
 const express = require("express");
-const db = require("../public/js/db");
-const upload = require("../public/js/multer");
+const db = require("../utils/db");
+const upload = require("../utils/uploader");
 const router = express.Router();
 
 router.get("/", (req, res) => {

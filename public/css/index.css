@@ -62,7 +62,7 @@ header.nav a {
   background-color: #38383818;
   height: 510px;
   overflow-x: auto;
-  border-bottom: thin solid #38383818;
+  border-bottom: thin solid #3838380e;
 }
 
 .main > .header {
@@ -274,11 +274,11 @@ header.nav a {
   width: 230px;
   display: flex;
   flex-direction: column;
-  border: thin solid #535353;
+  border: thin solid #53535381;
 }
 
 .media.data > .header {
-  border-bottom: thin solid #535353;
+  border-bottom: thin solid #53535381;
 }
 
 .media.data > .header,
@@ -295,8 +295,8 @@ header.nav a {
   font-size: small;
 }
 
-.media.data > .footer  {
-  border-top: thin solid #535353;
+.media.data > .footer {
+  border-top: thin solid #53535381;
 }
 
 /* MEDIA CARD, TABULAR CARD, DATA CARD,  ARTICLE CARD STYLES END */
