@@ -1,47 +1,30 @@
 <%- include("../partials/head") %> <%- include("../partials/nav") %>
-<div class="container row max">
-  <%- include("../partials/sidebar") %>
-  <main class="main max relative">
-    <header class="header toolbar row align sticky">
-      <section class="max">
-        <label for="elections">Select Election</label>
-        <select name="elections" id="elections">
-          <option value="">Block A General Elections</option>
-          <option value="">Block B General Elections</option>
-          <option value="">Block C General Elections</option>
-        </select>
-      </section>
-      <section class="">
-        <a href="elections/create" class="iconbutton">
-          <i class="icon">&plus;</i>
-          <span class="text">New Election</span>
-        </a>
-      </section>
-    </header>
-    <div class="body">
-      <section>
-        <nav class="tabs">
-          <span class="title">Block A General Elections</span>
-          <a href="elections/12345/parties" class="tabitem active">Parites</a>
-          <a href="elections/12345/candidates" class="tabitem">Candidates</a>
-          <a href="elections/12345/voters" class="tabitem">Voters</a>
-        </nav>
-        <div class="gridlist padding">
-          <% if(data.parties) { %> <% data.parties.map(function each(party,
-          index){ %>
-          <section class="gridcell center-align">
-            <img class="figure" src="/images/sample.png" alt="" />
-            <h3 class="headline"><%= party.party %></h3>
-            <small class="infoline">
-              Block A General Elections &middot; 2 Candidates
-            </small>
-          </section>
-          <%}) %> <% } else {%>
-          <h1>no party register</h1>
-          <% } %>
-        </div>
-      </section>
+    <div class="container row max">
+      <%- include("../partials/sidebar") %>
+        <main class="main max relative">
+          <%- include("./toolbar") %>
+            <div class="body">
+              <section>
+                <%- include("./tabs") %>
+                  <div class="gridlist padding">
+                    <% if(data.parties) { %>
+                      <% data.parties.map(function each(party, index){ %>
+                        <section class="gridcell center-align">
+                          <img class="figure" src="/images/sample.png" alt="" />
+                          <h3 class="headline">
+                            <%= party.party %>
+                          </h3>
+                          <small class="infoline">
+                            Block A General Elections &middot; 2 Candidates
+                          </small>
+                        </section>
+                        <%}) %>
+                          <% } else {%>
+                            <h1>no party register</h1>
+                            <% } %>
+                  </div>
+              </section>
+            </div>
+        </main>
     </div>
-  </main>
-</div>
-<%- include("../partials/foot") %>
+    <%- include("../partials/foot") %>

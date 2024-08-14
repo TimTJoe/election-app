@@ -16,4 +16,19 @@ router.get("/create", function handler(req, res) {
   res.send("create elections");
 });
 
+router.get("/:electionID/parties", (req, res) => {
+  let data = {};
+  res.render("elections/parties.ejs", { data });
+});
+
+router.get("/:electionID/candidates", (req, res) => {
+  let data = {};
+  res.render("elections/candidates.ejs", { data });
+});
+
+router.get("/:electionID/voters", (req, res) => {
+  let data = {};
+  res.render("elections/voters.ejs", { data });
+});
+
 module.exports = router;

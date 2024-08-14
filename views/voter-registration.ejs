@@ -77,6 +77,13 @@
           <option value="<%= role.id %>"><%= role.role %></option>
           <%}) %>
         </select>
+
+        <label for="role">Party: </label>
+        <select name="role" id="role">
+          <% data?.parties.map((party) => { %>
+          <option value="<%= party.id %>"><%= party.party %></option>
+          <%}) %>
+        </select>
         
         <label for="position">Position: </label>
         <select name="position" id="position">

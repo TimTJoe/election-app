@@ -19,22 +19,21 @@ router.get("/", (req, res) => {
 router.get("/registration", (req, res) => {
   let data = {};
   let errors;
-  // Query the database to find a matching
   db.all("SELECT * FROM roles", function query(err, roles) {
     data.roles = roles;
     if (err) errors = err;
   });
+  db.all("SELECT * FROM parties", function query(err, parties) {
+    data.parties = parties;
+    if (err) errors = err;
+  });
   db.all("SELECT * FROM positions", function query(err, positions) {
     data.positions = positions;
-    console.log(data);
     res.render("voter-registration.ejs", { data });
     if (err) errors = err;
-    if (errors) {
-      console.error(errors);
-    }
+    if (errors) console.error(errors);
   });
 });
-
 
 
 module.exports = router;
