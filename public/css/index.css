@@ -9,7 +9,9 @@
 
 a {
   text-decoration: none;
+  color: #009c41e5;
 }
+
 html {
   height: 100%;
 }
@@ -58,6 +60,9 @@ header.nav a {
 .dash .sidebar {
   width: 278px;
   padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
 }
 
 .sidebar a {
@@ -70,13 +75,28 @@ header.nav a {
   color: black;
 }
 
-.sidebar a:hover {
+.sidebar a:hover,
+.sidebar a.active {
   background-color: whitesmoke;
   border-color: #00172c;
 }
 
 .sidebar a:focus {
   transform: scale(0.98);
+}
+
+.sidebar .tablink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tablink .tabicon,
+.iconbutton .icon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
 }
 
 .dash .main {
@@ -140,19 +160,34 @@ header.nav a {
   flex: 2;
 }
 
-.button {
+.button,
+.iconbutton {
   display: inline-block;
   color: white;
   padding: 10px;
   text-decoration: none;
-  background-color: #1873fc;
+  background-color: #00bb4ee5;
+  font-weight: bolder;
+  text-transform: capitalize;
 }
 
-.button:hover {
-  background-color: #0761e7;
+.button:hover,
+.iconbutton {
+  background-color: #00a846e8;
 }
-.button:focus {
+.button:focus,
+.iconbutton:focus {
   transform: scale(0.98);
+}
+
+.iconbutton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.iconbutton .icon {
+  font-weight: larger;
 }
 
 .tablist {
@@ -316,7 +351,7 @@ small {
 .gridlist {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
- gap: 12px;
+  gap: 12px;
   /* grid-column: 200px; */
 }
 

@@ -36,64 +36,6 @@ router.get("/registration", (req, res) => {
   });
 });
 
-// Handle POST request to /voter-registration endpoint
-<<<<<<< HEAD
-router.post("/registration", upload.single("photo"), (req, res) => {
-  console.log(req.body);
-  // const { first_name, middle_name, last_name, DOB, username, password,photo, role } =
-  //   req.body;
-  // db.run(
-  //   "INSERT INTO users VALUES(?,?,?,?,?,?,?)",
-  //   [null, first_name, middle_name, last_name, DOB, photo, role],
-  //   function (err) {
-  //     if (err) {
-  //       console.error(err);
-  //     } else {
-  //       db.run("INSERT INTO auth VALUES(?,?,?,?)", [
-  //         null,
-  //         username,
-  //         password,
-  //         this.lastID,
-  //       ]);
-  //       res.redirect("/login");
-  //     }
-  //   }
-  // );
-=======
-router.post("/registration", (req, res) => {
-  // Destructure required fields from request body
-  const {
-    first_name,
-    middle_name,
-    last_name,
-    DOB,
-    username,
-    password,
-    photo,
-    role,
-  } = req.body;
-  // Insert user information into 'users' table in the database
-  db.run(
-    "INSERT INTO users VALUES(?,?,?,?,?,?,?)",
-    [null, first_name, middle_name, last_name, DOB, photo, role],
-    function (err) {
-      if (err) {
-        // If there's an error, throw it
-        console.error(err);
-      } else {
-        // Insert auth information into 'auth' table using last inserted ID
-        db.run("INSERT INTO auth VALUES(?,?,?,?)", [
-          null,
-          username,
-          password,
-          this.lastID,
-        ]);
-        // Redirect to login page after successful registration
-        res.redirect("/login");
-      }
-    }
-  );
->>>>>>> 3242601624210791263f0ce39087d80fe31f8046
-});
+
 
 module.exports = router;
