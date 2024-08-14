@@ -6,25 +6,23 @@
             <div class="body">
               <section>
                 <%- include("./tabs") %>
-                  <div class="gridlist padding">
-                    <% if(data.parties) { %>
-                      <% data.parties.map(function each(party, index){ %>
-                        <section class="media">
-                          <img class="figure" src="/images/sample.png" alt="" />
-                          <section class="block">
-                            <strong class="title">
-                              <%= party.party %>
-                            </strong>
-                            <small class="footer">
-                               2 Candidates
-                            </small>
-                          </section>
+                <div class="body padding row">
+                  <% if(data.parties) { %>
+                    <% data.parties.map(function each(party, index){ %>
+                      <section class="media article">
+                        <img class="figure" src="/images/sample.png" alt="" />
+                        <section class="block">
+                          <strong class="title">
+                            <%= party.party %>
+                          </strong>
+                          <small class="footer"> 0 Candidates &middot; 0 Elections Won </small>
                         </section>
-                        <%}) %>
-                          <% } else {%>
-                            <h1>no party register</h1>
-                            <% } %>
-                  </div>
+                      </section>
+                      <%}) %>
+                        <% } else {%>
+                          <h1>no party register</h1>
+                          <% } %>
+                </div>
               </section>
             </div>
         </main>
