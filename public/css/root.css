@@ -1,0 +1,74 @@
+/* root.css */
+:root {
+    /* Navy Blue Palette */
+    --color-navy: #001f3f;
+    --color-navy-light: #2c3e50;
+    --color-navy-dark: #00122b;
+
+    /* Complementary Colors */
+    --color-complementary-blue: #0074D9;
+    --color-complementary-green: #2ECC40;
+    --color-complementary-yellow: #FFDC00;
+    --color-complementary-red: #FF4136;
+
+    /* Neutral Colors */
+    --color-white: #ffffff;
+    --color-gray-light: #f6f8fa;
+    --color-gray: #c0c0c0;
+    --color-gray-dark: #5f5f5f;
+    --color-black: #111111;
+
+    /* Font Sizes */
+    --font-size-xxs: 0.625rem;
+    /* 10px */
+    --font-size-xs: 0.75rem;
+    /* 12px */
+    --font-size-sm: 0.875rem;
+    /* 14px */
+    --font-size-md: 1rem;
+    /* 16px */
+    --font-size-lg: 1.25rem;
+    /* 20px */
+    --font-size-xl: 1.5rem;
+    /* 24px */
+    --font-size-xxl: 2rem;
+    /* 32px */
+    --font-size-xxxl: 3rem;
+    /* 48px */
+
+    /* Spacing */
+    --spacing-xxs: 0.25rem;
+    /* 4px */
+    --spacing-xs: 0.5rem;
+    /* 8px */
+    --spacing-sm: 0.75rem;
+    /* 12px */
+    --spacing-md: 1rem;
+    /* 16px */
+    --spacing-lg: 1.5rem;
+    /* 24px */
+    --spacing-xl: 2rem;
+    /* 32px */
+    --spacing-xxl: 3rem;
+    /* 48px */
+    --spacing-xxxl: 4rem;
+    /* 64px */
+
+    /* Box Shadows */
+    --box-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+    --box-shadow-md: 0 3px 6px rgba(0, 0, 0, 0.15);
+    --box-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.2);
+    --box-shadow-xl: 0 15px 30px rgba(0, 0, 0, 0.25);
+
+    /* Background Colors */
+    --bg-color-primary: var(--color-navy);
+    --bg-color-secondary: var(--color-navy-light);
+    --bg-color-accent: var(--color-complementary-blue);
+    --bg-color-neutral: var(--color-gray-light);
+
+    /* Text Colors */
+    --text-color-primary: var(--color-white);
+    --text-color-secondary: var(--color-gray-dark);
+    --text-color-accent: var(--color-complementary-yellow);
+    --text-color-muted: var(--color-gray);
+}

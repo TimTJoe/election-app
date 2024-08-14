@@ -1,0 +1,81 @@
+/* resets.css */
+/* Box sizing reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+/* Remove list styles on ul, ol elements */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Remove default padding */
+button,
+input,
+textarea {
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+/* Set core body defaults */
+body {
+    line-height: 1.5;
+    background-color: var(--bg-color-neutral);
+    font-family: Arial, sans-serif;
+    color: var(--text-color-secondary);
+}
+
+/* Set core root defaults */
+html {
+    -webkit-text-size-adjust: 100%;
+    /* Prevent font scaling in landscape */
+}
+
+/* A elements that don't have a class get default styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Make images easier to work with */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions, and smooth scroll */
+* {
+    -webkit-transition: none !important;
+    transition: none !important;
+    -webkit-animation: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+}
