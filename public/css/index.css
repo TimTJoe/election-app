@@ -183,6 +183,7 @@ header.nav a {
 
 .row {
   display: flex;
+  gap: 12px;
 }
 
 .row.align {
@@ -552,4 +553,8 @@ nav.tabs .tabitem.active {
 
 .padding {
   padding: 12px;
+}
+
+.grid {
+  display: grid;
 }

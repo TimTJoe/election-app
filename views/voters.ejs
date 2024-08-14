@@ -1,39 +1,39 @@
 <%- include("./partials/head") %> <%- include("./partials/nav") %>
-<div class="dash">
-  <%- include("./partials/sidebar") %>
-  <main class="main">
-    <nav class="toolbar row">
-      <section class="max">
-        <label for="elections">Select Election</label>
-         <select name="elections" id="elections">
-          <option value="">Block A General Elections</option>
-          <option value="">Block B General Elections</option>
-          <option value="">Block C General Elections</option>
-        </select>
-      </section>
-      <section class="">
-        <a href="voters/registration" class="iconbutton">
-          <i class="icon">&plus;</i>
-          <span class="text">Voter Registration</span>
-        </a>
-      </section>
-    </nav>
-    <div class="tablist">
-      <% data.voters.map((voter, key) => { %>
-      <section class="tabitem" id="<%= voter.id %>">
-        <span class="tabicon">
-          <img src="/images/sample.png" alt="icon" class="tabimg" />
-        </span>
-        <span class="tabcontent max">
-          <strong>
-            <%= voter.first_name %> <%= voter.middle_name %>. <%=
-            voter.last_name %>
-          </strong>
-          <small> <%= voter.DOB %> &middot; Male</small>
-        </span>
-      </section>
-      <%}) %>
+    <div class="container row max">
+      <%- include("./partials/sidebar") %>
+        <main class="main max relative">
+          <nav class="toolbar row align">
+            <section class="max">
+              <label for="elections">Filter By:</label>
+              <select name="elections" id="elections">
+                <option value="">Block A General Elections</option>
+                <option value="">Block B General Elections</option>
+                <option value="">Block C General Elections</option>
+              </select>
+            </section>
+            <section class="">
+              <a href="voters/registration" class="iconbutton">
+                <i class="icon">&plus;</i>
+                <span class="text">Voter Registration</span>
+              </a>
+            </section>
+          </nav>
+          <div class="body padding row">
+            <% data.voters.map((voter, key)=> { %>
+              <section class="media" id="<%= voter.id %>">
+                <img class="figure" src="/images/sample.png" alt="" />
+                <section class="block">
+                  <strong class="title">
+                    <%= voter.first_name %>
+                      <%= voter.middle_name %>. <%= voter.last_name %>
+                  </strong>
+                  <small class="footer">
+                    <%= voter.DOB %> &middot; Voter
+                  </small>
+                </section>
+              </section>
+              <%}) %>
+          </div>
+        </main>
     </div>
-  </main>
-</div>
-<%- include("./partials/foot") %>
+    <%- include("./partials/foot") %>

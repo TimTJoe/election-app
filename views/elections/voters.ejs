@@ -5,20 +5,18 @@
         <main class="main max relative">
           <%- include("./toolbar") %>
             <div class="body">
-              <section>
-                <%- include("./tabs") %>
-                  <div class="tablist">
-                    <section class="tabitem" id="">
-                      <span class="tabicon">
-                        <img src="/images/sample.png" alt="icon" class="tabimg" />
-                      </span>
-                      <span class="tabcontent max">
-                        <strong> Full Name</strong>
-                        <small> DOB &middot; Male</small>
+              <%- include("./tabs") %>
+                <section class="padding">
+                  <div class="row">
+                    <section class="media" id="">
+                      <img src="/images/sample.png" alt="icon" class="figure" />
+                      <span class="block max">
+                        <strong class="title"> Full Name</strong>
+                        <small class="footer"> DOB &middot; Voter</small>
                       </span>
                     </section>
                   </div>
-              </section>
+                </section>
             </div>
         </main>
     </div>
