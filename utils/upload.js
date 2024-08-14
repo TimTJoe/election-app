@@ -1,19 +1,15 @@
-const multer = require("multer");
-const path = require("path");
-var dest = "/public/uploads";
+var multer = require("multer");
+var path = require("path");
+var dest = "./public/uploads";
 
 const storage = multer.diskStorage({
   destination: dest,
   filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    const extname = path.extname(file.originalname);
-    const newFilename = req.body.name + "-" + uniqueSuffix + extname;
+    let uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    let extname = path.extname(file.originalname);
+    req.filename = "IMG_" + uniqueSuffix + extname;
 
-    // Attach the new filename to the request object
-    req.new_file_name = newFilename;
-    console.log("Generated filename:", req.new_file_name);
-
-    cb(null, newFilename);
+    cb(null, req.filename);
   },
 });
 

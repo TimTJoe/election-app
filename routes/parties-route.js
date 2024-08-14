@@ -1,7 +1,7 @@
 const express = require("express");
+const router = express.Router();
 const db = require("../utils/db");
 const upload = require("../utils/upload");
-const router = express.Router();
 
 router.get("/", (req, res) => {
   let data = {};
@@ -19,12 +19,11 @@ router.get("/registration", (req, res) => {
 
 // Handle POST requests to "/party-registration"
 router.post("/registration", upload.single("logo"), (req, res) => {
-  let filename = req.new_file_name;
-  console.log(filename);
+  let logo = req.file.filename;
   // Destructure party and logo from the request body
-  // const { party, logo } = req.body;
+  const { party } = req.body;
 
-  // // Insert party details into the database
+  // Insert party details into the database
   // db.run(
   //   "INSERT INTO parties VALUES (?,?,?)",
   //   [null, party, logo],
