@@ -1,58 +1,43 @@
 /* root.css */
 :root {
-    /* Navy Blue Palette */
-    --color-navy: #001f3f;
-    --color-navy-light: #2c3e50;
-    --color-navy-dark: #00122b;
+    --navy: #001f3f;
+    --navy-light: #2c3e50;
+    --navy-dark: #00122b;
 
-    /* Complementary Colors */
-    --color-complementary-blue: #0074D9;
-    --color-complementary-green: #2ECC40;
-    --color-complementary-yellow: #FFDC00;
-    --color-complementary-red: #FF4136;
+    --blue: #0074D9;
+    --green: #2ECC40;
+    --yellow: #FFDC00;
+    --red: #FF4136;
+    --purple: #8b058b;
 
-    /* Neutral Colors */
-    --color-white: #ffffff;
-    --color-gray-light: #f6f8fa;
-    --color-gray: #c0c0c0;
-    --color-gray-dark: #5f5f5f;
-    --color-black: #111111;
+    --white: #ffffff;
+    --gray-light: #f6f8fa;
+    --gray: #c0c0c0;
+    --gray-dark: #5f5f5f;
+    --black: #111111;
 
-    /* Font Sizes */
-    --font-size-xxs: 0.625rem;
-    /* 10px */
-    --font-size-xs: 0.75rem;
-    /* 12px */
-    --font-size-sm: 0.875rem;
-    /* 14px */
-    --font-size-md: 1rem;
-    /* 16px */
-    --font-size-lg: 1.25rem;
-    /* 20px */
-    --font-size-xl: 1.5rem;
-    /* 24px */
-    --font-size-xxl: 2rem;
-    /* 32px */
-    --font-size-xxxl: 3rem;
-    /* 48px */
+    --font-xxs: 0.625rem;
+    --font-xs: 0.75rem;
+    --font-sm: 0.875rem;
+    --font-md: 1rem;
+    --font-lg: 1.25rem;
+    --font-xl: 1.5rem;
+    --font-xxl: 2rem;
+    --font-xxxl: 3rem;
 
-    /* Spacing */
     --spacing-xxs: 0.25rem;
-    /* 4px */
     --spacing-xs: 0.5rem;
-    /* 8px */
     --spacing-sm: 0.75rem;
-    /* 12px */
     --spacing-md: 1rem;
-    /* 16px */
     --spacing-lg: 1.5rem;
-    /* 24px */
     --spacing-xl: 2rem;
-    /* 32px */
     --spacing-xxl: 3rem;
-    /* 48px */
     --spacing-xxxl: 4rem;
-    /* 64px */
+
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 17px;
+    --radius-xl: 24px;
 
     /* Box Shadows */
     --box-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -61,14 +46,14 @@
     --box-shadow-xl: 0 15px 30px rgba(0, 0, 0, 0.25);
 
     /* Background Colors */
-    --bg-color-primary: var(--color-navy);
-    --bg-color-secondary: var(--color-navy-light);
-    --bg-color-accent: var(--color-complementary-blue);
-    --bg-color-neutral: var(--color-gray-light);
+    --bg-primary: var(--color-navy);
+    --bg-secondary: var(--color-navy-light);
+    --bg-accent: var(--color-complementary-blue);
+    --bg-neutral: var(--color-gray-light);
 
     /* Text Colors */
-    --text-color-primary: var(--color-white);
-    --text-color-secondary: var(--color-gray-dark);
-    --text-color-accent: var(--color-complementary-yellow);
-    --text-color-muted: var(--color-gray);
+    --text-primary: var(--white);
+    --text-secondary: var(--gray-dark);
+    --text-accent: var(--yellow);
+    --text-muted: var(--gray);
 }

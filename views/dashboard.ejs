@@ -1,21 +1,17 @@
 <%- include("./partials/head") %> <%- include("./partials/nav") %>
-<div class="dash">
-  <%- include("./partials/sidebar") %>
-  <main class="main grid">
-    <article class="card">
-      <header>Registered Voters</header>
-      <section class="center">
-        <h1 class="larger"><%= data.voter.length %></h1>
-      </section>
-      <footer>Total Number of Registered Voters</footer>
-    </article>
-    <section class="card data">
-      <header class="header">Number of Parties</header>
-      <section class="center body">
-        <h1 class="larger"><%= data.parties.length %></h1>
-      </section>
-      <footer class="footer">Total Number of Registered Parties</footer>
-    </section>
-  </main>
-</div>
-<%- include("./partials/foot") %>
+    <h1>Buttons</h1>
+    <button>Default</button>
+    <button class="primary">Primary</button>
+    <button class="secondary">Secondary</button>
+    <button class="ternary">Ternary</button>
+    <button disabled>Disabled</button>
+    <button class="iconbutton">
+      <i>&#x270D;</i>
+    </button>
+    <button class="chip">
+      <em>&#x1F50D;</em>
+      <span class="tabtext">Chip</span>
+    </button>
+
+    <h1>Inputs</h1>
+    <input type="text" placeholder="Input"/>

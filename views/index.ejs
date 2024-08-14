@@ -1,69 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index Page</title>
-    <link rel="stylesheet" href="/css/imports.css">
-</head>
-
-<body>
-    <header class="header">
-        <div class="container">
-            <h1>Website Header</h1>
+<%- include("./partials/head") %> <%- include("./partials/nav") %>
+        <div class="dash">
+            <%- include("./partials/sidebar") %>
+                <main class="main grid">
+                    <article class="card">
+                        <header>Registered Voters</header>
+                        <section class="center">
+                            <h1 class="larger">
+                                <%= data.voter.length %>
+                            </h1>
+                        </section>
+                        <footer>Total Number of Registered Voters</footer>
+                    </article>
+                    <section class="card data">
+                        <header class="header">Number of Parties</header>
+                        <section class="center body">
+                            <h1 class="larger">
+                                <%= data.parties.length %>
+                            </h1>
+                        </section>
+                        <footer class="footer">Total Number of Registered Parties</footer>
+                    </section>
+                </main>
         </div>
-    </header>
-
-    <div class="container">
-        <aside class="sidebar">
-            <nav>
-                <ul>
-                    <li><a href="#home" class="button">Home</a></li>
-                    <li><a href="#contestants" class="button">Contestants</a></li>
-                    <li><a href="#positions" class="button">Positions</a></li>
-                    <li><a href="#elections" class="button">Elections</a></li>
-                </ul>
-            </nav>
-        </aside>
-
-        <main class="main-content">
-            <section class="media-block">
-                <img src="https://via.placeholder.com/800x400" alt="Placeholder Image">
-                <div class="header">Media Block Header</div>
-                <div class="content">
-                    This is the content area of the media block. It contains information about the topic and can be
-                    customized as needed.
-                </div>
-                <div class="footer">Footer Information</div>
-            </section>
-
-            <section class="row-card">
-                <img src="https://via.placeholder.com/150" alt="Placeholder Image">
-                <div class="content">
-                    <div class="header">Row Card Header</div>
-                    <p>This is the content area of the row card. It can include text, images, and other elements as
-                        needed.</p>
-                    <div class="footer">Row Card Footer</div>
-                </div>
-            </section>
-
-            <button class="button">Primary Button</button>
-            <button class="button" disabled>Disabled Button</button>
-
-            <label class="label" for="input1">Label:</label>
-            <input type="text" id="input1" class="input-field">
-
-            <label class="label" for="textarea1">Textarea Label:</label>
-            <textarea id="textarea1" class="textarea"></textarea>
-        </main>
-    </div>
-
-    <footer class="footer">
-        <div class="container">
-            <p>Website Footer</p>
-        </div>
-    </footer>
-</body>
-
-</html>
+        <%- include("./partials/foot") %>
