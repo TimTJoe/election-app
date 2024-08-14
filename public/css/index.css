@@ -9,7 +9,7 @@
 
 a {
   text-decoration: none;
-  color: #009c41e5;
+  color: #0659f1;
 }
 
 html {
@@ -71,7 +71,7 @@ header.nav a {
 }
 
 .main > .body {
-  border: solid rgba(17, 17, 17, 0.014);
+  /* border: solid rgba(17, 17, 17, 0.014); */
 }
 
 .dash {
@@ -176,7 +176,7 @@ header.nav a {
 /* TODO TO BE REMOVED BECAUSE OF MAIN > HEADER CLASS */
 .toolbar {
   padding: 4px;
-  background-color: rgba(228, 228, 228, 0.274);
+  background-color: #e4e4e446;
 }
 
 /* CSS FLEX AND GRID CLASSES */
@@ -478,7 +478,7 @@ small {
 
 .gridlist .gridcell {
   background-color: white;
-  border: thin solid black;
+  border: thin solid rgba(0, 0, 0, 0.384);
   max-height: 300px;
 }
 
@@ -512,4 +512,40 @@ small {
 
 .sticky {
   position: sticky;
+}
+
+/* NAV: ROW, TABS AND MORE STYLES HERE */
+nav.tabs {
+  display: flex;
+  align-items: center;
+  background-color: #3838380c;
+  border-top: thin solid #d8d6d6;
+}
+
+nav.tabs .title {
+  font-weight: bolder;
+  font-size: larger;
+  padding: 12px;
+}
+
+nav.tabs .tabitem {
+  padding: 12px 24px;
+  margin-right: 1px;
+  color: #00172c;
+  border-bottom: thin solid transparent;
+}
+
+nav.tabs .tabitem:hover {
+  background-color: #d8d6d6;
+}
+
+nav.tabs .tabitem.active {
+  background-color: #d8d6d6;
+  border-color: #00172c;
+}
+
+/* NAV: ROW, TABS AND MORE STYLES END */
+
+.padding {
+  padding: 12px;
 }
