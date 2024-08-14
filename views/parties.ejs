@@ -22,9 +22,9 @@
 
           <div class="body padding row">
             <% if(data.parties) { %>
-              <% data.parties.map(function each(party, index){ %>
+              <% data.parties.reverse().map(function each(party, index){ %>
                 <section class="media article">
-                  <img class="figure" src="/images/sample.png" alt="" />
+                  <img class="figure" src="/uploads/<%= party.logo %>" alt="" />
                   <section class="block">
                     <strong class="title">
                       <%= party.party %>

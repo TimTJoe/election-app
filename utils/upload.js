@@ -1,15 +1,17 @@
 var multer = require("multer");
 var path = require("path");
+var crypto = require("node:crypto");
 var dest = "./public/uploads";
 
 const storage = multer.diskStorage({
   destination: dest,
   filename: function (req, file, cb) {
-    let uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    let extname = path.extname(file.originalname);
-    req.filename = "IMG_" + uniqueSuffix + extname;
-
-    cb(null, req.filename);
+    crypto.pseudoRandomBytes(8, (err, raw) => {
+      if (err) return cb(err);
+      let filename =
+        "IMG_" + raw.toString("hex") + path.extname(file.originalname);
+      cb(null, filename);
+    });
   },
 });
 

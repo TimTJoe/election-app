@@ -5,7 +5,6 @@ const upload = require("../utils/upload");
 
 router.get("/", (req, res) => {
   let data = {};
-  // Query the database to find a matching
   db.all("SELECT * FROM parties", function (err, parties) {
     data.parties = parties;
     if (err) console.error(err);
@@ -20,23 +19,19 @@ router.get("/registration", (req, res) => {
 // Handle POST requests to "/party-registration"
 router.post("/registration", upload.single("logo"), (req, res) => {
   let logo = req.file.filename;
-  // Destructure party and logo from the request body
-  const { party } = req.body;
+  let { party } = req.body;
 
-  // Insert party details into the database
-  // db.run(
-  //   "INSERT INTO parties VALUES (?,?,?)",
-  //   [null, party, logo],
-  //   function query(err) {
-  //     if (!err) {
-  //       // Redirect to the dashboard if insertion is successful
-  //       res.redirect("/parties");
-  //     } else {
-  //       // console log if insertion fails
-  //       console.error(err);
-  //     }
-  //   }
-  // );
+  db.run(
+    "INSERT INTO parties VALUES (?,?,?)",
+    [null, party, logo],
+    function query(err) {
+      if (!err) {
+        res.redirect("/parties");
+      } else {
+        console.error(err);
+      }
+    }
+  );
 });
 
 module.exports = router;
