@@ -52,12 +52,34 @@ header.nav a {
 
 /* dashboard styles */
 
+.container {
+  height: 80vh;
+}
+
+/* MAIN CONTAINER */
+
+.main {
+  background-color: #38383818;
+  height: 510px;
+  overflow-x: auto;
+  border-bottom: thin solid #38383818;
+}
+
+.main > .header {
+  background-color: #3838380c;
+  padding: 8px;
+}
+
+.main > .body {
+  border: solid rgba(17, 17, 17, 0.014);
+}
+
 .dash {
   height: 80vh;
   display: flex;
 }
 
-.dash .sidebar {
+.sidebar {
   width: 278px;
   padding: 8px;
   display: flex;
@@ -99,6 +121,7 @@ header.nav a {
   place-items: center;
 }
 
+/* TODO: TO BE REMOVE BECAUSE OF CONTAINER CLASS */
 .dash .main {
   flex: 2;
   background-color: #38383818;
@@ -146,22 +169,34 @@ header.nav a {
   font-size: 4rem;
 }
 
+/* TODO ENDS HERE */
+
 /* dashboard styles end. */
 
+/* TODO TO BE REMOVED BECAUSE OF MAIN > HEADER CLASS */
 .toolbar {
   padding: 4px;
   background-color: rgba(228, 228, 228, 0.274);
 }
 
+/* CSS FLEX AND GRID CLASSES */
+
 .row {
   display: flex;
-  justify-content: space-between;
+}
+
+.row.align {
+  justify-content: center;
   align-items: center;
 }
 
 .max {
   flex: 2;
 }
+
+/* FLEX AND GRID CLASSES ENDS */
+
+/* NORMAL BUTTONS, ROUND BUTTON ICONS BUTTON STYLES */
 
 .button,
 .iconbutton {
@@ -189,9 +224,82 @@ header.nav a {
   gap: 4px;
 }
 
-.iconbutton .icon {
-  font-weight: larger;
+/* BUTTONS ENDS */
+
+/* MEDIA CARD, TABULAR CARD, DATA CARD,  ARTICLE CARD STYLES HERE */
+
+.media {
+  display: flex;
+  align-items: initial;
+  background-color: white;
+  border: thin solid #f1f1f1;
 }
+
+.media.article {
+  max-width: 250px;
+  flex-direction: column;
+}
+
+.media .figure {
+  width: 92px;
+}
+
+.media.article .figure {
+  min-width: 100%;
+}
+.media .block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px;
+  flex: 2;
+}
+
+.media.article .block {
+  text-align: center;
+}
+
+.media .block .title {
+  display: block;
+  font-size: larger;
+}
+
+.media .block .footer {
+  margin-top: 8px;
+  color: #535353;
+}
+
+.media.data {
+  height: 230px;
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  border: thin solid #535353;
+}
+
+.media.data > .header {
+  border-bottom: thin solid #535353;
+}
+
+.media.data > .header,
+.media.data > .footer,
+.media.data > .body {
+  padding: 8px;
+}
+
+.media.data > .body {
+  flex: 2;
+}
+
+.media.data > .footer {
+  font-size: small;
+}
+
+.media.data > .footer  {
+  border-top: thin solid #535353;
+}
+
+/* MEDIA CARD, TABULAR CARD, DATA CARD,  ARTICLE CARD STYLES END */
 
 .tablist {
   padding: 8px;
@@ -273,8 +381,6 @@ select {
   text-align: left;
   font: inherit;
 }
-
-
 
 fieldset select {
   text-transform: capitalize;
@@ -402,4 +508,8 @@ small {
 
 .fixed {
   position: fixed;
+}
+
+.sticky {
+  position: sticky;
 }
