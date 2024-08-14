@@ -18,7 +18,11 @@ router.get("/create", function handler(req, res) {
 
 router.get("/:electionID/parties", (req, res) => {
   let data = {};
-  res.render("elections/parties.ejs", { data });
+  db.all("SELECT * FROM parties", function (err, parties) {
+    data.parties = parties;
+    if (err) console.error(err);
+    res.render("elections/parties.ejs", { data });
+  });
 });
 
 router.get("/:electionID/candidates", (req, res) => {

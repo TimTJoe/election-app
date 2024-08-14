@@ -9,14 +9,16 @@
                   <div class="gridlist padding">
                     <% if(data.parties) { %>
                       <% data.parties.map(function each(party, index){ %>
-                        <section class="gridcell center-align">
+                        <section class="media">
                           <img class="figure" src="/images/sample.png" alt="" />
-                          <h3 class="headline">
-                            <%= party.party %>
-                          </h3>
-                          <small class="infoline">
-                            Block A General Elections &middot; 2 Candidates
-                          </small>
+                          <section class="block">
+                            <strong class="title">
+                              <%= party.party %>
+                            </strong>
+                            <small class="footer">
+                               2 Candidates
+                            </small>
+                          </section>
                         </section>
                         <%}) %>
                           <% } else {%>

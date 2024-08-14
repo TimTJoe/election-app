@@ -65,12 +65,12 @@ header.nav a {
   border-bottom: thin solid #3838380e;
 }
 
-.main > .header {
+.main>.header {
   background-color: #3838380c;
   padding: 8px;
 }
 
-.main > .body {
+.main>.body {
   /* border: solid rgba(17, 17, 17, 0.014); */
 }
 
@@ -213,6 +213,7 @@ header.nav a {
 .iconbutton {
   background-color: #00a846e8;
 }
+
 .button:focus,
 .iconbutton:focus {
   transform: scale(0.98);
@@ -233,6 +234,7 @@ header.nav a {
   align-items: initial;
   background-color: white;
   border: thin solid #f1f1f1;
+  padding: 4px;
 }
 
 .media.article {
@@ -247,6 +249,7 @@ header.nav a {
 .media.article .figure {
   min-width: 100%;
 }
+
 .media .block {
   display: flex;
   flex-direction: column;
@@ -277,25 +280,25 @@ header.nav a {
   border: thin solid #53535381;
 }
 
-.media.data > .header {
+.media.data>.header {
   border-bottom: thin solid #53535381;
 }
 
-.media.data > .header,
-.media.data > .footer,
-.media.data > .body {
+.media.data>.header,
+.media.data>.footer,
+.media.data>.body {
   padding: 8px;
 }
 
-.media.data > .body {
+.media.data>.body {
   flex: 2;
 }
 
-.media.data > .footer {
+.media.data>.footer {
   font-size: small;
 }
 
-.media.data > .footer {
+.media.data>.footer {
   border-top: thin solid #53535381;
 }
 
@@ -418,6 +421,7 @@ fieldset button {
   float: right;
   margin-bottom: 4px;
 }
+
 /* GENERIC PAGES END*/
 
 /* FLEX COLUMN */
@@ -428,18 +432,18 @@ fieldset button {
   height: inherit;
 }
 
-.flexbody > header,
-.flexbody > footer {
+.flexbody>header,
+.flexbody>footer {
   padding: 12px 24px;
   display: flex;
   justify-content: space-between;
 }
 
-.flexbody > footer {
+.flexbody>footer {
   background-color: rgba(211, 211, 211, 0.692);
 }
 
-.flexbody > main {
+.flexbody>main {
   flex: 2;
 }
 
@@ -455,8 +459,8 @@ fieldset button {
   flex-direction: column;
 }
 
-.flexcolumn > header,
-.flexcolumn > footer {
+.flexcolumn>header,
+.flexcolumn>footer {
   display: flex;
   justify-content: space-between;
 }
