@@ -150,10 +150,13 @@ header.nav a {
 
 .toolbar {
   padding: 4px;
+  background-color: rgba(228, 228, 228, 0.274);
 }
 
 .row {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .max {
@@ -260,6 +263,18 @@ fieldset select {
   text-align: left;
   font: inherit;
 }
+
+select {
+  display: inline-block;
+  padding: 8px;
+  border-radius: 0;
+  outline: none;
+  border: thin solid lightgrey;
+  text-align: left;
+  font: inherit;
+}
+
+
 
 fieldset select {
   text-transform: capitalize;
@@ -379,4 +394,12 @@ small {
 
 .center-align {
   text-align: center;
+}
+
+.relative {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
 }

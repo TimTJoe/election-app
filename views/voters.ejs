@@ -3,13 +3,20 @@
   <%- include("./partials/sidebar") %>
   <main class="main">
     <nav class="toolbar row">
+      <section class="max">
+        <label for="elections">Select Election</label>
+         <select name="elections" id="elections">
+          <option value="">Block A General Elections</option>
+          <option value="">Block B General Elections</option>
+          <option value="">Block C General Elections</option>
+        </select>
+      </section>
       <section class="">
         <a href="voters/registration" class="iconbutton">
           <i class="icon">&plus;</i>
           <span class="text">Voter Registration</span>
         </a>
       </section>
-      <section></section>
     </nav>
     <div class="tablist">
       <% data.voters.map((voter, key) => { %>

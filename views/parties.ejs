@@ -3,13 +3,13 @@
   <%- include("./partials/sidebar") %>
   <main class="main">
     <nav class="toolbar row">
+      <section class="max"></section>
       <section class="">
         <a href="parties/registration" class="iconbutton">
           <i class="icon">&plus;</i>
           <span>Party Registration</span>
         </a>
       </section>
-      <section></section>
     </nav>
     <div class="gridlist">
       <% if(data.parties) { %> <% data.parties.map(function each(party, index){
