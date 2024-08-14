@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../utils/db");
-const upload = require("../public/js/multer");
+const upload = require("../utils/upload");
 
 router.get("/", (req, res) => {
   let data = {};
@@ -19,24 +19,24 @@ router.get("/registration", (req, res) => {
 
 // Handle POST requests to "/party-registration"
 router.post("/registration", upload.single("logo"), (req, res) => {
-  let logo = req.file.filename
+  let logo = req.file.filename;
   // Destructure party and logo from the request body
   const { party } = req.body;
 
   // Insert party details into the database
-  db.run(
-    "INSERT INTO parties VALUES (?,?,?)",
-    [null, party, logo],
-    function query(err) {
-      if (!err) {
-        // Redirect to the dashboard if insertion is successful
-        res.redirect("/parties");
-      } else {
-        // console log if insertion fails
-        console.error(err);
-      }
-    }
-  );
+  // db.run(
+  //   "INSERT INTO parties VALUES (?,?,?)",
+  //   [null, party, logo],
+  //   function query(err) {
+  //     if (!err) {
+  //       // Redirect to the dashboard if insertion is successful
+  //       res.redirect("/parties");
+  //     } else {
+  //       // console log if insertion fails
+  //       console.error(err);
+  //     }
+  //   }
+  // );
 });
 
 module.exports = router;
