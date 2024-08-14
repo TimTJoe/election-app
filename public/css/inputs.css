@@ -1,0 +1,32 @@
+
+input[type="date"] {
+    text-transform: uppercase;
+}
+
+fieldset {
+    border: 2px solid var(--gray);
+    border-radius: var(--radius-md);
+}
+
+fieldset.field {
+    padding: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+}
+
+fieldset.field input {
+    padding: var(--spacing-xs);
+    padding-top: unset;
+    border-radius: var(--radius-md);
+    font-size: var(--font-lg);
+}
+
+fieldset.row {
+    display: flex;
+    gap: var(--spacing-sm);
+    border-color: transparent;
+}
+
+fieldset.row input {
+    padding: var(--spacing-xs);
+    border: 2px solid var(--gray);
+}

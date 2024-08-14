@@ -37,6 +37,7 @@ textarea {
     padding: 0;
     border: 0;
     outline: 0;
+    font: inherit;
 }
 
 /* Set core body defaults */
