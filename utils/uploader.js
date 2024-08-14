@@ -1,7 +1,7 @@
 var multer = require("multer");
 var path = require("path")
 var crypto = require("crypto")
-var dest = "./public/uploads";
+var dest = "/public/uploads";
 
 // var storage = multer.memoryStorage({
 var storage = multer.diskStorage({
