@@ -13,20 +13,20 @@
     /* backgrounds */
     --crimson: #fe2c55;
     --charcoal: #1b1b1b;
-    --noir: #1618230f;
-    --ink: #1618231f;
+    --noir: rgba(22, 24, 35, 0.059);
+    --ink: rgba(22, 24, 35, 0.122);
     
     /* fills */
     --aqua: #25f4ee;
     --midnight:#161823;
-    --shadow: #16182399;
-    --smoke: #16182357;
+    --shadow: rgba(22, 24, 35, 0.6);
+    --smoke: rgba(22, 24, 35, 0.341);
     --cobalt: #2b5db9;
     --black: #000000;
     /* borders */
     --ash: #e3e3e5;
-    --fog: #1618231f;
-    --whisper: #16182308;
+    --fog: rgba(22, 24, 35, 0.122);
+    --whisper: rgba(22, 24, 35, 0.031);
 
     --white: #ffffff;
     --gray-light: #f6f8fa;
