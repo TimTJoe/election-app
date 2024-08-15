@@ -1,11 +1,11 @@
 
-input[type="date"] {
-    text-transform: uppercase;
-}
-
 fieldset {
     border: 2px solid var(--gray);
     border-radius: var(--radius-md);
+}
+
+input[type="date"] {
+    text-transform: uppercase;
 }
 
 fieldset.field {
@@ -13,11 +13,17 @@ fieldset.field {
     margin-bottom: var(--spacing-md);
 }
 
-fieldset.field input {
+fieldset.field input, fieldset select {
     padding: var(--spacing-xs);
     padding-top: unset;
     border-radius: var(--radius-md);
     font-size: var(--font-lg);
+    width: 100%;
+}
+
+fieldset select {
+    padding-top: var(--spacing-xs);
+    border: unset;
 }
 
 fieldset.row {
@@ -26,7 +32,7 @@ fieldset.row {
     border-color: transparent;
 }
 
-fieldset.row input {
+fieldset.row input, fieldset.row select {
     padding: var(--spacing-xs);
     border: 2px solid var(--gray);
 }
