@@ -10,6 +10,24 @@
     --red: #FF4136;
     --purple: #8b058b;
 
+    /* backgrounds */
+    --crimson: #fe2c55;
+    --charcoal: #1b1b1b;
+    --noir: #1618230f;
+    --ink: #1618231f;
+    
+    /* fills */
+    --aqua: #25f4ee;
+    --midnight:#161823;
+    --shadow: #16182399;
+    --smoke: #16182357;
+    --cobalt: #2b5db9;
+    --black: #000000;
+    /* borders */
+    --ash: #e3e3e5;
+    --fog: #1618231f;
+    --whisper: #16182308;
+
     --white: #ffffff;
     --gray-light: #f6f8fa;
     --gray: #c0c0c0;
@@ -45,15 +63,4 @@
     --box-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.2);
     --box-shadow-xl: 0 15px 30px rgba(0, 0, 0, 0.25);
 
-    /* Background Colors */
-    --bg-primary: var(--navy);
-    --bg-secondary: var(--navy-light);
-    --bg-accent: var(--complementary-blue);
-    --bg-neutral: var(--gray-light);
-
-    /* Text Colors */
-    --text-primary: var(--white);
-    --text-secondary: var(--gray-dark);
-    --text-accent: var(--yellow);
-    --text-muted: var(--gray);
 }

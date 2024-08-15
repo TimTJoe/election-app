@@ -1,0 +1,40 @@
+.label {
+    display: flex;
+    font-weight: 600;
+    font-size: 15px;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.input {
+    border-radius: 2px;
+    width: 100%;
+    background-color: var(--noir);
+    color: var(--midnight);
+    line-height: 100%;
+    outline: none;
+    font: 16px;
+    caret-color: var(--crimson);
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--ink);
+}
+
+.button {
+    border-radius: 4px;
+    border: none;
+    color: var(--white);
+    min-width: 120px;
+    min-height: 46px;
+    line-height: 22px;
+    font-weight: 700;
+    padding: 6px 8px;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    margin-top: 21px;
+    background-color: var(--crimson);
+}

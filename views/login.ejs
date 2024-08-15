@@ -1,29 +1,23 @@
 <%- include("./partials/head") %>
-  <main class="fullbleed center">
-    <form action="/login" method="post" class="card wide white">
-      <header>
-        <h1 class="larger">Log in to your account</h1>
-      </header>
-      <hr class="divider margin-top margin-bottom">
-      <fieldset class="field">
-        <legend>Username</legend>
-        <input type="text" name="username" placeholder="Enter username" required />
-      </fieldset>
-      <fieldset class="field no-margin">
-        <legend>Password</legend>
-        <input type="password" name="password" placeholder="Enter password" required />
-      </fieldset>
-      <% if(data.errors) { %>
-        <small>
-          <% data.errors %>
-        </small>
-        <%}%>
-          <a href="reset-password" class="medium padding-bottom">Forget Password?</a>
-          <button type="submit" class="primary full">Log In</button>
-          <hr class="divider margin-top">
-          <p class="medium padding-bottom padding-top center-align">
-            <span>Don't have an account?</span>
-            <a href="/voters/registration">Create new account</a>
-          </p>
-    </form>
+  <nav class="navigation">
+    <a href="" class="larger">Election App</a>
+    <span class=""></span>
+  </nav>
+  <main class="container center">
+    <div class="smblock">
+      <h2 class="larger center-align">Log in</h2>
+      <form action="" method="post">
+
+          <label class="label" for="username">Username </label>
+          <input type="username" name="username" id="username" class="input" />
+
+          <label class="label" for="password">Password</label>
+          <input type="password" name="password" id="password" class="input"  />
+
+        <a href="/reset-password" class="link">Forget Password?</a>
+
+        <button type="submit" class="button">Log In</button>
+      </form>
+    </div>
   </main>
+  <footer class="footer">&copy; 2024</footer>
