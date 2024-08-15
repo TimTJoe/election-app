@@ -1,0 +1,74 @@
+.box {
+    display: inline-block;
+    min-width: 50px;
+    min-height: 50px;
+    border: solid red;
+}
+
+.flex {
+    display: flex;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.max {
+    flex: 2;
+}
+
+.even {
+    justify-content: space-evenly;
+}
+
+.between {
+    justify-content: space-between;
+}
+
+.around {
+    justify-content: space-around;
+}
+
+.align {
+    align-items: center;
+}
+
+.center {
+    display: grid;
+    place-items: center;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid.even {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.half {
+/* TODO: resize individual grid item */
+}
+
+.single {
+/* TODO: resize individual grid item */
+}
+
+.grid .double {
+/* TODO: resize individual grid item */
+}
+
+.grid .triple {
+/* TODO: resize individual grid item */
+}
+
+.grid .full {
+/* TODO: resize individual grid item */
+}
