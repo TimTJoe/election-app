@@ -2,8 +2,9 @@
   <main class="fullbleed center">
     <form action="/login" method="post" class="card wide white">
       <header>
-        <h1 class="larger padding-bottom">Log in to your account</h1>
+        <h1 class="larger">Log in to your account</h1>
       </header>
+      <hr class="divider margin-top margin-bottom">
       <fieldset class="field">
         <legend>Username</legend>
         <input type="text" name="username" placeholder="Enter username" required />
@@ -13,14 +14,16 @@
         <input type="password" name="password" placeholder="Enter password" required />
       </fieldset>
       <% if(data.errors) { %>
-        <small><% data.errors %></small>
-      <%}%>
-      <a href="reset-password" class="medium padding-bottom">Forget Password?</a>
-      <button type="submit" class="primary full">Log In</button>
-
-      <p class="medium padding-bottom padding-top center-align">
-        <span>Don't have an account?</span>  
-        <a href="/voters/registration">Create new account</a>
-      </p>
+        <small>
+          <% data.errors %>
+        </small>
+        <%}%>
+          <a href="reset-password" class="medium padding-bottom">Forget Password?</a>
+          <button type="submit" class="primary full">Log In</button>
+          <hr class="divider margin-top">
+          <p class="medium padding-bottom padding-top center-align">
+            <span>Don't have an account?</span>
+            <a href="/voters/registration">Create new account</a>
+          </p>
     </form>
-</main>
+  </main>
