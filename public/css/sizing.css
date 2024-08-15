@@ -1,0 +1,52 @@
+.wide {
+    min-width: 368px;
+}
+
+.fullbleed {
+    width: 99.98vw;
+    height: 99.98vh;
+}
+
+.padding {
+    padding: var(--spacing-md);
+}
+
+.padding-bottom {
+    padding-bottom: var(--spacing-md);
+}
+
+.padding-top {
+    padding-top: var(--spacing-md);
+}
+
+.padding-right {
+    padding-right: var(--spacing-md);
+}
+
+.padding-left {
+    padding-left: var(--spacing-md);
+}
+
+.no-padding {
+    padding: unset !important;
+}
+
+.margin-left {
+    margin-left: var(--spacing-md);
+}
+
+.margin-right {
+    margin-right: var(--spacing-md);
+}
+
+.margin-top {
+    margin-top: var(--spacing-md);
+}
+
+.margin-bottom {
+    margin-bottom: var(--spacing-md);
+}
+
+.no-margin {
+    margin: unset !important;
+}

@@ -4,6 +4,12 @@ fieldset {
     border-radius: var(--radius-md);
 }
 
+fieldset legend {
+    text-transform: uppercase;
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+}
+
 input[type="date"] {
     text-transform: uppercase;
 }
@@ -17,7 +23,8 @@ fieldset.field input, fieldset select {
     padding: var(--spacing-xs);
     padding-top: unset;
     border-radius: var(--radius-md);
-    font-size: var(--font-lg);
+    font-size: var(--font-md);
+    color: var(--text-secondary);
     width: 100%;
     background-color: transparent;
 }

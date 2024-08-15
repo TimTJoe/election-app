@@ -3,6 +3,7 @@
 *,
 *::before,
 *::after {
+    font: inherit;
     box-sizing: border-box;
 }
 
@@ -58,8 +59,9 @@ html {
 
 /* A elements that don't have a class get default styles */
 a {
+    display: inline-block;
     text-decoration: none;
-    color: inherit;
+    color: var(--blue);
 }
 
 /* Make images easier to work with */

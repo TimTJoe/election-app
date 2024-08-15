@@ -22,6 +22,9 @@
     font-size: large;
     color: var(--text-secondary);
 }
+.card.white {
+    background-color: var(--white);
+}
 
 .media {
     margin: var(--spacing-sm);

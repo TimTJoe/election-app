@@ -1,46 +1,25 @@
 <%- include("./partials/head") %>
-<div class="flexbody">
-  <header>
-    <a href="/">Elections App</a>
-    <a href="/voters/registration">Voter Registration</a>
-  </header>
-  <main class="centerized">
-    <form action="/login" method="post" class="form">
-      <fieldset>
-        <legend>Log In</legend>
-
-        <label for="username">User Name:</label>
-        <input
-          name="username"
-          type="text"
-          id="username"
-          placeholder="Enter user name"
-          required
-        />
-        <br />
-
-        <label for="password">Password:</label>
-        <input
-          name="password"
-          type="password"
-          id="password"
-          placeholder="********"
-          minlength="8"
-          required
-        />
-        <% if(data.error) {%>
-        <small class="error"><%= data.error %></small>
-        <% }%>
-        <br />
-        <br />
-        <button type="submit" class="button">Log In</button>
+  <main class="fullbleed center">
+    <form action="/login" method="post" class="card wide white">
+      <header>
+        <h1 class="larger padding-bottom">Log in to your account</h1>
+      </header>
+      <fieldset class="field">
+        <legend>Username</legend>
+        <input type="text" name="username" placeholder="Enter username" required />
       </fieldset>
+      <fieldset class="field no-margin">
+        <legend>Password</legend>
+        <input type="password" name="password" placeholder="Enter password" required />
+      </fieldset>
+
+      <a href="reset-password" class="medium padding-bottom">Forget Password?</a>
+      <button type="submit" class="primary full">Log In</button>
+
+      <p class="medium row between padding-bottom padding-top center-align">
+        <span>Don't have an account?</span>  
+       
+        <a href="/voters/registration" class="button ternary round max no-elevate">Sign up</a>
+      </p>
     </form>
   </main>
-  <footer>
-    <span
-      >&copy; 2024 -
-      <a href="https://github.com/timtjoe" target="_blank">Tim T. Joe</a></span
-    >
-  </footer>
-</div>

@@ -38,3 +38,7 @@
 .muted {
     color: var(--text-muted);
 }
+
+.center-align {
+    text-align: center;
+}
