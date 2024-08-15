@@ -42,7 +42,6 @@
 .media .img {
     min-width: 100px;
     min-height: 100px;
-    border: solid red;
     border-radius: var(--radius-sm);
 }
 

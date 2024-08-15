@@ -1,0 +1,40 @@
+.bold {
+    font-weight: bolder;
+}
+.smallest {
+    font-size: var(--font-xxs);
+}
+.smaller {
+    font-size: var(--font-xs);
+}
+.small {
+    font-size: var(--font-sm);
+}
+.medium {
+    font-size: var(--font-md);
+}
+.large {
+    font-size: var(--font-lg);
+}
+.larger {
+    font-size: var(--font-xl);
+}
+.largest {
+    font-size: var(--font-xxl);
+}
+.huge {
+    font-size: var(--font-xxxl);
+}
+
+.secondary {
+    color: var(--text-secondary);
+}
+.primary {
+    color: var(--text-primary);
+}
+.accent {
+    color: var(--text-accent);
+}
+.muted {
+    color: var(--text-muted);
+}

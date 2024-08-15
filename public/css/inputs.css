@@ -19,6 +19,7 @@ fieldset.field input, fieldset select {
     border-radius: var(--radius-md);
     font-size: var(--font-lg);
     width: 100%;
+    background-color: transparent;
 }
 
 fieldset select {

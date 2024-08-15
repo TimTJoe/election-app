@@ -43,9 +43,9 @@ textarea {
 /* Set core body defaults */
 body {
     line-height: 1.5;
-    background-color: var(--bg-color-neutral);
+    background-color: var(--bg-neutral);
     font-family: Arial, sans-serif;
-    color: var(--text-color-secondary);
+    color: var(--text-secondary);
     height: inherit;
 }
 
