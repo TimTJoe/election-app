@@ -12,14 +12,15 @@
         <legend>Password</legend>
         <input type="password" name="password" placeholder="Enter password" required />
       </fieldset>
-
+      <% if(data.errors) { %>
+        <small><% data.errors %></small>
+      <%}%>
       <a href="reset-password" class="medium padding-bottom">Forget Password?</a>
       <button type="submit" class="primary full">Log In</button>
 
-      <p class="medium row between padding-bottom padding-top center-align">
+      <p class="medium padding-bottom padding-top center-align">
         <span>Don't have an account?</span>  
-       
-        <a href="/voters/registration" class="button ternary round max no-elevate">Sign up</a>
+        <a href="/voters/registration">Create new account</a>
       </p>
     </form>
-  </main>
+</main>

@@ -1,27 +1,22 @@
 <%- include("./partials/head") %>
-<div class="flexbody">
-  <%- include("./partials/nav") %>
+  <div class="fullbleed column">
+    <%- include("./partials/nav") %>
+      <main class="max center">
+        <form action="/parties/registration" method="post" class="card wide" enctype="multipart/form-data">
+          <header class="padding-bottom">
+            <h1 class="larger ">Register Political Party</h1>
+          </header>
+          <fieldset class="field">
+            <legend>Party Name</legend>
+            <input type="text" id="party" name="party" placeholder="Enter name" required />
+          </fieldset>
+          <fieldset class="field">
+            <legend>Party Logo</legend>
+            <input type="file" id="logo" name="logo" required />
+          </fieldset>
+          <button type="submit" class="primary full">Register Party</button>
+        </form>
+      </main>
+      <%- include("./partials/foot") %>
 
-  <main class="centerized">
-    <form action="/parties/registration" method="post" class="form" enctype="multipart/form-data">
-      <fieldset>
-        <legend>Party Registration</legend>
-        <label for="party">Party Name:</label>
-        <input
-          type="text"
-          id="party"
-          name="party"
-          placeholder="Enter party name"
-          required
-        />
-        <br />
-        <label for="logo">Party Logo:</label>
-        <input type="file" id="logo" name="logo" required />
-        <br />
-        <br />
-        <button type="submit" class="button">Register Party</button>
-      </fieldset>
-    </form>
-  </main>
-  <%- include("./partials/foot") %>
-</div>
+  </div>
