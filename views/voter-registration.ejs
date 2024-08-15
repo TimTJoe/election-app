@@ -8,17 +8,30 @@
       <h2 class="larger center-align">Voter Registration</h2>
       <form action="" method="post">
 
-        <label class="label" for="first_name">First Name </label>
-        <input type="text" name="first_name" id="first_name" class="input" required />
+        <section class="flexfield">
+          <span>
+            <label class="label" for="first_name">First Name </label>
+            <input type="text" name="first_name" id="first_name" class="input" required />
+          </span>
+          <span>
+            <label class="label" for="middle_name">Middle Name </label>
+            <input type="text" name="middle_name" id="middle_name" class="input" />
+          </span>
+        </section>
 
-        <label class="label" for="middle_name">Middle Name </label>
-        <input type="text" name="middle_name" id="middle_name" class="input" />
+        <section class="flexfield">
+          <span>
+            <label class="label" for="last_name">Last Name </label>
+            <input type="text" name="last_name" id="last_name" class="input" required />
+          </span>
+          <span>
+            <label class="label" for="username">Username </label>
+            <input type="text" name="username" id="username" class="input" required />
+          </span>
+        </section>
 
-        <label class="label" for="last_name">Last Name </label>
-        <input type="text" name="last_name" id="last_name" class="input" required />
-
-        <label class="label" for="username">Username </label>
-        <input type="text" name="username" id="username" class="input" required />
+        <label class="label" for="DOB">Date of Birth</label>
+        <input type="date" name="DOB" id="DOB" class="input" />
 
         <label class="label" for="password">Password</label>
         <input type="password" name="password" id="password" class="input" />
@@ -26,7 +39,7 @@
         <label class="label" for="photo">Profile Photo</label>
         <input type="file" name="photo" id="photo" class="input" />
 
-        <label for="role" class="label">Role: </label>
+        <label for="role" class="label">Role </label>
         <select name="role" id="role" class="input">
           <% data.roles.map((role)=> { %>
             <option value="<%= role.id %>">
@@ -35,7 +48,7 @@
             <%}) %>
         </select>
 
-        <label for="party">Party: </label>
+        <label for="party" class="label">Party</label>
         <select name="party" id="party" class="input">
           <% data?.parties.map((party)=> { %>
             <option value="<%= party.id %>">

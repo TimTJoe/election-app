@@ -38,3 +38,18 @@
     margin-top: 21px;
     background-color: var(--crimson);
 }
+
+input[type="date"].input {
+    text-transform: uppercase;
+}
+
+select.input {
+    text-transform: capitalize;
+}
+
+.flexfield {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
