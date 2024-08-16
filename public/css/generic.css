@@ -163,16 +163,17 @@
 
 .toaster {
     position: absolute;
-    top: 2%;
+    top: 1px;
     min-width: 60%;
     max-width: 60%;
-    background-color: var(--whisper);
+    background-color: var(--charcoal);
     z-index: 3000;
     box-shadow: var(--shadow-sm);
     border-radius: 8px;
     text-align: center;
     padding: var(--spacing-xxs);
     gap: var(--spacing-md);
+    transition: visibility 3s ease-in;
 }
 
 .toaster .text {
@@ -180,6 +181,12 @@
     font-weight: 600;
 }
 
-.toaster .action {
+.toaster.hide {
+    visibility: hidden;
+    opacity: 0;
+}
 
+.toaster.show {
+    visibility: visible;
+    opacity: 1;
 }
