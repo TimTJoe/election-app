@@ -160,3 +160,30 @@
     height: 200px;
     border-radius: 4px;
 }
+
+.toaster {
+    position: absolute;
+    top: 2%;
+    left: 45%;
+    width: 250px;
+    background-color: var(--charcoal);
+    z-index: 3000;
+    box-shadow: var(--shadow-sm);
+    border-radius: 8px;
+    text-align: center;
+    padding: var(--spacing-xs);
+}
+
+.toaster .large {
+    min-width: 60%;
+        max-width: 60%;
+}
+
+.toaster .text {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.toaster .action {
+
+}
