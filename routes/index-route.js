@@ -6,19 +6,20 @@ const db = new sqlite3.Database("./elections.db");
 router.get("/", function get(req, res) {
   let data = {};
   db.all(
-    "SELECT * FROM users WHERE role_id=?",
+    "SELECT COUNT(*) AS votersCount FROM users WHERE role_id=?",
     [3],
-    function query(error, voter) {
+    function query(error, votersCount) {
       if (error) console.error(error);
-      data.voter = voter;
+      console.log(votersCount)
+      data.votersCount = votersCount[0].votersCount;
     }
   );
 
-  db.all("SELECT * FROM parties", function query(error, parties) {
+  db.all("SELECT COUNT(*) AS partiesCount FROM parties", function query(error, partiesCount) {
     if (error) console.error(error);
-    data.parties = parties;
+    data.partiesCount = partiesCount[0].partiesCount;
     if (data.length !== 0) {
-      res.render("dashboard.ejs", {path: "/", data });
+      res.render("dashboard.ejs", { path: "/", data });
     }
   });
 });

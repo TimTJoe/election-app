@@ -41,3 +41,8 @@
     margin: 0.83em 0px;
     font-weight: bold;
 }
+
+.navlogo:hover,
+.logo:hover {
+    color: var(--crimson);
+}
