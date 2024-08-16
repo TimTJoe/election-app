@@ -1,19 +1,10 @@
-.box {
-    display: inline-block;
-    min-width: 50px;
-    min-height: 50px;
-    border: solid red;
-}
-
 .flex {
     display: flex;
 }
 
 .row {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: var(--spacing-sm);
 }
 
 .column {
@@ -25,31 +16,8 @@
     flex: 2;
 }
 
-.even {
-    justify-content: space-evenly;
-}
-
-.between {
-    justify-content: space-between;
-}
-
-.around {
-    justify-content: space-around;
-}
-
-.align {
-    align-items: center;
-}
-
-.center {
-    display: grid;
-    place-items: center;
-}
-
 .grid {
     display: grid;
-}
-
-.grid.even {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
 }

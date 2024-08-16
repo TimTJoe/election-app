@@ -53,3 +53,43 @@ select.input {
     justify-content: space-between;
     gap: 12px;
 }
+
+button.outlined,
+.button.outlined {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    color: rgb(254, 44, 85);
+    border-color: rgb(254, 44, 85);
+    background-color: rgb(255, 255, 255);
+    min-width: 168px;
+    min-height: 48px;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 600;
+    display: flex;
+    position: relative;
+    align-items: center;
+    /* -webkit-box-align: center; */
+    /* -webkit-box-pack: center; */
+    justify-content: center;
+    padding: 6px 8px;
+    user-select: none;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.minibtn {
+    min-width: 110px;
+    padding: 0px 16px;
+    height: 36px;
+    border: 1px solid var(--smoke);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    color: var(--midnight);
+    border-radius: 2px;
+    font-weight: 600;
+}

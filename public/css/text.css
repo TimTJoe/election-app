@@ -2,13 +2,22 @@
     font-weight: bolder;
 }
 
-.larger {
+.large, .larger, .huge {
     font-size: 1.5rem;
     unicode-bidi: isolate;
     display: block;
     margin: 0.83em 0px;
     font-weight: bold;
 }
+
+.huge {
+    font-size: 3rem;
+}
+
+.large {
+    font-size: 1.3rem;
+}
+
 .center-align {
     text-align: center;
 }
@@ -30,4 +39,8 @@
     font-weight: 600;
     font-size: 12px;
     display: inline-block;
+}
+
+.muted {
+    color: var(--shadow);
 }
