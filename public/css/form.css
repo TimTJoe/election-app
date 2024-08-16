@@ -54,7 +54,7 @@ select.input {
     gap: var(--spacing-sm);
 }
 
-.flexfield > * {
+.flexfield>* {
     flex: 2;
 }
 
@@ -96,4 +96,10 @@ button.outlined,
     color: var(--midnight);
     border-radius: 2px;
     font-weight: 600;
+}
+
+.hide {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
 }

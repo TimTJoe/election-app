@@ -29,7 +29,7 @@
     color: var(--midnight);
 }
 
-.tablink:hover {
+.tablink:hover, .tablink.active {
     background-color: var(--ash);
     color: var(--crimson);
 }

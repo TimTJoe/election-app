@@ -3,13 +3,6 @@ const router = express.Router();
 const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database("./elections.db");
 
-router.get("/welcome", function get(req, res) {
-  res.render("welcome.ejs");
-});
-router.get("/index", function get(req, res) {
-  res.render("index.ejs");
-});
-
 router.get("/", function get(req, res) {
   let data = {};
   db.all(
@@ -25,7 +18,7 @@ router.get("/", function get(req, res) {
     if (error) console.error(error);
     data.parties = parties;
     if (data.length !== 0) {
-      res.render("dashboard.ejs", { data });
+      res.render("dashboard.ejs", {path: "/", data });
     }
   });
 });

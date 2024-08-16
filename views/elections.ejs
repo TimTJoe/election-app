@@ -1,11 +1,11 @@
-<%- include("../partials/head") %> <%- include("../partials/nav") %>
+<%- include("./partials/head") %> <%- include("./partials/navigation") %>
     <div class="container row max">
-      <%- include("../partials/sidebar") %>
+      <%- include("./partials/sidebar") %>
         <main class="main max relative">
-          <%- include("./toolbar") %>
+          <%- include("./elections/toolbar") %>
             <div class="body">
               <section>
-                <%- include("./tabs") %>
+                <%- include("./elections/tabs") %>
                   <div class="body padding row">
                     <% if(data.parties) { %>
                       <% data.parties.map(function each(party, index){ %>
@@ -27,4 +27,4 @@
             </div>
         </main>
     </div>
-    <%- include("../partials/foot") %>
+    <%- include("./partials/foot") %>

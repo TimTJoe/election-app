@@ -15,6 +15,9 @@ const indexRoutes = require("./routes/index-route");
 const voterRoutes = require("./routes/voters-route");
 const partiesRoutes = require("./routes/parties-route");
 const electionsRoutes = require("./routes/elections-routes");
+const candidatesRoutes = require("./routes/candidates-routes");
+const votesRoutes = require("./routes/votes-routes");
+const usersRoutes = require("./routes/users-routes");
 const db = require("./utils/db");
 
 db.serialize(() => {
@@ -52,6 +55,9 @@ app.use("/", indexRoutes);
 app.use("/voters", voterRoutes);
 app.use("/parties", partiesRoutes);
 app.use("/elections", electionsRoutes);
+app.use("/candidates", candidatesRoutes);
+app.use("/votes", votesRoutes);
+app.use("/users", usersRoutes);
 
 app.listen(port, () => {
   console.log(`App is listening to port http://localhost:${port}`);

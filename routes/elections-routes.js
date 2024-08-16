@@ -8,7 +8,7 @@ router.get("/", function handler(req, res) {
     if (error) console.error(error);
     data.parties = parties;
     if (data.length !== 0) {
-      res.render("elections.ejs", { data });
+      res.render("elections.ejs", {path: "elections", data });
     }
   });
 });

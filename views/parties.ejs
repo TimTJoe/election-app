@@ -1,42 +1,8 @@
-<%- include("./partials/head") %> <%- include("./partials/nav") %>
-    <div class="container row max">
+<%- include("./partials/head") %>
+  <%- include("./partials/navigation") %>
+    <div class="layout">
       <%- include("./partials/sidebar") %>
-        <main class="main max relative">
-          <header class="header toolbar row align sticky">
-            <section class="max">
-              <label for="elections">Filter by:</label>
-              <select name="elections" id="elections">
-                <option value="">All Elections</option>
-                <option value="">Block A General Elections</option>
-                <option value="">Block B General Elections</option>
-                <option value="">Block C General Elections</option>
-              </select>
-            </section>
-            <section class="">
-              <a href="parties/registration" class="iconbutton">
-                <i class="icon">&plus;</i>
-                <span>Party Registration</span>
-              </a>
-            </section>
-          </header>
+        <div class="content padding">
 
-          <div class="body padding row">
-            <% if(data.parties) { %>
-              <% data.parties.reverse().map(function each(party, index){ %>
-                <section class="media article">
-                  <img class="figure" src="/uploads/<%= party.logo %>" alt="" />
-                  <section class="block">
-                    <strong class="title">
-                      <%= party.party %>
-                    </strong>
-                    <small class="footer"> 0 Candidates &middot; 0 Elections Won </small>
-                  </section>
-                </section>
-                <%}) %>
-                  <% } else {%>
-                    <h1>no party register</h1>
-                    <% } %>
-          </div>
-        </main>
+        </div>
     </div>
-    <%- include("./partials/foot") %>

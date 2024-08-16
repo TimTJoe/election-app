@@ -1,39 +1,8 @@
-<%- include("./partials/head") %> <%- include("./partials/nav") %>
-    <div class="container row max">
+<%- include("./partials/head") %>
+  <%- include("./partials/navigation") %>
+    <div class="layout">
       <%- include("./partials/sidebar") %>
-        <main class="main max relative">
-          <nav class="toolbar row align">
-            <section class="max">
-              <label for="elections">Filter By:</label>
-              <select name="elections" id="elections">
-                <option value="">Block A General Elections</option>
-                <option value="">Block B General Elections</option>
-                <option value="">Block C General Elections</option>
-              </select>
-            </section>
-            <section class="">
-              <a href="voters/registration" class="iconbutton">
-                <i class="icon">&plus;</i>
-                <span class="text">Voter Registration</span>
-              </a>
-            </section>
-          </nav>
-          <div class="body padding row">
-            <% data.voters.map((voter, key)=> { %>
-              <section class="media" id="<%= voter.id %>">
-                <img class="figure" src="/images/sample.png" alt="" />
-                <section class="block">
-                  <strong class="title">
-                    <%= voter.first_name %>
-                      <%= voter.middle_name %>. <%= voter.last_name %>
-                  </strong>
-                  <small class="footer">
-                    <%= voter.DOB %> &middot; Voter
-                  </small>
-                </section>
-              </section>
-              <%}) %>
-          </div>
-        </main>
+        <div class="content padding">
+
+        </div>
     </div>
-    <%- include("./partials/foot") %>

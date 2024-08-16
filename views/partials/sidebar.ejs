@@ -1,29 +1,29 @@
 <nav class="sidebar border-right">
-  <a href="/" class="tablink">
+  <a href="/" class="tablink <%= path === '/' ? 'active' : '' %>">
     <em class="tabicon">&#x1F4C8;</em>
     <span class="tabtext">Dashboard</span>
   </a>
-  <a href="/voters" class="tablink">
+  <a href="/voters" class="tablink <%= path === 'voters' ? 'active' : '' %>">
     <em class="tabicon">&#x1F465;</em>
     <span class="tabtext">Voters</span>
   </a>
-  <a href="/elections" class="tablink">
+  <a href="/elections" class="tablink <%= path === 'elections' ? 'active' : '' %>">
     <em class="tabicon">&#x1F4C5;</em>
     <span class="tabtext">Elections</span>
   </a>
-  <a href="/parties" class="tablink">
+  <a href="/parties" class="tablink <%= path === 'parties' ? 'active' : '' %>">
     <em class="tabicon">&#127758;</em>
     <span class="tabtext">Parties</span>
   </a>
-  <a href="/candidates" class="tablink">
+  <a href="/candidates" class="tablink <%= path === 'candidates' ? 'active' : '' %>">
     <em class="tabicon">&#x1F464;</em>
     <span class="tabtext">Candidates</span>
   </a>
-  <a href="/votes" class="tablink">
+  <a href="/votes" class="tablink <%= path === 'votes' ? 'active' : '' %>">
     <em class="tabicon">&#x2714;</em>
     <span class="tabtext">Votes</span>
   </a>
-  <a href="/users" class="tablink">
+  <a href="/users" class="tablink <%= path === 'users' ? 'active' : '' %>">
     <em class="tabicon">&#x1F465;</em>
     <span>Users</span>
   </a>

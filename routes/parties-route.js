@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
   db.all("SELECT * FROM parties", function (err, parties) {
     data.parties = parties;
     if (err) console.error(err);
-    res.render("parties.ejs", { data });
+    res.render("parties.ejs", {path: "parties", data });
   });
 });
 

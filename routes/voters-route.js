@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
   db.all("SELECT * FROM users WHERE role_id=?", [3], function (err, users) {
     data.voters = users;
     if (users.length !== 0) {
-      res.render("voters.ejs", { data });
+      res.render("voters.ejs", { path: "voters", data });
     } else {
       console.error(err);
     }
@@ -34,6 +34,5 @@ router.get("/registration", (req, res) => {
     if (errors) console.error(errors);
   });
 });
-
 
 module.exports = router;
