@@ -42,3 +42,6 @@
 .border-bottom {
     border-bottom: 1px solid var(--ash);
 }
+.border-right {
+    border-right: 1px solid var(--ash);
+}
