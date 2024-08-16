@@ -2,7 +2,26 @@
   <%- include("./partials/navigation") %>
     <div class="layout">
       <%- include("./partials/sidebar") %>
-        <div class="content padding">
-
+        <div class="content ">
+          <%- include("./parties/toolbar") %>
+            <%- include("./parties/tabs") %>
+              <div class="content media-group padding">
+                <div class="media-group padding">
+                  <% if(data.parties) { %>
+                    <% data.parties.map(function each(party, index){ %>
+                      <section class="mediamedia border padding center-align">
+                        <img class="image" src="/images/<%= party.logo %>" alt="" />
+                        <strong class="large no-margin">
+                          <%= party.party %>
+                        </strong>
+                        <small class="muted"> 0 Candidates &middot; 0 Elections Won </small>
+                      </section>
+                      <%}) %>
+                        <% } else {%>
+                          <h1 class="padding">No Party Found</h1>
+                          <% } %>
+                </div>
+              </div>
         </div>
     </div>
+

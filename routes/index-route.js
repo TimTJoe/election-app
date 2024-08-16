@@ -10,18 +10,20 @@ router.get("/", function get(req, res) {
     [3],
     function query(error, votersCount) {
       if (error) console.error(error);
-      console.log(votersCount)
       data.votersCount = votersCount[0].votersCount;
     }
   );
 
-  db.all("SELECT COUNT(*) AS partiesCount FROM parties", function query(error, partiesCount) {
-    if (error) console.error(error);
-    data.partiesCount = partiesCount[0].partiesCount;
-    if (data.length !== 0) {
-      res.render("dashboard.ejs", { path: "/", data });
+  db.all(
+    "SELECT COUNT(*) AS partiesCount FROM parties",
+    function query(error, partiesCount) {
+      if (error) console.error(error);
+      data.partiesCount = partiesCount[0].partiesCount;
+      if (data.length !== 0) {
+        res.render("dashboard.ejs", { path: "/", data });
+      }
     }
-  });
+  );
 });
 
 // Handle POST request to /login endpoint
