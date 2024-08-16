@@ -3,8 +3,8 @@
     font-weight: 600;
     font-size: 15px;
     justify-content: space-between;
-    margin-bottom: 5px;
-    margin-top: 10px;
+    margin-bottom: 4px;
+    margin-top: var(--spacing-sm);
     cursor: pointer;
 }
 
@@ -51,7 +51,11 @@ select.input {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
+    gap: var(--spacing-sm);
+}
+
+.flexfield > * {
+    flex: 2;
 }
 
 button.outlined,

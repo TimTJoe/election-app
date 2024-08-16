@@ -21,3 +21,13 @@
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-sm);
 }
+
+.between {
+    justify-content: space-between;
+}
+.around {
+    justify-content: space-around;
+}
+.evenly {
+    justify-content: space-evenly;
+}

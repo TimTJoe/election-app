@@ -44,9 +44,11 @@
 .border-right {
     border-right: 1px solid var(--ash);
 }
+
 .border-left {
     border-left: 1px solid var(--ash);
 }
+
 .border-top {
     border-top: 1px solid var(--ash);
 }
@@ -79,11 +81,7 @@
 .padding,
 .padding-top,
 .padding-right,
-.padding-bottom,
-.margin,
-.margin-top,
-.margin-right,
-.margin-bottom {
+.padding-bottom {
     display: inline-block;
 }
 
@@ -109,4 +107,44 @@
 
 .margin {
     margin: var(--spacing-sm);
+}
+
+.badge-group,
+.figure-group {
+    display: flex;
+    align-items: center;
+}
+
+.badge-group>*+* {
+    margin: -10px;
+}
+
+.badge,
+.figure img {
+    border: 4px solid var(--white);
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+}
+
+.figure-group {
+    justify-content: space-between;
+}
+
+.figure {
+    margin: 0;
+    padding: 0;
+    padding: 8px;
+    border-radius: 2px;
+}
+
+.figure img {
+    border: unset;
+}
+
+.figure figcaption {
+    font-size: var(--font-sm);
+    padding-top: 8px;
+    text-align: center;
+    text-transform: capitalize;
 }

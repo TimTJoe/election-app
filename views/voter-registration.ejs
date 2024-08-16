@@ -1,64 +1,64 @@
 <%- include("./partials/head") %>
-  <nav class="navigation">
-    <a href="/" class="larger">Election App</a>
-    <span class=""></span>
+  <nav class="navigation border-bottom">
+      <a href="/" class="larger">Election App</a>
+    <a href="/login" class="minibtn">Log in</a>
   </nav>
-  <main class="container center">
+  <main class="center">
     <div class="smblock">
       <h2 class="larger center-align">Voter Registration</h2>
+
       <form action="" method="post">
 
-        <section class="flexfield">
-          <span>
-            <label class="label" for="first_name">First Name </label>
-            <input type="text" name="first_name" id="first_name" class="input" required />
-          </span>
-          <span>
-            <label class="label" for="middle_name">Middle Name </label>
-            <input type="text" name="middle_name" id="middle_name" class="input" />
-          </span>
-        </section>
+        <label class="label" for="first_name">Fill in Form</label>
+        <input type="text" name="first_name" id="first_name" class="input margin-bottom" placeholder="First Name"
+          required />
 
-        <section class="flexfield">
-          <span>
-            <label class="label" for="last_name">Last Name </label>
-            <input type="text" name="last_name" id="last_name" class="input" required />
-          </span>
-          <span>
-            <label class="label" for="username">Username </label>
-            <input type="text" name="username" id="username" class="input" required />
-          </span>
+        <section class="flexfield margin-bottom">
+          <input type="text" name="middle_name" id="middle_name" class="input" placeholder="Middle Name" />
+
+          <input type="text" name="last_name" id="last_name" class="input" placeholder="Last Name" required />
         </section>
 
         <label class="label" for="DOB">Date of Birth</label>
-        <input type="date" name="DOB" id="DOB" class="input" />
+        <input type="date" name="DOB" id="DOB" class="input margin-bottom" />
 
-        <label class="label" for="password">Password</label>
-        <input type="password" name="password" id="password" class="input" />
+        <section class="flexfield">
+          <input type="text" name="username" id="username" class="input" placeholder="Username" required />
+
+          <input type="password" name="password" id="password" placeholder="Password" class="input" />
+        </section>
 
         <label class="label" for="photo">Profile Photo</label>
         <input type="file" name="photo" id="photo" class="input" />
 
-        <label for="role" class="label">Role </label>
-        <select name="role" id="role" class="input">
-          <% data.roles.map((role)=> { %>
-            <option value="<%= role.id %>">
-              <%= role.role %>
-            </option>
-            <%}) %>
-        </select>
+        <section class="flexfield">
 
-        <label for="party" class="label">Party</label>
-        <select name="party" id="party" class="input">
-          <% data?.parties.map((party)=> { %>
-            <option value="<%= party.id %>">
-              <%= party.party %>
-            </option>
-            <%}) %>
-        </select>
+          <span>
+            <label for="role" class="label">Role </label>
+            <select name="role" id="role" class="input">
+              <% data.roles.map((role)=> { %>
+                <option value="<%= role.id %>">
+                  <%= role.role %>
+                </option>
+                <%}) %>
+            </select>
+          </span>
+
+          <span>
+            <label for="party" class="label">Party</label>
+            <select name="party" id="party" class="input">
+              <% data?.parties.map((party)=> { %>
+                <option value="<%= party.id %>">
+                  <%= party.party %>
+                </option>
+                <%}) %>
+            </select>
+          </span>
+
+        </section>
 
         <button type="submit" class="button">Register</button>
       </form>
+
     </div>
   </main>
-  <footer class="footer">&copy; 2024</footer>
