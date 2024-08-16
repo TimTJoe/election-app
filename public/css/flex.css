@@ -31,3 +31,7 @@
 .evenly {
     justify-content: space-evenly;
 }
+
+.move-down {
+    margin-top: auto;
+}

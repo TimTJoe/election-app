@@ -40,6 +40,11 @@
     height: 22px;
 }
 
+.tabicon {
+    width: 48px;
+    height: 48px;
+}
+
 .content {
     flex: 2;
     /* align-self: flex-start; */
