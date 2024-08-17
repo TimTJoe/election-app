@@ -51,3 +51,65 @@
     height: 90vh;
     overflow-y: auto;
 }
+
+
+/* ================================FLEX AND GRID START=================================== */
+
+/* FLEXBOX */
+.flex {
+    display: flex;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.center, .column.center {
+    display: grid;
+    place-items: center;
+}
+
+.max {
+    flex: 2;
+}
+
+.between {
+    justify-content: space-between;
+}
+
+.around {
+    justify-content: space-around;
+}
+
+.evenly {
+    justify-content: space-evenly;
+}
+
+.move-down {
+    margin-top: auto;
+}
+
+.move-up {
+    margin-bottom: auto;
+}
+
+.move-right {
+    margin-left: auto;
+}
+.move-left {
+    margin-right: auto;
+}
+
+/* GRID CONTAINER */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+}
+/* ================================FLEX AND GRID END=================================== */
