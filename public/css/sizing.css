@@ -65,3 +65,19 @@
 .margin {
     margin: var(--spacing-sm);
 }
+
+.fullwidth {
+    min-width: 100%;
+}
+
+img.fullwidth {
+    height: 74%;
+}
+
+.round {
+    border-radius: var(--spacing-lg);
+}
+
+.small-round {
+    border-radius: 4px;
+}
