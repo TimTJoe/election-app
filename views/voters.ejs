@@ -2,7 +2,18 @@
   <%- include("./partials/navigation") %>
     <div class="layout">
       <%- include("./partials/sidebar") %>
-        <div class="content padding">
+        <div class="content">
+      <%- include("./partials/pageTitle") %>
 
+          <header class="padding row between border-bottom">
+              <span class="row">
+                <label for="elections" class="label">Filter By Election:</label>
+                <select name="elections" id="elections" class="input">
+                  <option value="">Block A General Elections</option>
+                  <option value="">Block B General Elections</option>
+                  <option value="">Block C General Elections</option>
+                </select>
+              </span>
+          </header>
         </div>
     </div>

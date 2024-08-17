@@ -2,7 +2,9 @@
     font-weight: bolder;
 }
 
-.large, .larger, .huge {
+.large,
+.larger,
+.huge {
     font-size: 1.5rem;
     unicode-bidi: isolate;
     display: block;
@@ -52,6 +54,19 @@
 .warning {
     color: var(--yellow);
 }
- .error {
+
+.error {
     color: var(--red);
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
 }

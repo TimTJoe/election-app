@@ -35,3 +35,12 @@
 .move-down {
     margin-top: auto;
 }
+.move-up {
+    margin-bottom: auto;
+}
+.move-right {
+    margin-left: auto;
+}
+.move-left {
+    margin-right: auto;
+}
