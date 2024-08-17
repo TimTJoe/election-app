@@ -1,9 +1,9 @@
-let role = document.getElementById("role");
-let spanID = document.getElementById("spanID");
+var role = document.getElementById("role");
+var spanID = document.getElementById("spanID");
 
 window.onload = function onload() {
   spanID.classList.add("hide");
-  
+
   /**
    * Handles the change event for the 'role' dropdown menu.
    * When the selected option changes, this function checks the value of the selected option.
@@ -20,4 +20,5 @@ window.onload = function onload() {
       spanID.classList.add("hide");
     }
   });
+
 };
