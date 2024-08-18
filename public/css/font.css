@@ -55,6 +55,10 @@
     color: var(--yellow);
 }
 
+.black {
+    color: var(--black);
+}
+
 .error {
     color: var(--red);
 }

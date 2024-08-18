@@ -3,17 +3,36 @@
     <div class="layout">
       <%- include("./partials/sidebar") %>
         <div class="content">
-      <%- include("./partials/pageTitle") %>
-
-          <header class="padding row between border-bottom">
+          <%- include("./partials/page-title") %>
+            <header class="padding row between border-bottom">
               <span class="row">
                 <label for="elections" class="label">Filter By Election:</label>
                 <select name="elections" id="elections" class="input">
+                  <option value="">All Elections</option>
                   <option value="">Block A General Elections</option>
                   <option value="">Block B General Elections</option>
                   <option value="">Block C General Elections</option>
                 </select>
               </span>
-          </header>
+            </header>
+            <div class="grid padding">
+              <% if(data.voters) { %>
+                <% data.voters.reverse().map(function each(voter){ %>
+                  <section class="row border padding">
+                    <img src="/images/<%= voter.photo %>" alt="" class="round small">
+                    <span class="max margin-left">
+                      <a href="/user/<%= voter.id %>" class="large black no-margin">
+                        <%= voter.first_name %>
+                          <%= voter.middle_name %>
+                            <%= voter.last_name %>
+                      </a>
+                      <small class="row">
+                        <%= voter.DOB %> &middot; <p class="success"> 2x Voted </p>
+                      </small>
+                    </span>
+                  </section>
+                  <% }) %>
+                    <% } %>
+            </div>
         </div>
     </div>
