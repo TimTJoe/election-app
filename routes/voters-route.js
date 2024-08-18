@@ -1,4 +1,5 @@
 const express = require("express");
+const upload = require("../public/js/multer");
 const router = express.Router();
 const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database("./elections.db");
@@ -27,12 +28,56 @@ router.get("/registration", (req, res) => {
     data.parties = parties;
     if (err) errors = err;
   });
+
   db.all("SELECT * FROM positions", function query(err, positions) {
     data.positions = positions;
     res.render("voter-registration.ejs", { data });
     if (err) errors = err;
     if (errors) console.error(errors);
   });
+});
+
+router.post("/registration", upload.single("photo"), function post(req, res) {
+  let {
+    first_name,
+    middle_name,
+    last_name,
+    DOB,
+    username,
+    password,
+    photo,
+    role,
+    party,
+  } = req.body;
+
+  if (Number(role) === 2) {
+    console.log("candidate");
+    db.run(
+      "INSERT INTO candidates VALUES (?,?,?,?,?,?,?)",
+      [null, first_name, middle_name, last_name, DOB, , logo],
+      function query(err) {
+        if (!err) {
+          res.redirect("/parties");
+        } else {
+          console.error(err);
+        }
+      }
+    );
+  } else {
+    console.log("voter or admin");
+  }
+
+  // db.run(
+  //   "INSERT INTO parties VALUES (?,?,?)",
+  //   [null, party, logo],
+  //   function query(err) {
+  //     if (!err) {
+  //       res.redirect("/parties");
+  //     } else {
+  //       console.error(err);
+  //     }
+  //   }
+  // );
 });
 
 module.exports = router;
