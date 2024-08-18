@@ -44,25 +44,20 @@ router.post("/registration", upload.single("photo"), function post(req, res) {
 
   if (Number(role) === 2) {
     console.log("candidate");
-    let { position } = req.body;
+    let { position, party } = req.body;
     db.run(
-      "INSERT INTO candidates VALUES (?,?,?,?,?,?,?,?)",
-      [
-        null,
-        first_name,
-        middle_name,
-        last_name,
-        DOB,
-        position,
-        party,
-        filename,
-      ],
+      "INSERT INTO candidates VALUES (?,?,?,?,?,?,?)",
+      [null, first_name, middle_name, last_name, position, party, filename],
       function query(err) {
-        if (!err) {
-          res.redirect("/candidates");
-        } else {
-          console.error(err);
-        }
+        if (!err) console.error(err);
+        db.run(
+          "INSERT INTO auth VALUES (?,?,?,?)",
+          [null, username, password, this.lastID],
+          function cb(err) {
+            if (err) console.error(err);
+            res.redirect("/candidates");
+          }
+        );
       }
     );
   } else {

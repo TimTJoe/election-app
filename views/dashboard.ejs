@@ -18,7 +18,7 @@
                             <h1 class="large no-margin">Registered Voters</h1>
                             <hr class="divider half margin-top">
                             <h1 class="huge no-margin">
-                                <%= data.votersCount !==0 ? data.votersCount : 0 %>
+                                <%= data.votersCount !== 0 ? data.votersCount : 0 %>
                             </h1>
                             <small class="muted">Total Number of Registered Voters on the Platform</small>
                         </section>
@@ -26,23 +26,23 @@
                             <h1 class="large no-margin">Parties</h1>
                             <hr class="divider half margin-top">
                             <h1 class="huge no-margin">
-                                <%= data.partiesCount !==0 ? data.partiesCount : 0 %>
+                                <%= data.partiesCount !== 0 ? data.partiesCount : 0 %>
                             </h1>
                             <small class="muted">Total Number of Parties on the Platform</small>
                         </section>
                         <section class="border padding">
                             <h1 class="large no-margin">Candidates</h1>
                             <hr class="divider half margin-top">
-                            <h1 class="huge no-margin">1234567890</h1>
+                            <h1 class="huge no-margin"><%= data.candidateCount !== 0 ? data.candidateCount : 0 %></h1>
                             <small class="muted">Total Number of Candidates on the Platform</small>
                         </section>
                     </div>
                     <div class="padding"></div>
-                    <header>
+                    <header class="margin-bottom">
                         <h4 class="large no-margin margin-top margin-bottom">Elections</h4>
                         <hr class="divider half">
                     </header>
-                    <div class="padding"></div>
+                    <!-- <div class="padding"></div> -->
 
                     <div class="grid">
                         <section class="border padding">
@@ -51,7 +51,7 @@
                                 <strong class="success bold">Completed</strong>
                                 &middot; 10 Candidates &middot; Aug 25, 2024
                             </small>
-                            <span class="figure-group padding">
+                            <!-- <span class="figure-group padding">
                                 <figure class="figure">
                                     <img src="/images/sample.png" alt="">
                                     <figcaption>Winner</figcaption>
@@ -64,7 +64,7 @@
                                     <img src="/images/sample.png" alt="">
                                     <figcaption>Runner-up</figcaption>
                                 </figure>
-                            </span>
+                            </span> -->
                             <span class="row between padding-top">
                                 <a href="/elections/1234/Candidates" class="link">
                                     See all Candidates</a> &middot;
@@ -83,13 +83,13 @@
                                     &middot; Aug 25, 2024
                                 </small>
                             </span>
-                            <span class="badge-group padding">
+                            <!-- <span class="badge-group padding">
                                 <img src="/images/sample.png" alt="" class="badge">
                                 <img src="/images/sample.png" alt="" class="badge">
                                 <img src="/images/sample.png" alt="" class="badge">
                                 <img src="/images/sample.png" alt="" class="badge">
                                 <img src="/images/sample.png" alt="" class="badge">
-                            </span>
+                            </span> -->
                             <span class="row between padding-top move-down">
                                 <a href="/elections/1234/Candidates" class="link">
                                     See all Candidates</a> &middot;
@@ -107,13 +107,13 @@
                                     Candidates
                                     &middot; Aug 25, 2024</small>
                             </span>
-                            <span class="badge-group padding">
+                            <!-- <span class="badge-group padding">
                                 <img src="/images/sample.png" alt="" class="badge">
                                 <img src="/images/sample.png" alt="" class="badge">
                                 <img src="/images/sample.png" alt="" class="badge">
                                 <img src="/images/sample.png" alt="" class="badge">
                                 <img src="/images/sample.png" alt="" class="badge">
-                            </span>
+                            </span> -->
 
                             <span class="row between padding-top move-down">
                                 <a href="/elections/1234/Candidates" class="link">

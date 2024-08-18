@@ -13,6 +13,13 @@ router.get("/", function get(req, res) {
       data.votersCount = votersCount[0].votersCount;
     }
   );
+  db.all(
+    "SELECT COUNT(*) AS candidateCount FROM candidates",
+    function query(error, candidateCount) {
+      if (error) console.error(error);
+      data.candidateCount = candidateCount[0].candidateCount;
+    }
+  );
 
   db.all(
     "SELECT COUNT(*) AS partiesCount FROM parties",
