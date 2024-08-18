@@ -7,7 +7,7 @@
     <div class="smblock">
       <h2 class="larger center-align">Voter Registration</h2>
 
-      <form action="" method="post">
+      <form action="" method="post" enctype="multipart/form-data">
 
         <label class="label" for="first_name">Fill in Form</label>
         <input type="text" name="first_name" id="first_name" class="input margin-bottom" placeholder="First Name"
@@ -64,6 +64,15 @@
                 <%= party.party %>
               </option>
               <%}) %>
+          </select>
+        </span>
+
+        <span class="" id="election">
+          <label for="election" class="label">Election</label>
+          <select name="election" id="election" class="input">
+            <option>Election Name</option>
+            <option>Election Name</option>
+            <option>Election Name</option>
           </select>
         </span>
 

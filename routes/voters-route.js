@@ -38,33 +38,49 @@ router.get("/registration", (req, res) => {
 });
 
 router.post("/registration", upload.single("photo"), function post(req, res) {
-  let {
-    first_name,
-    middle_name,
-    last_name,
-    DOB,
-    username,
-    password,
-    photo,
-    role,
-    party,
-  } = req.body;
+  let filename = req.file.filename;
+  let { first_name, middle_name, last_name, DOB, username, password, role } =
+    req.body;
 
   if (Number(role) === 2) {
     console.log("candidate");
+    let { position } = req.body;
     db.run(
-      "INSERT INTO candidates VALUES (?,?,?,?,?,?,?)",
-      [null, first_name, middle_name, last_name, DOB, , logo],
+      "INSERT INTO candidates VALUES (?,?,?,?,?,?,?,?)",
+      [
+        null,
+        first_name,
+        middle_name,
+        last_name,
+        DOB,
+        position,
+        party,
+        filename,
+      ],
       function query(err) {
         if (!err) {
-          res.redirect("/parties");
+          res.redirect("/candidates");
         } else {
           console.error(err);
         }
       }
     );
   } else {
-    console.log("voter or admin");
+    db.run(
+      "INSERT INTO users VALUES (?,?,?,?,?,?,?)",
+      [null, first_name, middle_name, last_name, DOB, filename, role],
+      function query(err) {
+        if (err) console.error(err);
+        db.run(
+          "INSERT INTO auth VALUES (?,?,?,?)",
+          [null, username, password, this.lastID],
+          function cb(err) {
+            if (err) console.error(err);
+            res.redirect("/voters");
+          }
+        );
+      }
+    );
   }
 
   // db.run(

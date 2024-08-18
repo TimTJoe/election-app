@@ -1,10 +1,12 @@
 var role = document.getElementById("role");
 var party = document.getElementById("party");
 var positions = document.getElementById("positions");
+var election = document.getElementById("election");
 
 window.onload = function onload() {
   party.classList.add("hide");
   positions.classList.add("hide");
+  election.classList.add("hide");
 
   /**
    * Handles the change event for the 'role' dropdown menu.
@@ -19,9 +21,14 @@ window.onload = function onload() {
     if (choice === 2) {
       party.classList.remove("hide");
       positions.classList.remove("hide");
+    } else if (choice === 3) {
+      election.classList.remove("hide");
+      party.classList.add("hide");
+      positions.classList.add("hide");
     } else {
       party.classList.add("hide");
       positions.classList.add("hide");
+      election.classList.add("hide");
     }
   });
 };
