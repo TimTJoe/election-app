@@ -70,3 +70,11 @@
 .lowercase {
     text-transform: lowercase;
 }
+
+.no-line {
+    line-height: unset;
+}
+
+.small-line {
+    line-height: 1.25;
+}

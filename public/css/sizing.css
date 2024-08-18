@@ -70,14 +70,17 @@
     min-width: 100%;
 }
 
-img.fullwidth {
-    height: 74%;
-}
 
 .round {
-    border-radius: var(--spacing-lg);
+    border-radius: 50%;
 }
 
 .small-round {
     border-radius: 4px;
 }
+
+/* BOX SHADOWS START+============================================= */
+.small-elevate {
+    box-shadow: var(--shadow-sm);
+}
+/* BOX SHADOWS END+============================================= */
