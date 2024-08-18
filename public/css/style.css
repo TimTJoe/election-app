@@ -6,3 +6,6 @@
 @import url("./component.css");
 @import url("./layout.css");
 
+.hover-elevate:hover {
+    box-shadow: var(--shadow-sm);
+}

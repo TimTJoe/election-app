@@ -75,6 +75,10 @@
     border-radius: 50%;
 }
 
+.tiny-round {
+    border-radius: 2px;
+}
+
 .small-round {
     border-radius: 4px;
 }

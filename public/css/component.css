@@ -303,7 +303,6 @@ button.tab.active{
 .container.tall {
     margin: 0 auto;
     min-height: 80vh;
-    border: solid red;
 }
 
 .container.max {

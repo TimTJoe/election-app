@@ -19,7 +19,7 @@
               <% if(data.voters) { %>
                 <% data.voters.reverse().map(function each(voter){ %>
                   <section class="row border padding">
-                    <img src="/images/<%= voter.photo %>" alt="" class="round small">
+                    <img src="/uploads/<%= voter.photo %>" alt="" class="round small">
                     <span class="max margin-left">
                       <a href="/user/<%= voter.id %>" class="large black no-margin">
                         <%= voter.first_name %>

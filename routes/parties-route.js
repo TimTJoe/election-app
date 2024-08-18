@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../utils/db");
-const upload = require("../utils/upload");
+const upload = require("../public/js/multer");
 
 router.get("/", (req, res) => {
   let data = {};
   db.all("SELECT * FROM parties", function (err, parties) {
     data.parties = parties;
     if (err) console.error(err);
-    res.render("parties.ejs", {path: "parties", data });
+    res.render("parties.ejs", { path: "parties", data });
   });
 });
 
