@@ -161,19 +161,26 @@ button.outlined,
 }
 
 .minibtn,
-.mini {
-    min-width: 110px;
-    padding: 0px 16px;
-    height: 36px;
-    border: 1px solid var(--smoke);
+.mini, .tini {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--white);
-    color: var(--midnight);
+    min-width: 110px;
+    padding: 0px var(--spacing-md);
+    height: 36px;
+    border: 1px solid var(--smoke);
     border-radius: 2px;
     font-weight: 600;
+    background: var(--white);
+    color: var(--midnight);
     cursor: pointer;
+}
+
+.tini {
+    padding: 0 var(--spacing-xxs);
+    font-size: var(--font-sm);
+    font-weight: normal;
+    height: 24px;
 }
 
 button.crimson {

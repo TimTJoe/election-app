@@ -18,7 +18,7 @@
             <div class="grid padding">
               <% if(data.voters) { %>
                 <% data.voters.reverse().map(function each(voter){ %>
-                  <a href="/users/<%= voter.id %>" class="row border padding black hover-elevate">
+                  <section id="<%= voter.id %>" class="voter row border padding black hover-elevate">
                     <img src="/uploads/<%= voter.photo %>" alt="" class="round small">
                     <span class="max margin-left">
                       <h6 class="large no-margin">
@@ -26,14 +26,13 @@
                           <%= voter.middle_name %>
                             <%= voter.last_name %>
                       </h6>
-                      <p class="small ">Candidate</p>
-                      <small class="smaller muted">
-                        <%= voter.DOB %> &middot; No Affiliation
-                      </small>
+                      <p class="small">Voter</p>
+                      <button class="tini action">Select to vote</button>
                     </span>
-                  </a>
+                  </section>
                   <% }) %>
                     <% } %>
             </div>
         </div>
     </div>
+    <script type="module" src="/js/voters.js"></script>
