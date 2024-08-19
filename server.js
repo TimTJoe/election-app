@@ -1,24 +1,33 @@
-const express = require("express");
-const path = require("path");
-const bodyParser = require("body-parser");
-const app = express();
-const port = 3000;
+var express = require("express");
+var path = require("path");
+var bodyParser = require("body-parser");
+var app = express();
+var port = 3000;
+var session = require("express-session");
+const SECRET =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:,.<>?";
 
+app.use(
+  session({
+    secret: SECRET, 
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }, // Set to true if you're using HTTPS
+  })
+);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 
-// const sqlite3 = require('sqlite3').verbose()
-// const db = new sqlite3.Database('./elections.db')
-const indexRoutes = require("./routes/index-route");
-const voterRoutes = require("./routes/voters-route");
-const partiesRoutes = require("./routes/parties-route");
-const electionsRoutes = require("./routes/elections-routes");
-const candidatesRoutes = require("./routes/candidates-routes");
-const votesRoutes = require("./routes/votes-routes");
-const usersRoutes = require("./routes/users-routes");
-const db = require("./utils/db");
+var indexRoutes = require("./routes/index-route");
+var voterRoutes = require("./routes/voters-route");
+var partiesRoutes = require("./routes/parties-route");
+var electionsRoutes = require("./routes/elections-routes");
+var candidatesRoutes = require("./routes/candidates-routes");
+var votesRoutes = require("./routes/votes-routes");
+var usersRoutes = require("./routes/users-routes");
+var db = require("./utils/db");
 
 db.serialize(() => {
   db.run(
