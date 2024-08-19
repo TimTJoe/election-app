@@ -355,5 +355,23 @@ img.fullwidth {
     height: 100%;
 }
 
+img.large {
+    width: 182px;
+    height: 182px;
+}
+
 
 /* IMAGE ENDS +===================================================== */
+
+
+/* BOX CONTAINER STARTS +===================================================== */
+.container-max {
+    max-width: 1420px;
+    margin: 0 auto;
+}
+
+.container-medium {
+    max-width: 800px;
+    margin: 0 auto;
+}
+/* BOX CONTAINER ENDS +===================================================== */

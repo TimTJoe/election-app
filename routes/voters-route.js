@@ -78,17 +78,6 @@ router.post("/registration", upload.single("photo"), function post(req, res) {
     );
   }
 
-  // db.run(
-  //   "INSERT INTO parties VALUES (?,?,?)",
-  //   [null, party, logo],
-  //   function query(err) {
-  //     if (!err) {
-  //       res.redirect("/parties");
-  //     } else {
-  //       console.error(err);
-  //     }
-  //   }
-  // );
 });
 
 module.exports = router;

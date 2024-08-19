@@ -106,6 +106,10 @@
     margin-right: auto;
 }
 
+.align-top {
+    align-self: flex-start;
+}
+
 /* GRID CONTAINER */
 .grid {
     display: grid;

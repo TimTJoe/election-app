@@ -1,6 +1,9 @@
 .bold {
     font-weight: bolder;
 }
+.no-bold {
+    font-weight: normal !important;
+}
 
 .large,
 .larger,
