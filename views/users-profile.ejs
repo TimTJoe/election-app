@@ -3,28 +3,37 @@
         <div class="layout">
             <%- include("./partials/sidebar") %>
                 <div class="content ">
-                    <div class="container-medium">
-                        <% if(data.user){%>
-                            <header class="row">
-                                <img class="large round" src="/images/sample.png">
-                                <section class="max padding ">
-                                    <h1 class="huge no-margin">
-                                        <%= data.user.first_name %>
-                                            <%= data.user.middle_name %>
-                                                <%= data.user.last_name %>
-                                    </h1>
-                                    <small class="large no-bold no-margin">
-                                        <%= data.user.DOB %> &middot; 10x Voted
-                                    </small>
+                    <% if(data.user){%>
+                        <header class="row container-medium">
+                            <img class="large round" src="/uploads/<%= data.user.photo %>">
+                            <section class="max padding ">
+                                <h1 class="huge no-margin">
+                                    <%= data.user.first_name %>
+                                        <%= data.user.middle_name %>
+                                            <%= data.user.last_name %>
+                                </h1>
+                                <small class="large no-bold no-margin">
+                                    <%= data.user.DOB %> &middot; 10x Voted
+                                </small>
+                            </section>
+                        </header>
+                        <%}%>
+                            <nav class="row margin-top border-bottom" id="tabs">
+                                <button class="tab active">Elections</button>
+                            </nav>
+                            <div class="grid padding">
+                                <section class="border padding">
+                                    <h6 class="small bold">Block A General Elections</h6>
+                                    <small class="small">Aug 25, 2024 &middot; <em class="success">Voted</em></small>
                                 </section>
-                            </header>
-                            <%}%>
-                                <nav class="row tabs">
-                                    <a href="/">one</a>
-                                    <a href="/">one</a>
-                                    <a href="/">one</a>
-                                </nav>
-                    </div>
-                    userID is: <%= data.userID %>
+                                <section class="border padding">
+                                    <h6 class="small bold">Block A General Elections</h6>
+                                    <small class="small">Aug 25, 2024 &middot; <em class="success">Voted</em></small>
+                                </section>
+                                <section class="border padding">
+                                    <h6 class="small bold">Block A General Elections</h6>
+                                    <small class="small">Aug 25, 2024 &middot; <em class="success">Voted</em></small>
+                                </section>
+                            </div>
                 </div>
         </div>

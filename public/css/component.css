@@ -196,8 +196,9 @@ button.tab {
     margin-right: 2px;
 }
 
-button.tab.active{
-    border-color: var(--fog);
+button.tab.active {
+    border-color: var(--crimson);
+    color: var(--crimson);
 }
 
 /* FORM ENDS +======================================================== */
@@ -205,13 +206,14 @@ button.tab.active{
 /* TOASTER +============================================================ */
 .toaster {
     position: absolute;
-    top: 1px;
-    min-width: 60%;
-    max-width: 60%;
-    background-color: var(--charcoal);
-    z-index: 3000;
+    left: 10%;
+    transform: translate(50%, 50%);
+    min-width: 40%;
+    max-width: 40%;
+    background-color: rgba(36, 36, 36, 0.856);
+    z-index: 9999;
     box-shadow: var(--shadow-sm);
-    border-radius: 8px;
+    border-radius: var(--spacing-xs);
     text-align: center;
     padding: var(--spacing-xxs);
     gap: var(--spacing-md);
@@ -374,4 +376,5 @@ img.large {
     max-width: 800px;
     margin: 0 auto;
 }
+
 /* BOX CONTAINER ENDS +===================================================== */

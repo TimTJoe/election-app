@@ -18,6 +18,7 @@ router.get("/", (req, res) => {
 
 router.get("/:userID", (req, res) => {
   let { userID } = req.params;
+  let data = { userID };
 
   // Query the database to find a matching
   db.all(

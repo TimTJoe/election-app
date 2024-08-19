@@ -46,6 +46,7 @@ body {
     font-family: Arial, sans-serif;
     height: inherit;
     color: var(--midnight);
+    position: relative;
 }
 
 /* Set core root defaults */
