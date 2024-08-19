@@ -17,26 +17,26 @@
                             </section>
                         </header>
                         <div class="grid padding">
-                            <% if(data.condidates) { %>
-                                <% data.condidates.reverse().map(function each(candidate){ %>
-                                    <section class="row border padding">
+                            <% if(data.candidates) { %>
+                                <% data.candidates.reverse().map(function each(candidate, key){ %>
+                                    <a href="/candidates/<%= candidate.id %>" class="row border padding black">
                                         <img src="/uploads/<%= candidate.photo %>" alt="" class="round small">
                                         <span class="max margin-left">
-                                            <a href="/candidates/<%= candidate.id %>" class="large black no-margin">
+                                            <h6 class="large no-margin"> 
                                                 <%= candidate.first_name %>
-                                                    <%= candidate.middle_name %>
-                                                        <%= candidate.last_name %>
-                                            </a>
-                                            <small class="small">
-                                                Candidate
-                                            </small>
-                                            <small class="small">
-                                                Election Name &middot; 0 Votes Obtained
+                                                <%= candidate.middle_name %>
+                                                <%= candidate.last_name %>
+                                            </h6>
+                                            <p class="small ">Candidate</p>
+                                            <small class="smaller muted">
+                                                Party Name &middot; Position
                                             </small>
                                         </span>
-                                    </section>
-                                    <% }) %>
-                                        <% } %>
+                                    </a>
+                                    <% })%>
+                                        <% } else {%>
+                                            <h1>No Candidate Found!</h1>
+                                            <% } %>
                         </div>
                 </div>
         </div>
