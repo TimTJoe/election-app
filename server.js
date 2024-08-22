@@ -1,25 +1,21 @@
-var express = require("express")
-var port = 4500
-var app = express()
-var bodyParser = require("body-parser")
-var db = require("sqlite3")
-var path = require("node:path")
+var express = require("express");
+var app = express();
+var bodyParser = require("body-parser");
+var path = require("node:path");
+var db = require("./db");
+var port = process.env.PORT || 4500;
 
-// middleware
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(express.static(path.join(__dirname, "public")))
-app.set("view engine", "ejs")
-
-// initial database manager
-var sqlite = require("sqlite3").verbose()
-var db = new sqlite.Database("./election.db")
+// app-wide middlewares
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
+app.set("view engine", "ejs");
 
 //create database tables
-db.serialize(function create(){
-    db.run(
-      "CREATE TABLE IF NOT EXISTS roles (id INTEGER  PRIMARY KEY AUTOINCREMENT, role VARCHAR(50) NOT NUll)"
-    );
+db.serialize(function create() {
+  db.run(
+    "CREATE TABLE IF NOT EXISTS roles (id INTEGER  PRIMARY KEY AUTOINCREMENT, role VARCHAR(50) NOT NUll)"
+  );
   db.run(
     "CREATE TABLE IF NOT EXISTS auth (id INTEGER  PRIMARY KEY AUTOINCREMENT, username VARCHAR(50) NOT NUll UNIQUE, password VARCHAR(50) NOT NULL, user_id INTEGER)"
   );
@@ -44,11 +40,14 @@ db.serialize(function create(){
   );
 });
 
+// require route handlers
+var voterRouter = require("./routes/voter");
 
+// route handler middlewares
+app.use("/voters", voterRouter);
 
-// export to use across app
-module.exports = {db}
-
+// start server
 app.listen(port, function lister() {
-    console.log(`App is listening at www.localhost:${port}`)
-})
+  console.log(`App is listening at www.localhost:${port}`);
+});
+
