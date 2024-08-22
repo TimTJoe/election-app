@@ -42,7 +42,7 @@ router.post("/registration", upload.single("photo"), (req, res) => {
           [null, username, hashed, this.lastID],
           function cb(err) {
             if (err) console.error(err);
-            res.redirect("/candidates");
+            res.redirect("/login");
           }
         );
       }
@@ -58,33 +58,12 @@ router.post("/registration", upload.single("photo"), (req, res) => {
           [null, username, password, this.lastID],
           function cb(err) {
             if (err) console.error(err);
-            res.redirect("/voters");
+            res.redirect("/login");
           }
         );
       }
     );
   }
-
-  //add record to db
-  // db.run(
-  //   "INSERT INTO users VALUE(?,?,?,?,?,?,?)",
-  //   [first_name, middle_name, last_name, DOB, filename, role],
-  //   function (err) {
-  //     if (!err) {
-  //     //insert auth record
-  //       db.run(
-  //         "INSERT INTO auth VALUES(?,?,?,?)",
-  //         [null, username, hashed, this.lastID],
-  //         function (err) {
-  //           if (err) console.error(err);
-  //           //redirect to login
-  //           res.redirect("/login");
-  //         }
-  //       );
-  //     }
-  //   }
-  // );
-  console.log(req.body);
 });
 
 module.exports = router;
