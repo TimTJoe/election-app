@@ -1,7 +1,8 @@
 <%- include("./partial/head") %>
 
     <body>
-        <form action="/voters/registration" method="post" style="width: 150px; margin: 0 auto;">
+        <form action="/voters/registration" method="post" style="width: 150px; margin: 0 auto;"
+            enctype="multipart/form-data">
             <input type="text" name="first_name" id="first_name">
             <input type="text" name="middle_name" id="middle_name">
             <input type="text" name="last_name" id="last_name">
