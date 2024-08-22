@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include("./partial/head") %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%= title %>
-    </title>
-</head>
+    <body>
+        <form action="/voters/registration" method="post" style="width: 150px; margin: 0 auto;">
+            <input type="text" name="first_name" id="first_name">
+            <input type="text" name="middle_name" id="middle_name">
+            <input type="text" name="last_name" id="last_name">
+            <input type="date" name="DOB" id="DOB">
+            <input type="text" name="username" id="username">
+            <input type="password" name="password" id="password">
+            <input type="file" name="photo" id="photo">
+            <select name="role" id="role">
+                <% data.roles.map((role,index)=> { %>
+                    <option value="<%= role.id %>">
+                        <%= role.role %>
+                    </option>
+                    <% }) %>
+            </select>
+            <button type="submit">Register Now</button>
+        </form>
+    </body>
 
-<body>
-    voter registration
-</body>
-
-</html>
+    </html>
