@@ -17,6 +17,13 @@
                     </option>
                     <% }) %>
             </select>
+            <select name="position" id="position">
+                <% data.positions.map((position,index)=> { %>
+                    <option value="<%= position.id %>">
+                        <%= position.position %>
+                    </option>
+                    <% }) %>
+            </select>
             <button type="submit">Register Now</button>
         </form>
     </body>
