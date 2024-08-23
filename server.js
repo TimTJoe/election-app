@@ -42,9 +42,11 @@ db.serialize(function create() {
 
 // require route handlers
 var voterRouter = require("./routes/voter");
+var partyRouter = require("./routes/party");
 
 // route handler middlewares
 app.use("/voters", voterRouter);
+app.use("/parties", partyRouter);
 
 // start server
 app.listen(port, function lister() {

@@ -1,0 +1,15 @@
+<%- include("./partial/head") %>
+
+    <body>
+        <form action="/parties/registration" method="post" style="width: 150px; margin: 0 auto;"
+            enctype="multipart/form-data">
+            <label for="party">Party Name:</label>
+            <input type="text" name="party" id="party">
+            <label for="logo">Logo:</label>
+            <input type="file" name="logo" id="logo">
+            <button type="submit">Register Now</button>
+        </form>
+    </body>
+    <script type="module" src="/js/parties.js"></script>
+
+    </html>
