@@ -1,32 +1,68 @@
 <%- include("./partial/head") %>
 
     <body>
-        <form action="/voters/registration" method="post" style="width: 150px; margin: 0 auto;"
-            enctype="multipart/form-data">
-            <input type="text" name="first_name" id="first_name">
-            <input type="text" name="middle_name" id="middle_name">
-            <input type="text" name="last_name" id="last_name">
-            <input type="date" name="DOB" id="DOB">
-            <input type="text" name="username" id="username">
-            <input type="password" name="password" id="password">
-            <input type="file" name="photo" id="photo">
-            <select name="role" id="role">
-                <% data.roles.map((role,index)=> { %>
-                    <option value="<%= role.id %>">
-                        <%= role.role %>
-                    </option>
-                    <% }) %>
-            </select>
-            <select name="position" id="position">
-                <% data.positions.map((position,index)=> { %>
-                    <option value="<%= position.id %>">
-                        <%= position.position %>
-                    </option>
-                    <% }) %>
-            </select>
+        <form action="/voters/registration" method="post" enctype="multipart/form-data">
+
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="first_name">First Name</label>
+                <input type="text" name="first_name" id="first_name">
+                <label for="middle_name">Middle Name</label>
+                <input type="text" name="middle_name" id="middle_name">
+                <label for="last_name">Last Name</label>
+                <input type="text" name="last_name" id="last_name">
+                <label for="DOB">Date of Birth</label>
+                <input type="date" name="DOB" id="DOB">
+                <label for="photo">Profile Photo</label>
+                <input type="file" name="photo" id="photo">
+            </fieldset>
+
+            <fieldset>
+                <legend>Role</legend>
+
+                <label for="role">Role</label>
+                <select name="role" id="role">
+                    <% data.roles.map((role,index)=> { %>
+                        <option value="<%= role.id %>">
+                            <%= role.role %>
+                        </option>
+                        <% }) %>
+                </select>
+
+                <span id="parties">
+                    <label for="party">Party</label>
+                    <select name="party" id="party">
+                        <% data.parties.map((party,index)=> { %>
+                            <option value="<%= party.id %>">
+                                <%= party.party %>
+                            </option>
+                            <% }) %>
+                    </select>
+                </span>
+
+                <span id="positions">
+                    <label for="position">Position</label>
+                    <select name="position" id="position">
+                        <% data.positions.map((position,index)=> { %>
+                            <option value="<%= position.id %>">
+                                <%= position.position %>
+                            </option>
+                            <% }) %>
+                    </select>
+                </span>
+            </fieldset>
+
+            <fieldset>
+                <legend>Authentication</legend>
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+            </fieldset>
 
             <button type="submit">Register Now</button>
         </form>
     </body>
     <script type="module" src="/js/voters.js"></script>
+
     </html>

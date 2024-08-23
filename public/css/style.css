@@ -1,0 +1,14 @@
+label {
+    display: block;
+    margin-top: 6px;
+}
+
+input, select {
+    display: block;
+    width: 100%;
+}
+
+form {
+    margin: auto;
+    max-width: 378px;
+}
