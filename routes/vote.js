@@ -4,14 +4,15 @@ var db = require("../db");
 router.get("/", (req, res, next) => {
   let data = {};
   //TODO: use join clause
+  // SELECT * FROM candidates INNER JOIN parties ON parties.id=candidates.party_id
+  // SELECT * FROM candidates JOIN parties ON parties.id=candidates.party_id
   db.all(
     "SELECT * FROM candidates INNER JOIN parties ON parties.id=candidates.party_id",
-    [1],
     function (err, rows) {
       console.log(rows);
       if (err) console.error(err);
       data.candidates = rows;
-      // res.render("vote.ejs", { title: "Cast Your Vote", data });
+      res.render("vote.ejs", { title: "Cast Your Vote", data });
     }
   );
 });
