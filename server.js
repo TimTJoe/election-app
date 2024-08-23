@@ -44,11 +44,13 @@ db.serialize(function create() {
 var voterRouter = require("./routes/voter");
 var partyRouter = require("./routes/party");
 var dashboardRouter = require("./routes/dashboard");
+var candidateRouter = require("./routes/candidate");
 
 // route handler middlewares
 app.use("/", dashboardRouter);
 app.use("/voters", voterRouter);
 app.use("/parties", partyRouter);
+app.use("/candidates", candidateRouter);
 
 // start server
 app.listen(port, function lister() {

@@ -1,9 +1,10 @@
 label {
-    display: block;
+    display: flex;
     margin-top: 6px;
 }
 
-input, select {
+input,
+select {
     display: block;
     width: 100%;
 }
@@ -11,4 +12,9 @@ input, select {
 form {
     margin: auto;
     max-width: 378px;
+}
+
+input[type="radio"] {
+    width: unset;
+    margin-right: 12px;
 }
