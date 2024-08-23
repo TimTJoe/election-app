@@ -1,0 +1,20 @@
+<%- include("./partial/head") %>
+
+    <body>
+        <table id="voters">
+            <h1>voters</h1>
+            <% data.voters.map((voter,index)=> { %>
+                <tr>
+                    <td>
+                        <%= voter.first_name %>
+                            <%= voter.middle_name %>
+                                <%= voter.last_name %>
+                    </td>
+                    <td><a href="/candidates">select to vote</a></td>
+                </tr>
+                <%})%>
+        </table>
+    </body>
+    <script type="module" src="/js/parties.js"></script>
+
+    </html>

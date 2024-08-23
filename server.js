@@ -43,8 +43,10 @@ db.serialize(function create() {
 // require route handlers
 var voterRouter = require("./routes/voter");
 var partyRouter = require("./routes/party");
+var dashboardRouter = require("./routes/dashboard");
 
 // route handler middlewares
+app.use("/", dashboardRouter);
 app.use("/voters", voterRouter);
 app.use("/parties", partyRouter);
 
@@ -52,4 +54,3 @@ app.use("/parties", partyRouter);
 app.listen(port, function lister() {
   console.log(`App is listening at www.localhost:${port}`);
 });
-
