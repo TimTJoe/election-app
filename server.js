@@ -2,10 +2,19 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var path = require("node:path");
+var session = require("express-session");
 var db = require("./db");
 var port = process.env.PORT || 4500;
 
 // app-wide middlewares
+
+app.use( session({
+    secret: "RSTUVWXYZabcdefghijklmyz0123456789!@#$%^&*()_+[]{}|;:,.<>?",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false },
+  })
+);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
@@ -45,12 +54,13 @@ var voterRouter = require("./routes/voter");
 var partyRouter = require("./routes/party");
 var dashboardRouter = require("./routes/dashboard");
 var voteRouter = require("./routes/vote");
+var loginRouter = require("./routes/login");
 
 // route handler middlewares
 app.use("/", dashboardRouter);
 app.use("/voters", voterRouter);
 app.use("/parties", partyRouter);
-app.use("/votes", voteRouter);
+app.use("/login", loginRouter);
 
 // start server
 app.listen(port, function lister() {
