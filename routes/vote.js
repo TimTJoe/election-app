@@ -5,12 +5,13 @@ router.get("/", (req, res, next) => {
   let data = {};
   //TODO: use join clause
   db.all(
-    "SELECT * FROM candidates WHERE position_id=?",
+    "SELECT * FROM candidates INNER JOIN parties ON parties.id=candidates.party_id",
     [1],
     function (err, rows) {
+      console.log(rows);
       if (err) console.error(err);
       data.candidates = rows;
-      res.render("vote.ejs", { title: "Cast Your Vote", data });
+      // res.render("vote.ejs", { title: "Cast Your Vote", data });
     }
   );
 });
@@ -26,6 +27,13 @@ router.post("/", (req, res, next) => {
       res.redirect("/");
     }
   );
+  db.run("UPDATE users SET voted=? WHERE id=?", [true, voter], function (err) {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log(`Row(s) updated: ${this.changes}`);
+    }
+  });
 });
 
 module.exports = router;

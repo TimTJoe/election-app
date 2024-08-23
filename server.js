@@ -8,7 +8,8 @@ var port = process.env.PORT || 4500;
 
 // app-wide middlewares
 
-app.use( session({
+app.use(
+  session({
     secret: "RSTUVWXYZabcdefghijklmyz0123456789!@#$%^&*()_+[]{}|;:,.<>?",
     resave: false,
     saveUninitialized: true,
@@ -61,8 +62,9 @@ app.use("/", dashboardRouter);
 app.use("/voters", voterRouter);
 app.use("/parties", partyRouter);
 app.use("/login", loginRouter);
+app.use("/votes", voteRouter);
 
 // start server
 app.listen(port, function lister() {
-  console.log(`App is listening at www.localhost:${port}`);
+  console.log(`App is listening at http//localhost:${port}`);
 });
