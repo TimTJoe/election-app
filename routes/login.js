@@ -22,7 +22,7 @@ router.post("/", (req, res, next) => {
             function (err, rows) {
               if (err) console.error(err);
               req.session.user = rows[0];
-              res.redirect("/");
+              res.redirect("/dashboard");
             }
           );
         } else {

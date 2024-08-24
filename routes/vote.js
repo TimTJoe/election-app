@@ -34,7 +34,7 @@ router.post("/", (req, res, next) => {
             if (err) {
               console.error(err);
             } else {
-              res.redirect("/");
+              res.redirect("/dashboard");
             }
           }
         );

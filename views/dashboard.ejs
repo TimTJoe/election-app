@@ -1,6 +1,10 @@
 <%- include("./partial/head") %>
 
     <body>
+        <div>
+            <h4>total voters: <%= data.total.voters %></h4>
+            <h4>total votes: <%= data.total.votes %></h4>
+        </div>
         <table id="voters">
             <h1>voters</h1>
             <% data.voters.map((voter,index)=> { %>

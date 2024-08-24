@@ -11,8 +11,8 @@ var port = process.env.PORT || 4500;
 app.use(
   session({
     secret: "RSTUVWXYZabcdefghijklmyz0123456789!@#$%^&*()_+[]{}|;:,.<>?",
-    resave: false,
-    saveUninitialized: true,
+    resave: true,
+    saveUninitialized: false,
     cookie: { secure: false },
   })
 );
@@ -56,13 +56,16 @@ var partyRouter = require("./routes/party");
 var dashboardRouter = require("./routes/dashboard");
 var voteRouter = require("./routes/vote");
 var loginRouter = require("./routes/login");
+var logoutRouter = require("./routes/logout");
+var restrict = require("./middlewares/restrict");
 
 // route handler middlewares
-app.use("/", dashboardRouter);
+app.use("/dashboard", restrict, dashboardRouter);
+app.use("/parties", restrict, partyRouter);
+app.use("/logout", restrict, logoutRouter);
+app.use("/votes", restrict, voteRouter);
 app.use("/voters", voterRouter);
-app.use("/parties", partyRouter);
 app.use("/login", loginRouter);
-app.use("/votes", voteRouter);
 
 // start server
 app.listen(port, function lister() {
