@@ -11,14 +11,23 @@ router.post("/", (req, res, next) => {
     "SELECT * FROM auth WHERE username=?",
     [username],
     function (err, rows) {
-      if (err) console.log(err);
+      if (err) console.error(err);
       if (rows.length === 0) {
-        console.log("User doesn't exist");
+        console.error("User doesn't exist");
       } else {
-        //TODO: set req.session.isAuth to true and add user data to session
-        bcrypt.compareSync(password, rows[0].password)
-          ? res.redirect("/")
-          : console.log("Incorrect password");
+        if (bcrypt.compareSync(password, rows[0].password)) {
+          db.all(
+            "SELECT * FROM users INNER JOIN roles ON roles.id=users.role_id WHERE users.id=?",
+            [rows[0].user_id],
+            function (err, rows) {
+              if (err) console.error(err);
+              req.session.user = rows[0];
+              res.redirect("/");
+            }
+          );
+        } else {
+          console.error("Incorrect password");
+        }
       }
     }
   );
