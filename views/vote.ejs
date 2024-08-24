@@ -1,30 +1,35 @@
 <%- include("./partial/head") %>
-
     <body>
         <form action="votes" method="post">
             <h2>Cast Your Vote</h2>
+            
             <fieldset>
                 <legend>President</legend>
-                <% data.candidates.map((president, index)=>{ %>
-                    <label for="<%= president.id %>">
-                        <input type="radio" name="president" id="<%= president.id %>" value="<%= president.id %>">
-                        <span>
-                            <%= president.first_name %>
-                                <%= president.middle_name %>
-                                    <%= president.last_name %>
-                        </span>
-                    </label>
-                    <% }) %>
-                        <br><br>
-                        <button type="submit">Cast Vote</button>
-            </fieldset>
-            <!-- <fieldset>
-                <legend>Vice President</legend>
-            </fieldset> -->
-
+                <% data.candidates.map((candidate, index)=>{ %>
+                    <% if(candidate.position === "President") { %>
+                        <label for="<%= candidate.id %>">
+                            <input type="radio" name="candidate" id="<%= candidate.id %>" value="<%= candidate.id %>">
+                            <span>
+                                <img src="/images/<%= candidate.photo %>" 
+                                style="width: 14px; height: 14px;" alt="">
+                                <%= candidate.first_name %>
+                                <%= candidate.middle_name %>
+                                <%= candidate.last_name %>
+                                &middot;
+                                <%= candidate.position %>
+                                &middot;
+                                <img src="/images/<%= candidate.logo %>" style="width: 14px; height: 14px;" alt="">
+                                <%= candidate.party %>
+                            </span>
+                        </label>
+                        <% } else if(candidate.position === "Vice President") { %>
+                            vice President
+                            <% } %>
+                            <% }) %>
+                        </fieldset>
+                    <br><br>
+                    <button type="submit">Cast Vote</button>
             <input type="hidden" name="voter" id="voter" value="4">
         </form>
     </body>
-    <!-- <script type="module" src="/js/dashboard.js"></script> -->
-
-    </html>
+</html>
