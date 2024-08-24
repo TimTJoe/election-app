@@ -1,23 +1,40 @@
 <%- include("./partial/head") %>
 
     <body>
-        <div>
-            <h4>total voters: <%= data.total.voters %></h4>
-            <h4>total votes: <%= data.total.votes %></h4>
+        <div class="container">
+            <p>Total Number of Voters: <%= data.total.voters %></p>
+            <h3>Total Number of Votes: <%= data.total.votes %></>
         </div>
-        <table id="voters">
-            <h1>voters</h1>
-            <% data.voters.map((voter,index)=> { %>
-                <tr>
-                    <td>
-                        <%= voter.first_name %>
-                        <%= voter.middle_name %>
-                        <%= voter.last_name %>
-                    </td>
-                    <td><a href="/votes">Select to Vote</a></td>
-                </tr>
-            <%})%>
-        </table>
+        <fieldset class="container">
+            <legend>Total Votes Per candidate</legend>
+            <% data.votes.map((votes, index)=>{ %>
+                <section>
+                    <img src="/images/<%= votes.photo %>" style="width: 14px; height: 14px;" alt="">
+                    <%= votes.first_name %>
+                        <%= votes.middle_name %>
+                            <%= votes.last_name %>
+                                &middot;
+                                <%= votes.votes %>
+                </section>
+                <% }) %>
+        </fieldset>
+
+        <section class="container">
+            <table id="voters">
+                <h1>Voters</h1>
+                <% data.voters.map((voter,index)=> { %>
+                    <tr>
+                        <td>
+                            <%= voter.first_name %>
+                            <%= voter.middle_name %>
+                            <%= voter.last_name %>
+                        </td>
+                        <td><a href="/votes">Select to Vote</a></td>
+                    </tr>
+                <%})%>
+            </table>
+        </section>
+     
     </body>
-    <!-- <script type="module" src="/js/dashboard.js"></script> -->
+
     </html>

@@ -15,6 +15,13 @@ router.get("/", (req, res, next) => {
   db.all("SELECT COUNT(*) AS total FROM votes", function query(error, total) {
     error ? console.error(error) : (data.total.votes = total[0].total);
   });
+    db.all(
+      //TODO: add all the
+      "SELECT *,candidates.id, (SELECT SUM(votes.vote) FROM votes WHERE candidates.id=votes.candidate_id) votes FROM candidates LEFT OUTER JOIN parties ON parties.id=candidates.party_id LEFT OUTER JOIN positions ON positions.id = candidates.position_id",
+      function (err, rows) {
+        err ? console.error(err) : (data.votes = rows);
+      }
+    );
   db.all("SELECT * FROM users WHERE role_id=?", [3], function (error, rows) {
     error ? console.error(error) : (data.voters = rows);
     res.render("dashboard.ejs", { title: "Dashboard", data });
