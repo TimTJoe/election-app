@@ -11,7 +11,7 @@ select {
     margin-bottom: 6px;
 }
 
-form {
+form, .container{
     margin: auto;
     max-width: 378px;
 }
@@ -20,3 +20,4 @@ input[type="radio"] {
     width: unset;
     margin-right: 12px;
 }
+

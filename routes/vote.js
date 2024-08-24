@@ -4,6 +4,15 @@ var db = require("../db");
 router.get("/", (req, res, next) => {
   let data = {};
   data.voter = req.session.user;
+
+  db.all(
+    //TODO: add all the
+    "SELECT *,candidates.id, (SELECT SUM(votes.vote) FROM votes WHERE candidates.id=votes.candidate_id) votes FROM candidates LEFT OUTER JOIN parties ON parties.id=candidates.party_id LEFT OUTER JOIN positions ON positions.id = candidates.position_id",
+    function (err, rows) {
+      console.log(rows);
+      err ? console.error(err) : (data.votes = rows);
+    }
+  );
   db.all(
     "SELECT *, candidates.id FROM candidates LEFT OUTER JOIN parties ON parties.id=candidates.party_id LEFT OUTER JOIN positions ON positions.id = candidates.position_id",
     function (err, rows) {
