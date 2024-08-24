@@ -17,7 +17,7 @@ router.post("/", (req, res, next) => {
       } else {
         if (bcrypt.compareSync(password, rows[0].password)) {
           db.all(
-            "SELECT * FROM users INNER JOIN roles ON roles.id=users.role_id WHERE users.id=?",
+            "SELECT *, users.id FROM users LEFT OUTER JOIN roles ON roles.id=users.role_id WHERE users.id=?",
             [rows[0].user_id],
             function (err, rows) {
               if (err) console.error(err);
