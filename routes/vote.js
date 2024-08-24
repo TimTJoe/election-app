@@ -4,7 +4,6 @@ var db = require("../db");
 router.get("/", (req, res, next) => {
   let data = {};
   data.voter = req.session.user;
-  console.log(data.voter)
   db.all(
     "SELECT *, candidates.id FROM candidates LEFT OUTER JOIN parties ON parties.id=candidates.party_id LEFT OUTER JOIN positions ON positions.id = candidates.position_id",
     function (err, rows) {
