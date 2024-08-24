@@ -1,0 +1,122 @@
+/* Josh Comeau's Modern CSS Reset */
+
+/* Remove default margins and paddings */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a baseline font size and line height */
+html {
+  font-size: 100%; /* 1rem = 16px */
+  line-height: 1.5;
+}
+
+/* Remove default list styling */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove default table styles */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove default button styles */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Remove default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Set a baseline for images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Set a baseline for form elements */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Remove default border for fieldset and legend */
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+legend {
+  display: none;
+}
+
+/* Remove default border styles for elements */
+hr {
+  border: none;
+  border-top: 1px solid currentColor;
+  color: inherit;
+}
+
+/* Ensure consistency for block elements */
+body {
+  font-family: system-ui, sans-serif;
+  font-weight: normal;
+  color: #000;
+  background: #fff;
+}
+
+/* Ensure a baseline for sections and articles */
+article,
+section {
+  display: block;
+}
+
+/* Ensure a baseline for headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Ensure consistency in text elements */
+p {
+  margin: 0;
+}
+
+/* Ensure consistent styling for inline elements */
+strong,
+b {
+  font-weight: bold;
+}
+
+em,
+i {
+  font-style: italic;
+}

@@ -1,0 +1,91 @@
+:root {
+    /* Background colors */
+    --frost: rgba(255, 255, 255, 0.12); /* #ffffff1f */
+    --mist: rgba(255, 255, 255, 0.08); /* #ffffff14 */
+    --snow: #ffffff; /* #ffffff */
+    --haze: rgba(255, 255, 255, 0.34); /* #ffffff57 */
+    --veil: rgba(255, 255, 255, 0.04); /* #ffffff0a */
+    --rose: #ff3b5c; /* #ff3b5c */
+    --slate: rgba(136, 136, 136, 0.50); /* #88888880 */
+    --crimson: #fe2c55; /* #fe2c55 */
+  
+    /* Text colors */
+    --pearl: rgba(255, 255, 255, 0.90); /* #ffffffe6 */
+    --frosty: rgba(255, 255, 255, 0.75); /* #ffffffbf */
+    --misty: rgba(255, 255, 255, 0.50); /* #ffffff80 */
+    --cloud: #f6f6f6; /* #f6f6f6 */
+    --midnight: #161823; /* #161823 */
+    --coal: #000000; /* #000000 */
+  
+    /* Fill colors */
+    --ice: #25f4ee; /* #25f4ee */
+    --sky: #cadbf5; /* #cadbf5 */
+    --sun: #fbbc04; /* #fbbc04 */
+    --aqua: #20d5ec; /* #20d5ec */
+    --azure: #1da1f2; /* #1da1f2 */
+    --green: #34a853; /* #34a853 */
+    --blue: #4285f4; /* #4285f4 */
+    --steel: #6184ac; /* #6184ac */
+    --red: #ea4335; /* #ea4335 */
+    --royal: #0075fa; /* #0075fa */
+    --dark: #333333; /* #333333 */
+  
+    /* Border colors */
+    --frost-border: var(--frost); /* #ffffff1f */
+    --light-gray: #e3e3e5; /* #e3e3e5 */
+    --light-red: rgba(255, 119, 146, 0.50); /* #ff779280 */
+    --rose-border: var(--rose); /* #ff3b5c */
+  
+    /* Responsive font sizes */
+    --tiny: 0.75rem; /* Small text, typically for fine print */
+    --small: 0.875rem; /* Slightly larger than tiny, good for captions */
+    --large: 1.125rem; /* Larger text, suitable for headers or emphasis */
+    --huge: 1.5rem; /* Very large text, ideal for main titles or standout elements */
+  
+    /* Spacing sizes */
+    --spacing-sm: 0.5rem; /* Small spacing for tight layouts */
+    --spacing-md: 1rem; /* Medium spacing for regular layouts */
+    --spacing-lg: 1.5rem; /* Large spacing for more generous layouts */
+    --spacing-xl: 2rem; /* Extra-large spacing for spacious layouts */
+  
+    /* Shadows for dark mode */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2); /* Small shadow */
+    --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.3); /* Medium shadow */
+    --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.4); /* Large shadow */
+    --shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.5); /* Extra-large shadow */
+  }
+  
+  /* Font size classes */
+  .tiny {
+    font-size: var(--tiny);
+  }
+  
+  .small {
+    font-size: var(--small);
+  }
+  
+  .large {
+    font-size: var(--large);
+  }
+  
+  .huge {
+    font-size: var(--huge);
+  }
+  
+  /* Shadow classes */
+  .small-elevate {
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .medium-elevate {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .large-elevate {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .huge-elevate {
+    box-shadow: var(--shadow-xl);
+  }
+  

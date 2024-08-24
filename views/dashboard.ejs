@@ -1,10 +1,14 @@
 <%- include("./partial/head") %>
 
     <body>
+
         <div class="container">
-            <p>Total Number of Voters: <%= data.total.voters %></p>
-            <h3>Total Number of Votes: <%= data.total.votes %></>
+            <p>Total Number of Voters: <%= data.total.voters %>
+            </p>
+            <p>Total Number of Votes: <%= data.total.votes %>
+            </p>
         </div>
+
         <fieldset class="container">
             <legend>Total Votes Per candidate</legend>
             <% data.votes.map((votes, index)=>{ %>
@@ -12,9 +16,9 @@
                     <img src="/images/<%= votes.photo %>" style="width: 14px; height: 14px;" alt="">
                     <%= votes.first_name %>
                         <%= votes.middle_name %>
-                            <%= votes.last_name %>
-                                &middot;
-                                <%= votes.votes %>
+                        <%= votes.last_name %>
+                        &middot;
+                        <%= votes.votes %>
                 </section>
                 <% }) %>
         </fieldset>
@@ -26,15 +30,15 @@
                     <tr>
                         <td>
                             <%= voter.first_name %>
-                            <%= voter.middle_name %>
-                            <%= voter.last_name %>
+                                <%= voter.middle_name %>
+                                    <%= voter.last_name %>
                         </td>
                         <td><a href="/votes">Select to Vote</a></td>
                     </tr>
-                <%})%>
+                    <%})%>
             </table>
         </section>
-     
+
     </body>
 
-    </html>
+</html>
