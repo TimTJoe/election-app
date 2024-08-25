@@ -4,7 +4,7 @@
     <main class="max row align-top no-gap">
         <%- include("./partial/sidebar") %>
         <div class="max constrant">
-            <div class="grid even padding">
+            <div class="grid fit padding">
                 <section class="border padding ">
                     <h1 class="large no-line margin-bottom">Registered Voters</h1>
                     <hr class="divider half">
@@ -40,7 +40,7 @@
                                     <%= candidate.middle_name %>
                                     <%= candidate.last_name %>
                                 </strong>
-                                <small>Total Votes:  <%= candidate.votes %></small>
+                                <small>Votes Obtained:  <%= candidate.votes %></small>
                             </span>
                             <span class="column max">
                                 <strong><%= candidate.position %></strong>

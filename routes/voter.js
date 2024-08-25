@@ -2,9 +2,23 @@ var router = require("express").Router();
 var db = require("../db");
 var bcrypt = require("bcrypt");
 const upload = require("../public/js/upload");
+let data = {};
+
+router.get("/", (req,res,next) => {
+  data.user = req.session.user
+  db.all(
+    //TODO: add all the
+    "SELECT *,users.id FROM users LEFT OUTER JOIN roles ON roles.id=users.id LEFT OUTER JOIN auth ON auth.user_id = users.id",
+    function (err, rows) {
+      err ? console.error(err) : (data.voters = rows);
+      console.log(data)
+    res.render("voters.ejs", { title: "Voters", data });
+
+    }
+  );
+})
 
 router.get("/registration", (req, res, next) => {
-  let data = {};
   let errors;
   db.all("SELECT * FROM roles", function query(err, roles) {
     data.roles = roles;
@@ -63,12 +77,4 @@ function insertAuth(db,res, username, password, user_id) {
   );
 }
 
-// db.run(
-//   "INSERT INTO auth VALUES (?,?,?,?)",
-//   [null, username, hashed, this.lastID],
-//   function cb(err) {
-//     if (err) console.error(err);
-//     res.redirect("/login");
-//   }
-// );
 module.exports = router;

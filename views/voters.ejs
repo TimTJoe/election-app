@@ -1,0 +1,35 @@
+<%- include("./partial/head") %>
+<body class="column">
+    <%- include("./partial/navigation") %>
+    <main class="max row align-top no-gap">
+        <%- include("./partial/sidebar") %>
+        <div class="constrant max">
+                <header class="border-bottom padding row between">
+                    <h1 class="large">Voters</h1>
+                </header>
+                <div class="grid even padding">
+                    <% data.voters.map((voter, index)=>{ %>
+                        <section class="border small-round card column">
+                            <img src="/images/<%= voter.photo %>" alt="">
+                            <span class="padding column align-center">
+                                <h4 class="large">
+                                    <%= voter.first_name %>
+                                    <%= voter.middle_name %>
+                                    <%= voter.last_name %>
+                                </h4>
+                                <small class="muted row around"> <%= voter.DOB %>  &middot; <%= voter.voted === '1' ? 'Voted' : 'Not Vote' %> </small>
+                                <a href="/voters/@<%= voter.username %>" class="button mini margin-top">View Profile</a>
+                            </span>
+                        </section>
+                    <% }) %>
+                   
+                </div>
+        </div>
+    </main>
+    <%- include("./partial/footer") %>
+    <!-- <section class="snackbar left">
+        You already voted
+    </section> -->
+    <script type="module" src="/js/caculate.js"></script>
+</body>
+</html>

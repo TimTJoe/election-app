@@ -6,7 +6,7 @@ router.get("/", (req, res, next) => {
   data.user = req.session.user
 
   db.all(
-    "SELECT *, candidates.id FROM candidates LEFT OUTER JOIN parties ON parties.id=candidates.party_id LEFT OUTER JOIN positions ON positions.id = candidates.position_id",
+    "SELECT *,candidates.id, (SELECT SUM(votes.vote) FROM votes WHERE candidates.id=votes.candidate_id) votes FROM candidates LEFT OUTER JOIN parties ON parties.id=candidates.party_id LEFT OUTER JOIN positions ON positions.id = candidates.position_id",
     function (err, rows) {
       //TODO: add each candidate to it position property on data ie: data.president, data.vp
       if (err) console.error(err);

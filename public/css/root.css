@@ -268,9 +268,9 @@
   justify-content: center;
 }
 
-.align-center {
+/* .align-center {
   align-items: center;
-}
+} */
 
 .align-top {
   align-items: flex-start;
@@ -321,8 +321,13 @@
   grid-column: span var(--grid-lg);
 }
 
-.even {
+.fit {
   grid-template-columns: repeat(auto-fit, minmax(var(--spacing-md), 1fr));
+}
+
+.even {
+  grid-template-columns: repeat(4, minmax(var(--spacing-md), 1fr));
+
 }
 
 .sm-child {
@@ -887,4 +892,8 @@ button.large {
   width: 60px;
   height: 60px;
   border-radius: var(--round-md);
+}
+
+.card {
+  overflow: hidden;
 }
