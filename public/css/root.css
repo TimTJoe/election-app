@@ -512,7 +512,7 @@ button.large {
   padding: var(--spacing-md);
   background-color: var(--midnight);
   color: var(--snow);
-  border-radius: var(--round-sm);
+  border-radius: var(--round-md);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
@@ -863,6 +863,7 @@ button.large {
 }
 
 .menu .item {
+  text-transform: capitalize;
   padding: var(--spacing-sm);
   font-size: var(--large);
   color: var(--charcoal);

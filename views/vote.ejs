@@ -32,8 +32,8 @@
         </div>
     </main>
     <%- include("./partial/footer") %>
-    <section class="snackbar left show">
-        this is snackbar this is being displayed
+    <section class="snackbar <%= data?.voted === true ? 'show' : '' %> left">
+        You already voted
     </section>
 </body>
 </html>

@@ -1,23 +1,17 @@
 var router = require("express").Router();
 var db = require("../db");
+let data = {};
 
 router.get("/", (req, res, next) => {
-  let data = {};
   data.user = req.session.user
 
-  db.all(
-    //TODO: add all the
-    "SELECT *,candidates.id, (SELECT SUM(votes.vote) FROM votes WHERE candidates.id=votes.candidate_id) votes FROM candidates LEFT OUTER JOIN parties ON parties.id=candidates.party_id LEFT OUTER JOIN positions ON positions.id = candidates.position_id",
-    function (err, rows) {
-      err ? console.error(err) : (data.votes = rows);
-    }
-  );
   db.all(
     "SELECT *, candidates.id FROM candidates LEFT OUTER JOIN parties ON parties.id=candidates.party_id LEFT OUTER JOIN positions ON positions.id = candidates.position_id",
     function (err, rows) {
       //TODO: add each candidate to it position property on data ie: data.president, data.vp
       if (err) console.error(err);
       data.candidates = rows;
+      req.session.candidates = rows
       res.render("vote.ejs", { title: "Cast Your Vote", data });
     }
   );
@@ -25,7 +19,8 @@ router.get("/", (req, res, next) => {
 
 router.post("/", (req, res, next) => {
   let { candidate, voter } = req.body;
-  console.log(req.body);
+  data.candidates = req.session.candidates
+  data.user = req.session.user
   db.all(
     "SELECT user_id FROM votes WHERE user_id=?",
     [voter],
@@ -46,6 +41,8 @@ router.post("/", (req, res, next) => {
           }
         );
       } else {
+        data.voted = true
+      res.render("vote.ejs", { title: "Cast Your Vote", data });
         console.error("You already voted");
       }
     }

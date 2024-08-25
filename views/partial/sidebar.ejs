@@ -1,8 +1,7 @@
 <section class="pane border-right full menu padding">
-    <a href="/dashboard" class="item">Dashboard</a>
-    <a href="/voters" class="item">Voters</a>
-    <a href="/elections" class="item">Elections</a>
-    <a href="/candidates" class="item">Candidates</a>
-    <a href="/users" class="item">Users</a>
+    <% ["dashboard","elections","voters","parties","candidates","votes"].forEach(item => { %>
+        <a href="/<%= item %>" class="item"><%= item %></a>
+    <% }); %>
+
     <a href="/settings" class="item move-down">Settings</a>
 </section>
