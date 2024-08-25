@@ -100,6 +100,10 @@
   color: var(--red);
 }
 
+.muted {
+  color: var(--shadow);
+}
+
 /* Shadow classes */
 .small-elevate {
   box-shadow: var(--shadow-sm);
@@ -225,6 +229,11 @@
   flex-direction: row;
   align-items: center;
   gap: var(--spacing-sm);
+}
+
+.no-gap {
+  gap: unset !important;
+  row-gap: unset !important;
 }
 
 .flex > * {
@@ -542,6 +551,13 @@ button:focus, .button:focus {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+}
+
+.constrant {
+  min-height: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 /* Box classes */

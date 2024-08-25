@@ -1,9 +1,30 @@
 <%- include("./partial/head") %>
 <body class="column">
     <%- include("./partial/navigation") %>
-    <main class="max row align-top">
+    <main class="max row align-top no-gap">
         <%- include("./partial/sidebar") %>
-        <div class="max">max</div>
+        <div class="max constrant">
+            <div class="grid even padding">
+                <section class="border padding ">
+                    <h1 class="large no-line margin-bottom">Registered Voters</h1>
+                    <hr class="divider half">
+                    <h1 class="huge"><%= data.total.voters %></h1>
+                    <small class="small muted">Total number of registered voters</small>
+                </section>
+                <section class="border padding">
+                    <h1 class="large no-line margin-bottom">Total Notes</h1>
+                    <hr class="divider half">
+                    <h1 class="huge"><%= data.total.votes %></h1>
+                    <small class="small muted">Total number of votes casted</small>
+                </section>
+                <section class="border padding ">
+                    <h1 class="large no-line margin-bottom">Total Candidates</h1>
+                    <hr class="divider half">
+                    <h1 class="huge">123467890</h1>
+                    <small class="small muted">Total number of registered candidates</small>
+                </section>
+            </div>
+        </div>
     </main>
     <%- include("./partial/footer") %>
 </body>
