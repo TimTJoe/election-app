@@ -3,6 +3,7 @@ function restrict(req, res, next) {
     next();
   } else {
     req.session.error = "Access denied!";
+    console.error(req.session.error)
     res.redirect("/login");
   }
 }

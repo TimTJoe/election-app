@@ -13,6 +13,7 @@
 html {
   font-size: 100%; /* 1rem = 16px */
   line-height: 1.5;
+  height: 100%;
 }
 
 /* Remove default list styling */
@@ -84,7 +85,8 @@ body {
   font-family: system-ui, sans-serif;
   font-weight: normal;
   color: #000;
-  background: #fff;
+  background: var(--snow);
+  height: inherit;
 }
 
 /* Ensure a baseline for sections and articles */

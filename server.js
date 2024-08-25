@@ -5,15 +5,21 @@ var path = require("node:path");
 var session = require("express-session");
 var db = require("./db");
 var port = process.env.PORT || 4500;
+var SQLiteStore = require("connect-sqlite3")(session)
 
 // app-wide middlewares
 
 app.use(
   session({
+    store: new SQLiteStore,
     secret: "RSTUVWXYZabcdefghijklmyz0123456789!@#$%^&*()_+[]{}|;:,.<>?",
     resave: true,
     saveUninitialized: false,
-    cookie: { secure: false },
+    cookie: { 
+      secure: false, 
+      // maxAge: 7*24*60*60*1000, //1 week
+      maxAge: 60*60*1000, //1 min
+    },
   })
 );
 app.use(bodyParser.json());
