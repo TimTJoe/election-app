@@ -12,7 +12,7 @@ router.get("/", (req, res, next) => {
       if (err) console.error(err);
       data.candidates = rows;
       req.session.candidates = rows
-      res.render("vote.ejs", { title: "Cast Your Vote", data });
+      res.render("vote.ejs", { path: "votes", title: "Cast Your Vote", data });
     }
   );
 });
@@ -42,7 +42,7 @@ router.post("/", (req, res, next) => {
         );
       } else {
       data.voted = true
-      res.render("vote.ejs", { title: "Cast Your Vote", data });
+      res.render("vote.ejs", {path: "votes", title: "Cast Your Vote", data });
       console.error("You already voted");
       }
     }

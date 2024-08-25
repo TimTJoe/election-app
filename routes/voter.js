@@ -12,7 +12,7 @@ router.get("/", (req,res,next) => {
     function (err, rows) {
       err ? console.error(err) : (data.voters = rows);
       console.log(data)
-    res.render("voters.ejs", { title: "Voters", data });
+    res.render("voters.ejs", {path: "voters", title: "Voters", data });
 
     }
   );

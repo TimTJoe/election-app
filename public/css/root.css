@@ -874,7 +874,7 @@ button.large {
 
 }
 
-.menu .item:hover {
+.menu .item:hover, .menu .item.active {
   background-color: var(--ash);
   color: var(--crimson);
 }

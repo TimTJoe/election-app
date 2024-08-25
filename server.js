@@ -63,6 +63,11 @@ var dashboardRouter = require("./routes/dashboard");
 var voteRouter = require("./routes/vote");
 var loginRouter = require("./routes/login");
 var logoutRouter = require("./routes/logout");
+var electionsRouter = require("./routes/elections");
+var partiesRouter = require("./routes/parties");
+var candidatesRouter = require("./routes/candidates");
+
+// require middlewares
 var restrict = require("./middlewares/restrict");
 
 // route handler middlewares
@@ -72,6 +77,9 @@ app.use("/logout", restrict, logoutRouter);
 app.use("/votes", restrict, voteRouter);
 app.use("/voters", voterRouter);
 app.use("/login", loginRouter);
+app.use("/elections", electionsRouter);
+app.use("/parties", partiesRouter);
+app.use("/candidates", candidatesRouter);
 
 // start server
 app.listen(port, function lister() {

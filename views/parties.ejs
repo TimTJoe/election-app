@@ -1,0 +1,16 @@
+<%- include("./partial/head") %>
+<body class="column">
+    <%- include("./partial/navigation") %>
+    <main class="max row align-top no-gap">
+        <%- include("./partial/sidebar") %>
+        <div class="constrant max">
+                <header class="border-bottom padding row between">
+                    <h1 class="large">Parties</h1>
+                </header>
+        </div>
+    </main>
+    <section class="snackbar <%= data?.voted === true ? 'show' : '' %> left">
+        You already voted
+    </section>
+</body>
+</html>

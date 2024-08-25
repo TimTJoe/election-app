@@ -26,14 +26,10 @@ router.get("/", (req, res, next) => {
       console.log(rows)
       err ? console.error(err) : (data.candidates = rows);
       req.session.candidates = rows
-    res.render("dashboard.ejs", { title: "Dashboard", data });
+    res.render("dashboard.ejs", { path: "dashboard", title: "Dashboard", data });
 
     }
   );
-  // db.all("SELECT * FROM users WHERE role_id=?", [3], function (error, rows) {
-  //   error ? console.error(error) : (data.voters = rows);
-  //   res.render("dashboard.ejs", { title: "Dashboard", data });
-  // });
 });
 
 module.exports = router;

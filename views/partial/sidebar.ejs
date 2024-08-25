@@ -1,7 +1,9 @@
 <section class="pane border-right full menu padding">
     <% ["dashboard","elections","voters","parties","candidates","votes"].forEach(item => { %>
-        <a href="/<%= item %>" class="item"><%= item %></a>
+        <a href="/<%= item %>" class="item <%= path === item ? 'active' : '' %>"><%= item %></a>
     <% }); %>
 
     <a href="/settings" class="item move-down">Settings</a>
+    <%- include("./footer") %>
+
 </section>
