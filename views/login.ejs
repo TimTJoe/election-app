@@ -1,20 +1,24 @@
 <%- include("./partial/head") %>
 
-    <body>
-        <form action="/login" method="post">
-            <h1>Log in</h1>
-            <label class="label" for="username">Username</label>
-            <input class="input" type="text" name="username" id="username">
-            <label for="logo">Password</label>
-            <input type="password" name="password" id="password">
-            <select name="" id="" class="select">
-                <option value="">Option here</option>
-                <option value="">Option here</option>
-                <option value="">Option here</option>
-            </select>
-            <button type="submit">Login Now</button>
-        </form>
-        <script type="module" src="/js/index.js"></script>
-    </body>
+    <body class="center">
+        <form action="/login" method="post" class="box small border">
+            <h1 class="huge">Log in</h1>
 
+            <span class="space"></span>
+
+            <label  for="username" class="label">Username</label>
+            <input  type="text" name="username" id="username" required minlength="5" class="input">
+
+            <span class="space small"></span>
+
+            <label for="logo" class="label">Password</label>
+            <input type="password" name="password" id="password" required minlength="8" class="input">
+            
+            <a href="/reset-password">Forget Password?</a>
+
+            <button type="submit" class="margin-top">Login Now</button>
+            <span class="space small"></span>
+            <p class="align-center">Don't have an account? <a href="/voters/registration">Register</a> </p>
+        </form>
+    </body>
     </html>

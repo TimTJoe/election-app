@@ -1,26 +1,2 @@
 @import url("./reset.css");
 @import url("./root.css");
-
-label {
-    display: flex;
-    align-items: center;
-    margin-top: 6px;
-}
-
-input,
-select {
-    display: block;
-    width: 100%;
-    margin-bottom: 6px;
-}
-
-form, .container{
-    margin: auto;
-    max-width: 378px;
-}
-
-input[type="radio"] {
-    width: unset;
-    margin-right: 12px;
-}
-

@@ -45,8 +45,9 @@ select {
 
 /* Remove default link styles */
 a {
+  display: inline-block;
   text-decoration: none;
-  color: inherit;
+  color: var(--blue);
 }
 
 /* Set a baseline for images */
@@ -64,9 +65,9 @@ form {
 
 /* Remove default border for fieldset and legend */
 fieldset {
-  border: none;
-  padding: 0;
-  margin: 0;
+  border-color:  var(--light-gray);
+  padding: var(--spacing-sm);
+  margin: var(--spacing-sm);
 }
 
 legend {
