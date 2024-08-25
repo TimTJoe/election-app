@@ -1,11 +1,11 @@
 <%- include("./partial/head") %>
 
-    <body>
+    <body class="column">
         <nav class="navigation border-bottom">
             <a href="/" class="larger logo">Election App</a>
             <a href="/login" class="button mini">Log in</a>
           </nav>
-        <main class="center">
+        <main class="max center">
             <form action="/voters/registration" method="post" enctype="multipart/form-data" class="box box-large border">
                 <h1 class="huge">Registration </h1>
                 <span class="space"></span>
@@ -80,6 +80,5 @@
             </form>
         </main>
 
-        <script type="module" src="/js/voters.js"></script>
     </body>
     </html>

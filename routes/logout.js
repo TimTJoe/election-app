@@ -1,7 +1,10 @@
 var router = require("express").Router();
 
 router.get("/", (req, res) => {
-  res.send("logging out...");
+  req.session.destroy(function (err) {
+    console.error(err)
+  })
+  res.redirect("/login")
 });
 
 module.exports = router;

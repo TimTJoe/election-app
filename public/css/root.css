@@ -743,7 +743,7 @@ button.large {
 /* Label */
 .label {
   display: block;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 4px;
   font-weight: bold;
   color: var(--midnight);
 }
