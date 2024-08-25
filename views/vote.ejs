@@ -4,46 +4,13 @@
 
     <form action="votes" method="post">
         <h2>Cast Your Vote</h2>
-        <fieldset>
-            <legend>President</legend>
-            <% data.candidates.map((candidate, index)=>{ %>
-                <label for="<%= candidate.id %>">
-                    <input type="radio" name="candidate" id="<%= candidate.id %>" value="<%= candidate.id %>">
-                    <span>
-                        <img src="/images/<%= candidate.photo %>" style="width: 14px; height: 14px;" alt="">
-                        <%= candidate.first_name %>
-                            <%= candidate.middle_name %>
-                                <%= candidate.last_name %>
-                                    &middot;
-                                    <%= candidate.position %>
-                                        &middot;
-                                        <img src="/images/<%= candidate.logo %>"
-                                            style="width: 14px; height: 14px;" alt="">
-                                        <%= candidate.party %>
-                    </span>
-                </label>
-            <% }) %>
-        </fieldset>
+      
         <br>
         <input type="hidden" name="voter" value="<%= data.voter.id %>">
         <button type="submit">Cast Vote</button>
         <br>
     </form>
     <br>
-    <fieldset class="container">
-        <legend>Total Votes Per candidate</legend>
-        <% data.votes.map((votes, index)=>{ %>
-            <section>
-                <img src="/images/<%= votes.photo %>" style="width: 14px; height: 14px;" alt="">
-                <%= votes.first_name %>
-                <%= votes.middle_name %>
-                <%= votes.last_name %>
-                &middot;
-                <%= votes.votes %>
-            </>
-        <% }) %>
-    </fieldset>
-
 </body>
 
 </html>

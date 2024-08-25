@@ -12,7 +12,7 @@
                     <small class="small muted">Total number of registered voters</small>
                 </section>
                 <section class="border padding">
-                    <h1 class="large no-line margin-bottom">Total Notes</h1>
+                    <h1 class="large no-line margin-bottom">Total Votes</h1>
                     <hr class="divider half">
                     <h1 class="huge"><%= data.total.votes %></h1>
                     <small class="small muted">Total number of votes casted</small>
@@ -20,9 +20,38 @@
                 <section class="border padding ">
                     <h1 class="large no-line margin-bottom">Total Candidates</h1>
                     <hr class="divider half">
-                    <h1 class="huge">123467890</h1>
+                    <h1 class="huge"><%= data.total.candidates %></h1>
                     <small class="small muted">Total number of registered candidates</small>
                 </section>
+            </div>
+
+            <div>
+                <header class="border-bottom padding row between">
+                    <h1 class="large">Candidates</h1>
+                </header>
+                <div class="column gap padding">
+
+                    <% data.candidates.map((candidate,index)=>{ %> 
+                        <section class="details row between border small-padding">
+                            <img src="/images/<%= candidate.photo %>" alt="" class="margin-right">
+                            <span class="column max">
+                                <strong>
+                                    <%= candidate.first_name %>
+                                    <%= candidate.middle_name %>
+                                    <%= candidate.last_name %>
+                                </strong>
+                                <small>Total Votes:  <%= candidate.votes %></small>
+                            </span>
+                            <span class="column max">
+                                <strong><%= candidate.position %></strong>
+                                <small>Party: <%= candidate.party %></small>
+                            </span>
+                            <a href="/votes" class="button mini">Select To Vote</a>
+                        </section>
+                    <% }) %>
+
+                  
+                </div>
             </div>
         </div>
     </main>
