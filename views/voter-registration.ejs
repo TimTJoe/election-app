@@ -1,68 +1,85 @@
 <%- include("./partial/head") %>
 
     <body>
-        <form action="/voters/registration" method="post" enctype="multipart/form-data">
-
-            <fieldset>
-                <legend>Personal Information</legend>
-                <label for="first_name">First Name</label>
-                <input type="text" name="first_name" id="first_name">
-                <label for="middle_name">Middle Name</label>
-                <input type="text" name="middle_name" id="middle_name">
-                <label for="last_name">Last Name</label>
-                <input type="text" name="last_name" id="last_name">
-                <label for="DOB">Date of Birth</label>
-                <input type="date" name="DOB" id="DOB">
-                <label for="photo">Profile Photo</label>
-                <input type="file" name="photo" id="photo">
-            </fieldset>
-
-            <fieldset>
-                <legend>Role</legend>
-
-                <label for="role">Role</label>
-                <select name="role" id="role">
-                    <% data.roles.map((role,index)=> { %>
-                        <option value="<%= role.id %>">
-                            <%= role.role %>
-                        </option>
-                        <% }) %>
-                </select>
-
-                <span id="parties">
-                    <label for="party">Party</label>
-                    <select name="party" id="party">
-                        <% data.parties.map((party,index)=> { %>
-                            <option value="<%= party.id %>">
-                                <%= party.party %>
+        <nav class="navigation border-bottom">
+            <a href="/" class="larger logo">Election App</a>
+            <a href="/login" class="button mini">Log in</a>
+          </nav>
+        <main class="center">
+            <form action="/voters/registration" method="post" enctype="multipart/form-data" class="box box-large border">
+                <h1 class="huge">Registration </h1>
+                <span class="space"></span>
+                <section class="row flex">
+                    <span>
+                        <label for="first_name" class="label">First Name</label>
+                        <input type="text" name="first_name" id="first_name" class="input">
+                    </span>
+                    <span>
+                        <label for="middle_name" class="label">Middle Name</label>
+                        <input type="text" name="middle_name" id="middle_name" class="input">
+                    </span>
+                </section>
+                <span class="space small"></span>
+                <label for="last_name" class="label">Last Name</label>
+                <input type="text" name="last_name" id="last_name" class="input">
+                <span class="space small"></span>
+                <section class="row flex">
+                    <span>
+                        <label for="DOB" class="label">Date of Birth</label>
+                        <input type="date" name="DOB" id="DOB" class="input">
+                    </span>
+                    <span>
+                        <label for="photo" class="label">Profile Photo</label>
+                        <input type="file" name="photo" id="photo" class="input">
+                    </span>
+                </section>
+                <span class="space small"></span>
+            
+                <span>
+                    <label for="role" class="label">Role</label>
+                    <select name="role" id="role" class="select">
+                        <% data.roles.map((role,index)=> { %>
+                            <option value="<%= role.id %>">
+                                <%= role.role %>
                             </option>
                             <% }) %>
                     </select>
                 </span>
+                <span class="space small"></span>
+                <section class="row flex">
+                    <span id="parties">
+                        <label for="party" class="label">Party</label>
+                        <select name="party" id="party" class="select">
+                            <% data.parties.map((party,index)=> { %>
+                                <option value="<%= party.id %>">
+                                    <%= party.party %>
+                                </option>
+                                <% }) %>
+                        </select>
+                    </span>
+                    <span id="positions">
+                        <label for="position" class="label">Position</label>
+                        <select name="position" id="position" class="select">
+                            <% data.positions.map((position,index)=> { %>
+                                <option value="<%= position.id %>">
+                                    <%= position.position %>
+                                </option>
+                                <% }) %>
+                        </select>
+                    </span>
+                </section>
+                <span class="space small"></span>
+            
+                <label for="username" class="label">Username</label>
+                <input type="text" name="username" id="username" class="input">
+                <span class="space small"></span>
+                <label for="password" class="label">Password</label>
+                <input type="password" name="password" id="password" class="input">
+                <span class="space"></span>
+                <button type="submit">Register Now</button>
+            </form>
+        </main>
 
-                <span id="positions">
-                    <label for="position">Position</label>
-                    <select name="position" id="position">
-                        <% data.positions.map((position,index)=> { %>
-                            <option value="<%= position.id %>">
-                                <%= position.position %>
-                            </option>
-                            <% }) %>
-                    </select>
-                </span>
-            </fieldset>
-
-            <fieldset>
-                <legend>Authentication</legend>
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password">
-            </fieldset>
-
-            <button type="submit">Register Now</button>
-        </form>
+        <script type="module" src="/js/voters.js"></script>
     </body>
-    <script type="module" src="/js/voters.js"></script>
-
     </html>

@@ -1,24 +1,24 @@
 <%- include("./partial/head") %>
 
-    <body class="center">
-        <form action="/login" method="post" class="box small border">
-            <h1 class="huge">Log in</h1>
-
-            <span class="space"></span>
-
-            <label  for="username" class="label">Username</label>
-            <input  type="text" name="username" id="username" required minlength="5" class="input">
-
-            <span class="space small"></span>
-
-            <label for="logo" class="label">Password</label>
-            <input type="password" name="password" id="password" required minlength="8" class="input">
+    <body>
+        <nav class="navigation border-bottom">
+            <a href="/" class="larger logo">Election App</a>
+            <a href="/voters/registration" class="button mini outlined">Register</a>
+          </nav>
+        <main class="center">
+            <form action="/login" method="post" class="box small border">
+                <h1 class="huge">Log in</h1>
+                <span class="space"></span>
+                <label  for="username" class="label">Username</label>
+                <input  type="text" name="username" id="username" required minlength="5" class="input">
+                <span class="space small"></span>
+                <label for="logo" class="label">Password</label>
+                <input type="password" name="password" id="password" required minlength="8" class="input">
             
-            <a href="/reset-password">Forget Password?</a>
-
-            <button type="submit" class="margin-top">Login Now</button>
-            <span class="space small"></span>
-            <p class="align-center">Don't have an account? <a href="/voters/registration">Register</a> </p>
-        </form>
+                <a href="/reset-password">Forget Password?</a>
+                <button type="submit" class="margin-top">Login Now</button>
+                <span class="space small"></span>
+            </form>
+        </main>
     </body>
     </html>
