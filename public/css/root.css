@@ -379,6 +379,19 @@ button:focus, .button:focus {
   transform: scale(.98);
 }
 
+button.large {
+    min-width: 120px;
+    min-height: 46px;
+    width: 100%;
+    user-select: none;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 6px 8px;
+    line-height: 22px;
+    text-align: center;
+    font-size: unset;
+}
+
 /* Button transformations */
 .outlined, .outlined {
   background-color: var(--snow);
@@ -571,6 +584,7 @@ button:focus, .button:focus {
 /* Box classes */
 .box {
   max-width: 350px;
+  min-width: 350px;
   height: auto;
   margin: var(--spacing-md) auto;
   padding: var(--spacing-md);
@@ -749,6 +763,11 @@ button:focus, .button:focus {
   outline: none;
 }
 
+.radio {
+  width:30px;
+  height: 30px;
+}
+
 /* Select */
 .select {
   width: 100%;
@@ -866,5 +885,5 @@ button:focus, .button:focus {
 .details img {
   width: 60px;
   height: 60px;
-  border-radius: 20px/20px;
+  border-radius: var(--round-md);
 }

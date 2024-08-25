@@ -1,16 +1,39 @@
 <%- include("./partial/head") %>
-
-<body>
-
-    <form action="votes" method="post">
-        <h2>Cast Your Vote</h2>
-      
-        <br>
-        <input type="hidden" name="voter" value="<%= data.voter.id %>">
-        <button type="submit">Cast Vote</button>
-        <br>
-    </form>
-    <br>
+<body class="column">
+    <%- include("./partial/navigation") %>
+    <main class="max row align-top no-gap">
+        <%- include("./partial/sidebar") %>
+        <div class="constrant max">
+                <header class="border-bottom padding row between">
+                    <h1 class="large">Cast Your Vote</h1>
+                </header>
+                <form method="post" action="/votes" class="column gap padding">
+                    <% data.candidates.map((candidate,index)=>{ %> 
+                        <label for="<%= candidate.id %>" class="details row between border small-padding">
+                            <img src="/images/<%= candidate.photo %>" alt="" class="margin-right">
+                            <span class="column max">
+                                <strong>
+                                    <%= candidate.first_name %>
+                                    <%= candidate.middle_name %>
+                                    <%= candidate.last_name %>
+                                </strong>
+                                <small>Total Votes:  <%= candidate.votes %></small>
+                            </span>
+                            <span class="column max">
+                                <strong><%= candidate.position %></strong>
+                                <small>Party: <%= candidate.party %></small>
+                            </span>
+                            <input type="radio" name="candidate" id="<%= candidate.id %>" value="<%= candidate.id %>" class="radio margin-right">
+                        </label>
+                    <% }) %>
+                    <input type="hidden" name="voter" value="<%= data.user.id %>">
+                    <span class="box"><button class="large">Cast Vote</button></span>
+                </form>
+        </div>
+    </main>
+    <%- include("./partial/footer") %>
+    <section class="snackbar left show">
+        this is snackbar this is being displayed
+    </section>
 </body>
-
 </html>

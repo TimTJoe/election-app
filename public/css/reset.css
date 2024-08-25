@@ -40,8 +40,6 @@ select {
   padding: 0;
   margin: 0;
   overflow: visible;
-  -webkit-appearance: none;
-  appearance: none;
 }
 
 /* Remove default link styles */
@@ -69,6 +67,10 @@ fieldset {
   border-color:  var(--light-gray);
   padding: var(--spacing-sm);
   margin: var(--spacing-sm);
+}
+
+label{
+  cursor: pointer;
 }
 
 

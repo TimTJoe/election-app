@@ -3,7 +3,7 @@ var db = require("../db");
 
 router.get("/", (req, res, next) => {
   let data = {};
-  data.voter = req.session.user;
+  data.user = req.session.user
 
   db.all(
     //TODO: add all the
