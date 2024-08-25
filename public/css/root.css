@@ -456,10 +456,6 @@ button.large {
   color: var(--snow);
 }
 
-.green {
-  background-color: var(--green);
-  color: var(--snow);
-}
 
 .blue {
   background-color: var(--blue);

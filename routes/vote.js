@@ -41,9 +41,9 @@ router.post("/", (req, res, next) => {
           }
         );
       } else {
-        data.voted = true
+      data.voted = true
       res.render("vote.ejs", { title: "Cast Your Vote", data });
-        console.error("You already voted");
+      console.error("You already voted");
       }
     }
   );

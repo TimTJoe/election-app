@@ -1,4 +1,4 @@
-function age(params) {
+function getAge(params) {
     const birthYear = new Date(fullDate).getFullYear();
     const currentYear = new Date().getFullYear();
     const currentMonth = new Date().getMonth();
@@ -19,4 +19,4 @@ function age(params) {
   
 }
 
-export default {age}
+console.log('utils')

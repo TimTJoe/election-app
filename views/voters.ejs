@@ -17,7 +17,9 @@
                                     <%= voter.middle_name %>
                                     <%= voter.last_name %>
                                 </h4>
-                                <small class="muted row around"> <%= voter.DOB %>  &middot; <%= voter.voted === '1' ? 'Voted' : 'Not Vote' %> </small>
+                                <small class="bold <%= voter.voted === '1' ? 'green' : 'muted' %>">  
+                                    <%= voter.voted === '1' ? 'Voted' : 'Not Vote' %> 
+                                </small>
                                 <a href="/voters/@<%= voter.username %>" class="button mini margin-top">View Profile</a>
                             </span>
                         </section>
@@ -30,6 +32,6 @@
     <!-- <section class="snackbar left">
         You already voted
     </section> -->
-    <script type="module" src="/js/caculate.js"></script>
+    <script type="module" src="/js/utils.js"></script>
 </body>
 </html>
