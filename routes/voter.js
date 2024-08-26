@@ -11,9 +11,7 @@ router.get("/", (req,res,next) => {
     "SELECT *,users.id FROM users LEFT OUTER JOIN roles ON roles.id=users.id LEFT OUTER JOIN auth ON auth.user_id = users.id",
     function (err, rows) {
       err ? console.error(err) : (data.voters = rows);
-      console.log(data)
     res.render("voters.ejs", {path: "voters", title: "Voters", data });
-
     }
   );
 })
