@@ -119,6 +119,11 @@ menu
     overflow: hidden;
   }
 
+  .card > img {
+    width: 270px;
+    height: 250px;
+  }
+
   /* navigation / top menu */
   .navigation {
     display: flex;
@@ -140,4 +145,5 @@ menu
   .logo:hover {
     color: var(--crimson);
   }
+
   
