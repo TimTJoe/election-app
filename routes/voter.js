@@ -54,8 +54,8 @@ router.post("/registration", upload.single("photo"), (req, res) => {
     );
   } else {
     db.run(
-      "INSERT INTO users VALUES (?,?,?,?,?,?,?)",
-      [null, first_name, middle_name, last_name, DOB, filename, role],
+      "INSERT INTO users VALUES (?,?,?,?,?,?,?,?)",
+      [null, first_name, middle_name, last_name, DOB, filename, role,null],
       function query(err) {
         if (err) console.error(err);
         insertAuth(db,res, username, hashed, this.lastID);
