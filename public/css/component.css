@@ -118,3 +118,26 @@ menu
   .card {
     overflow: hidden;
   }
+
+  /* navigation / top menu */
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 20px;
+    width: calc(100% - 0px);
+  }
+    
+
+  .logo {
+    color: var(--midnight);
+    font-size: 1.5rem;
+    margin: 0.83em 0px;
+    font-weight: bold;
+  }
+  
+  .logo:hover {
+    color: var(--crimson);
+  }
+  

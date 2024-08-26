@@ -23,7 +23,6 @@ router.get("/", (req, res, next) => {
     //TODO: add all the
     "SELECT *,candidates.id, (SELECT SUM(votes.vote) FROM votes WHERE candidates.id=votes.candidate_id) votes FROM candidates LEFT OUTER JOIN parties ON parties.id=candidates.party_id LEFT OUTER JOIN positions ON positions.id = candidates.position_id",
     function (err, rows) {
-      console.log(rows)
       err ? console.error(err) : (data.candidates = rows);
       req.session.candidates = rows
     res.render("dashboard.ejs", { path: "dashboard", title: "Dashboard", data });
