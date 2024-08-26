@@ -6,6 +6,7 @@ var session = require("express-session");
 var db = require("./db");
 var port = process.env.PORT || 4500;
 var SQLiteStore = require("connect-sqlite3")(session)
+var restrict = require("./middlewares/restrict");
 
 // app-wide middlewares
 
@@ -20,8 +21,7 @@ app.use(
       // maxAge: 7*24*60*60*1000, //1 week
       maxAge: 60*60*1000, //1 min
     },
-  })
-);
+  }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
@@ -66,11 +66,11 @@ var logoutRouter = require("./routes/logout");
 var electionsRouter = require("./routes/elections");
 var partiesRouter = require("./routes/parties");
 var candidatesRouter = require("./routes/candidates");
+var indexRouter = require("./routes/index");
 
-// require middlewares
-var restrict = require("./middlewares/restrict");
 
 // route handler middlewares
+app.use("/", indexRouter);
 app.use("/dashboard", restrict, dashboardRouter);
 app.use("/parties", restrict, partyRouter);
 app.use("/logout", restrict, logoutRouter);
