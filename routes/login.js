@@ -3,7 +3,7 @@ var db = require("../db");
 var bcrypt = require("bcrypt");
 
 router.get("/", (req, res, next) => {
-  res.render("login.ejs", {page: "login", title: "Log in" });
+  res.render("login.ejs", {path: "login", title: "Log in" });
 });
 router.post("/", (req, res, next) => {
   let { username, password } = req.body;
