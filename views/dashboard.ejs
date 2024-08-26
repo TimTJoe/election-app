@@ -4,9 +4,7 @@
     <main class="max row align-top no-gap">
         <%- include("./partial/sidebar") %>
         <div class="max constrant">
-            <header class="border-bottom padding row between">
-                <h1 class="large"><%= title %></h1>
-            </header>
+           
             <div class="grid fit padding">
                 <section class="border padding ">
                     <h1 class="large no-line margin-bottom">Registered Voters</h1>
@@ -29,8 +27,9 @@
             </div>
 
             <div>
-                <header class="border-bottom padding row between">
+                <header class="border-top padding row between">
                     <h1 class="large">Candidates</h1>
+                    <a href="/votes" class="button mini">Select To Vote</a>
                 </header>
                 <div class="column gap padding">
 
@@ -49,7 +48,7 @@
                                 <strong><%= candidate.position %></strong>
                                 <small>Party: <%= candidate.party %></small>
                             </span>
-                            <a href="/votes" class="button mini">Select To Vote</a>
+                            <!-- <a href="/votes" class="button mini">Select To Vote</a> -->
                         </section>
                     <% }) %>
 
