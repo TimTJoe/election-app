@@ -71,15 +71,15 @@ var indexRouter = require("./routes/index");
 
 // route handler middlewares
 app.use("/", indexRouter);
+app.use("/login", loginRouter);
+app.use("/voters", voterRouter);
 app.use("/dashboard", restrict, dashboardRouter);
 app.use("/parties", restrict, partyRouter);
 app.use("/logout", restrict, logoutRouter);
 app.use("/votes", restrict, voteRouter);
-app.use("/voters", voterRouter);
-app.use("/login", loginRouter);
-app.use("/elections", electionsRouter);
-app.use("/parties", partiesRouter);
-app.use("/candidates", candidatesRouter);
+app.use("/elections",restrict, electionsRouter);
+app.use("/parties", restrict, partiesRouter);
+app.use("/candidates", restrict, candidatesRouter);
 
 // start server
 app.listen(port, function lister() {
