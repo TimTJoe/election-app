@@ -1,7 +1,8 @@
 var router = require("express").Router();
 var db = require("../db");
 var bcrypt = require("bcrypt");
-const upload = require("../public/js/upload");
+const upload = require("../middlewares/upload");
+// const upload = require("../public/js/upload");
 let data = {};
 
 router.get("/", (req,res,next) => {
@@ -37,6 +38,7 @@ router.get("/registration", (req, res, next) => {
 
 router.post("/registration", upload.single("photo"), (req, res) => {
   //get uploaded photo name
+  //TODO: Delete image from folder if anything fails
   let filename = req.file.filename;
   let { first_name, middle_name, last_name, DOB, username, password, role } =
     req.body;
