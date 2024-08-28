@@ -36,7 +36,7 @@ db.serialize(function create() {
     "CREATE TABLE IF NOT EXISTS auth (id INTEGER  PRIMARY KEY AUTOINCREMENT, username VARCHAR(50) NOT NUll UNIQUE, password VARCHAR(50) NOT NULL, user_id INTEGER)"
   );
   db.run(
-    "CREATE TABLE IF NOT EXISTS users (id INTEGER  PRIMARY KEY AUTOINCREMENT, first_name VARCHAR(50) NOT NUll, middle_name VARCHAR(50) NULL, last_name VARCHAR(50) NOT NULL, DOB DATE NOT NULL, photo TEXT NULL, role_id INT NOT NULL)"
+    "CREATE TABLE IF NOT EXISTS users (id INTEGER  PRIMARY KEY AUTOINCREMENT, first_name VARCHAR(50) NOT NUll, middle_name VARCHAR(50) NULL, last_name VARCHAR(50) NOT NULL, DOB DATE NOT NULL, photo TEXT NULL, role_id INT NOT NULL, voted VARCHAR(10) NULL)"
   );
 
   db.run(
@@ -58,7 +58,7 @@ db.serialize(function create() {
 
 // require route handlers
 var voterRouter = require("./routes/voter");
-var partyRouter = require("./routes/party");
+var partyRouter = require("./public/js/party");
 var dashboardRouter = require("./routes/dashboard");
 var voteRouter = require("./routes/vote");
 var loginRouter = require("./routes/login");

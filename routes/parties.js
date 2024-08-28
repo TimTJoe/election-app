@@ -20,8 +20,6 @@ router.post("/registration",upload.single("logo"), (req, res, next) => {
       function query(err) {
         if (!err) {
           res.redirect("/parties");
-        } else {
-          console.error(err);
         }
       }
     );

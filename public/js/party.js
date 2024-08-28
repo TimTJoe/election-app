@@ -1,7 +1,7 @@
 var router = require("express").Router();
-var db = require("../db");
+var db = require("../../db");
 var bcrypt = require("bcrypt");
-const upload = require("../public/js/upload");
+const upload = require("./upload");
 
 router.get("/registration", (req, res, next) => {
   res.render("party-registration.ejs", { title: "Party Registration" });
@@ -16,7 +16,7 @@ router.post("/registration", upload.single("logo"), (req, res) => {
     [null, party, logo],
     function (err) {
       if (!err) {
-        res.redirect("/dashboard.ejs");
+        res.redirect("/dashboard");
       } else {
         console.error(err);
       }

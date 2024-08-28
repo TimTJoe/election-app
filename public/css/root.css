@@ -30,14 +30,19 @@
   --azure: #1da1f2;
   --green: #34a853;
   --blue: #4285f4;
-  --steel: #6184ac;
-  --red: #ea4335;
   --royal: #0075fa;
   --dark: #333333;
   --shadow: rgba(22, 24, 35, 0.6);
   --smoke: rgba(22, 24, 35, 0.341);
   --cobalt: #2b5db9;
   --black: #000000;
+  --blue: #0074D9;
+  --blue-light: #00B7FF;
+  --green: #2ECC40;
+  --yellow: #FFDC00;
+  --red: #FF4136;
+  --red-light: #fa453c4d;
+  --purple: #8b058b;
 
   /* Border colors */
   --frost-border: var(--frost);
