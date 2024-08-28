@@ -10,7 +10,7 @@ router.get("/", (req, res, next) => {
 });
 
 // Handle POST requests to "/party-registration"
-router.post("/registration",upload.single("logo"), (req, res, next) => {
+router.post("/registration", upload.single("logo"), (req, res, next) => {
     let logo = req.file.filename;
     let { party } = req.body;
   
